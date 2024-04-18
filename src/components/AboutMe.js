@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class AboutMe extends Component {
-    state = {  } 
-    render() { 
-        return (
-            <div>AboutMe</div>
-        );
-    }
+function AboutMe({ data }) {
+    return (
+        <div id='aboutMe' className='secition'>
+            <h2>About Me</h2>
+            <p>{data}</p>
+        </div>
+    );
 }
  
 export default AboutMe;
