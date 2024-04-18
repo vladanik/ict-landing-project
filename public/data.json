@@ -1,0 +1,103 @@
+{
+    "aboutMe": "I am a passionate software developer with a focus on creating innovative solutions to complex problems. I love learning new technologies and exploring the latest trends in the industry.",
+  
+    "experience": [
+      {
+        "company": "ABC Tech Solutions",
+        "experience": ["Led a team of developers in implementing a new customer relationship management system", "Developed and maintained multiple web applications using React.js", "Collaborated with cross-functional teams to deliver high-quality software solutions"],
+        "dateFrom": "2018-05-01",
+        "dateTo": "2022-10-15",
+        "country": "United States",
+        "remote": true
+      },
+      {
+        "company": "XYZ Software",
+        "experience": ["Developed RESTful APIs for a mobile application", "Participated in code reviews and provided constructive feedback", "Resolved critical bugs and implemented performance optimizations"],
+        "dateFrom": "2016-02-15",
+        "dateTo": "2018-04-30",
+        "country": "Canada",
+        "remote": false
+      }
+    ],
+  
+    "projects": [
+      {
+        "name": "E-commerce Platform",
+        "description": "Built a full-stack e-commerce platform using MERN stack",
+        "link": "https://example.com/ecommerce"
+      },
+      {
+        "name": "Task Management App",
+        "description": "Developed a task management application with real-time collaboration features",
+        "link": "https://example.com/task-manager"
+      }
+    ],
+  
+    "skills": {
+      "hardSkills": ["JavaScript", "React.js", "Node.js", "MongoDB", "HTML", "CSS"],
+      "softSkills": ["Teamwork", "Problem Solving", "Communication", "Time Management"]
+    },
+  
+    "education": [
+      {
+        "universityName": "University of Computer Science",
+        "titleName": "Bachelor of Science in Computer Science",
+        "levelName": "Undergraduate",
+        "dateFrom": "2014-09-01",
+        "dateTo": "2018-06-30",
+        "country": "United Kingdom"
+      }
+    ],
+  
+    "languages": [
+      {
+        "language": "English",
+        "level": "B2"
+      },
+      {
+        "language": "Polish",
+        "level": "C1"
+      },
+      {
+        "language": "Russian",
+        "level": "C2"
+      },
+      {
+        "language": "Belarussian",
+        "level": "C2"
+      },
+      {
+        "language": "Ukranian",
+        "level": "B1"
+      }
+    ],
+  
+    "certificates": [
+      {
+        "certificationName": "AWS Certified Developer - Associate",
+        "description": "Demonstrated proficiency in developing and maintaining applications on the AWS platform",
+        "dateIssued": "2020-08-20"
+      },
+      {
+        "certificationName": "Oracle Database Programming with SQL",
+        "description": "Created own database for managing train environment",
+        "dateIssued": "2022-02-14"
+      }
+    ],
+  
+    "services": [
+      {
+        "name": "Web Development",
+        "description": "Custom web development tailored to your business needs",
+        "priceFrom": 1000,
+        "priceTo": 5000
+      },
+      {
+        "name": "Consulting",
+        "description": "Expert advice on technology strategy and implementation",
+        "priceFrom": 200,
+        "priceTo": 800
+      }
+    ]
+  }
+  
