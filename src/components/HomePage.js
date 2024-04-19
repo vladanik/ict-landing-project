@@ -26,7 +26,10 @@ function HomePage () {
             <div className='home-container'>
                 <h1>Welcome to</h1>
                 <h2>{typedText}<span className='cursor'>&#95;</span></h2>
-                <p>Use the menu to get on the page you want.</p>
+                <p>
+                    <span>Use the menu to get on the page you want.</span>
+                    <a href='#contactForm'>Contact Form</a>
+                </p>
             </div>
         </main>
     );

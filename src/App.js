@@ -44,7 +44,7 @@ function App() {
           <Route path='/contact' Component={() => <Contact data={data.contact} />} />
         </Switch>
 
-        {/* <ContactForm /> */}
+        <ContactForm />
         <Footer />
       </div>
     </Router>
