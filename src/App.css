@@ -87,7 +87,7 @@
   display: block;
 }
 
-main {
+main, .contact-form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -297,4 +297,82 @@ main .page-header {
 
 .secition#contact li a:hover {
   text-decoration: underline;
+}
+
+.secition#contactForm {
+  width: 80%;
+  margin-top: 48px;
+}
+
+.secition#contactForm form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.secition#contactForm form input, 
+.secition#contactForm form select, 
+.secition#contactForm form button, 
+.secition#contactForm form textarea {
+  width: 500px;
+  height: 40px;
+  margin: 8px;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.secition#contactForm form textarea {
+  min-height: 120px;
+}
+
+@media only screen and (max-width: 700px) {
+  .secition#contactForm {
+    width: 90%;
+  }
+
+  .secition#contactForm form input, 
+  .secition#contactForm form select, 
+  .secition#contactForm form button, 
+  .secition#contactForm form textarea {
+    width: 100%;
+  }
+}
+
+.email-sent-modal {
+  position: fixed;
+  top: 0;
+  left: 30%;
+  width: 40%;
+  margin-top: 24px;
+  background: #fff;
+  border-radius: 10px;
+  color: #000;
+}
+
+.email-sent-modal .modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px auto 4px;
+}
+
+.email-sent-modal .modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.email-sent-modal .modal-body p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.email-sent-modal .modal-footer {
+  display: flex;
+  justify-content: center;
+  margin: 4px auto 24px;
 }

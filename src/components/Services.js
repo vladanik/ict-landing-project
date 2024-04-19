@@ -22,7 +22,7 @@ function Services({ data }) {
                                 <td width='50%' className='service-description'>{s.description}</td>
                                 <td width='25%' className='service-price mobile-hidden'>USD {s.priceFrom} - {s.priceTo}</td>
                                 <td width='5%' className='service-contact mobile-hidden'>
-                                    <button type="button" class="btn btn-light">Contact</button>
+                                    <a href='#contactForm'><button type="button" class="btn btn-light">Contact</button></a>
                                 </td>
                             </tr>)
                         }

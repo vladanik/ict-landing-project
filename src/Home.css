@@ -1,6 +1,6 @@
 .home-container {
     text-align: center;
-    margin: 20vh auto 50vh;
+    margin: 15vh;
 }
 
 .home-container h1 {
@@ -16,6 +16,12 @@
 
 .home-container p {
     margin-top: 25vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-container p a {
+    color: #fff;
 }
 
 .cursor {
