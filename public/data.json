@@ -1,5 +1,5 @@
 {
-    "aboutMe": "I am a passionate software developer with a focus on creating innovative solutions to complex problems. I love learning new technologies and exploring the latest trends in the industry.",
+    "aboutMe": "\"I am a passionate software developer with a focus on creating innovative solutions to complex problems. I love learning new technologies and exploring the latest trends in the industry.\"",
   
     "experience": [
       {
@@ -24,12 +24,16 @@
       {
         "name": "E-commerce Platform",
         "description": "Built a full-stack e-commerce platform using MERN stack",
-        "link": "https://example.com/ecommerce"
+        "link": "https://example.com/ecommerce",
+        "code": "https://example.com/ecommerce",
+        "projectId": "eCommPlatform"
       },
       {
         "name": "Task Management App",
         "description": "Developed a task management application with real-time collaboration features",
-        "link": "https://example.com/task-manager"
+        "link": "https://example.com/task-manager",
+        "code": "https://example.com/task-manager",
+        "projectId": "taskManager"
       }
     ],
   
@@ -90,14 +94,35 @@
         "name": "Web Development",
         "description": "Custom web development tailored to your business needs",
         "priceFrom": 1000,
-        "priceTo": 5000
+        "priceTo": 5000,
+        "serviceId": "webDevelopment"
       },
       {
         "name": "Consulting",
         "description": "Expert advice on technology strategy and implementation",
         "priceFrom": 200,
-        "priceTo": 800
+        "priceTo": 800,
+        "serviceId": "consulting"
       }
-    ]
+    ],
+
+    "contact": {
+      "telegram": {
+        "name": "@vlad_danik",
+        "link": "https://example.com/telegram"
+      },
+      "linkedin": {
+        "name": "@vladanik",
+        "link": "https://example.com/linkedin"
+      },
+      "github": {
+        "name": "@vladanik",
+        "link": "https://example.com/github"
+      },
+      "email": {
+        "name": "udanik@proton.me",
+        "link": "mailto:udanik@proton.me"
+      }
+    }
   }
   
