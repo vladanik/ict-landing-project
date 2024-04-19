@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 function Languages({ data }) {
     return (
         <div id='languages' className='secition'>
-            <h2>Languages</h2>
+            <h4>Languages</h4>
             <ul>
                 {
                     data.map(lang =>

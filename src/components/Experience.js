@@ -3,15 +3,15 @@ import React, { Component } from 'react';
 function Experience({ data }) {
     return (
         <div id='experience' className='secition'>
-            <h2>Experience</h2>
+            <h4>Experience</h4>
             <ul>
             {
                 data.map(record => 
                 <li>
                     <div>
-                        <h4>{record.company}  - {record.country} {record.remote ? '(Remote)' : ''}</h4>
+                        <h5>{record.company}  - {record.country} {record.remote ? '(Remote)' : ''}</h5>
                         <span>{record.dateFrom} - {record.dateTo}</span>
-                        <ul>
+                        <ul className='experience-inner-list'>
                             {
                                 record.experience.map(expDescription => 
                                 <li>
