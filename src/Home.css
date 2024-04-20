@@ -1,0 +1,38 @@
+.home-container {
+    text-align: center;
+    margin: 15vh;
+}
+
+.home-container h1 {
+    font-size: 48px;
+}
+
+.home-container h2 {
+    font-size: 108px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    margin: 24px;
+}
+
+.home-container p {
+    margin-top: 25vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-container p a {
+    color: #fff;
+}
+
+.cursor {
+    animation: blink 1s steps(1) 3;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

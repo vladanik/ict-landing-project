@@ -1,38 +1,422 @@
+/*******************************
+APP
+********************************/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  font-family: "Roboto", sans-serif;
+  background-image: url("back_blur.png");
+  background-size: cover;
+  color: #fff;
+}
+
+.loading-container {
+  background-image: url("back_blur.png");
+  background-size: cover;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  zoom: 2;
+}
+
+/*******************************
+HEADER
+********************************/
+
+#header {
+  margin-bottom: 1rem;
+}
+
+.navbar-brand {
+  scale: 2;
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  margin: 24px auto 8px auto !important;
+}
+
+@media only screen and (min-width: 992px) {
+  #header .container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.link-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.link-content-list {
+  list-style-type: none;
+  background-color: #f1f1f1;
+  padding: 0;
+  border-radius: 8px;
+}
+
+.link-content-list li {
+  margin: 8px 16px;
+  padding: 8px;
+}
+
+.link-content-list li:first-child {
+  padding-top: 16px;
+}
+
+.link-content-list li:last-child {
+  padding-bottom: 16px;
+}
+
+.link-content-list a {
+  color: #707070;
+  text-decoration: none;
+}
+
+.link-content-list a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.nav-item:hover .link-content {
+  display: block;
+}
+
+/*******************************
+MAIN CONTENT
+********************************/
+
+main, .contact-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .page-header {
+  font-weight: 500;
+  font-size: 28px;
+  margin-bottom: 1rem;
+}
+
+.secition {
+  margin: 12px 24px;
+  padding: 24px;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 10px 5px 25px #003655;
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.secition:hover {
+  transform: scale(1.02);
+}
+
+/*******************************
+ABOUT ME COMPONENT
+********************************/
+
+.secition#aboutMe {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 18px;
+}
+
+.secition#aboutMe img {
+  width: 90%;
+  border-radius: 14px;
+  box-shadow: 10px 5px 25px #003655;
+}
+
+.secition#aboutMe p {
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 992px) {
+  .secition#aboutMe {
+    flex-direction: row-reverse;
+    gap: 40px
+  }
+
+  .secition#aboutMe img {
+    width: 40%;
+  }
+}
+
+/*******************************
+EDUCATION LANGUAGES SKILLS COMPONENTS
+********************************/
+
+#skillsLanguagesEducation {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-areas:
+    "skills skills"
+    "education education"
+    "languages languages";
+}
+
+.secition#skills {
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  grid-area: skills;
+}
+
+.secition#languages {
+  grid-area: languages;
+}
+
+.secition#education {
+  grid-area: education;
+}
+
+.secition#skills ul, .secition#languages ul {
+  list-style-type: none;
+  padding-left: 4px;
+}
+
+@media only screen and (min-width: 700px) {
+  #skillsLanguagesEducation {
+    grid-template-columns: repeat(5, 20%);
+    grid-template-areas:
+      ". skills skills skills ."
+      "education education education languages languages";
+  }
+
+  .secition#skills {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/*******************************
+EXPERIENCE CERTIFICATES COMPONENTS
+********************************/
+
+.secition#experience > ul, .secition#cerificates > ul {
+  list-style: none;
+  padding: 4px;
+}
+
+.secition#experience .experience-inner-list {
+  list-style-type: disc;
+  margin: 5px auto 18px;
+  padding-left: 15px;
+}
+
+/*******************************
+PROJECTS COMPONENT
+********************************/
+
+.single-project-section {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.project-links {
+  width: 100%;
+  margin-right: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media only screen and (min-width: 868px) {
+  .single-project-section {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .project-links {
+    width: 20%;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.project-link {
+  color: #f0f0f0;
+  text-decoration: solid;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+/*******************************
+SERIVICES COMPONENT
+********************************/
+
+#services {
+  width: 90%;
+}
+
+#services thead {
+  border-bottom: 1px solid;
+}
+
+#services th, #services td {
+  padding: 18px;
+  border-left: 1px solid;
+}
+
+#services th:first-child, #services td:first-child {
+  border: none;
+}
+
+#services th {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.service-name, .service-price {
+  font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 700px) {
+  .mobile-hidden {
+    display: none;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*******************************
+CONTACT COMPONENT
+********************************/
+
+.secition#contact {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+
+.secition#contact ul {
+  list-style: none;
+}
+
+.secition#contact li {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin: 24px;
+}
+
+.secition#contact li:last-child {
+  margin-bottom: 0;
+}
+
+.secition#contact li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.secition#contact li a:hover {
+  text-decoration: underline;
+}
+
+/*******************************
+CONTACT FORM COMPONENT
+********************************/
+
+.secition#contactForm {
+  width: 80%;
+  margin-top: 48px;
+}
+
+.secition#contactForm form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.secition#contactForm form input, 
+.secition#contactForm form select, 
+.secition#contactForm form button, 
+.secition#contactForm form textarea {
+  width: 500px;
+  height: 40px;
+  margin: 8px;
+  border-radius: 6px;
+  padding: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.secition#contactForm form textarea {
+  min-height: 120px;
+}
+
+@media only screen and (max-width: 700px) {
+  .secition#contactForm {
+    width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .secition#contactForm form input, 
+  .secition#contactForm form select, 
+  .secition#contactForm form button, 
+  .secition#contactForm form textarea {
+    width: 100%;
   }
+}
+
+/*******************************
+CONTACT FORM EMAIL SENT POPUP
+********************************/
+
+.email-sent-modal {
+  position: fixed;
+  top: 0;
+  left: 30%;
+  width: 40%;
+  margin-top: 24px;
+  background: #fff;
+  border-radius: 10px;
+  color: #000;
+}
+
+.email-sent-modal .modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px auto 4px;
+}
+
+.email-sent-modal .modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.email-sent-modal .modal-body p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.email-sent-modal .modal-footer {
+  display: flex;
+  justify-content: center;
+  margin: 4px auto 24px;
 }
