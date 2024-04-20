@@ -1,5 +1,5 @@
-import React, { Component, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes as Switch, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes as Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
@@ -44,7 +44,7 @@ function App() {
           <Route path='/contact' Component={() => <Contact data={data.contact} />} />
         </Switch>
 
-        <ContactForm />
+        <ContactForm data={data.contactCategories} />
         <Footer />
       </div>
     </Router>

@@ -1,128 +1,148 @@
 {
-    "aboutMe": "\"I am a passionate software developer with a focus on creating innovative solutions to complex problems. I love learning new technologies and exploring the latest trends in the industry.\"",
-  
-    "experience": [
-      {
-        "company": "ABC Tech Solutions",
-        "experience": ["Led a team of developers in implementing a new customer relationship management system", "Developed and maintained multiple web applications using React.js", "Collaborated with cross-functional teams to deliver high-quality software solutions"],
-        "dateFrom": "2018-05-01",
-        "dateTo": "2022-10-15",
-        "country": "United States",
-        "remote": true
-      },
-      {
-        "company": "XYZ Software",
-        "experience": ["Developed RESTful APIs for a mobile application", "Participated in code reviews and provided constructive feedback", "Resolved critical bugs and implemented performance optimizations"],
-        "dateFrom": "2016-02-15",
-        "dateTo": "2018-04-30",
-        "country": "Canada",
-        "remote": false
-      }
-    ],
-  
-    "projects": [
-      {
-        "name": "E-commerce Platform",
-        "description": "Built a full-stack e-commerce platform using MERN stack",
-        "link": "https://example.com/ecommerce",
-        "code": "https://example.com/ecommerce",
-        "projectId": "eCommPlatform"
-      },
-      {
-        "name": "Task Management App",
-        "description": "Developed a task management application with real-time collaboration features",
-        "link": "https://example.com/task-manager",
-        "code": "https://example.com/task-manager",
-        "projectId": "taskManager"
-      }
-    ],
-  
-    "skills": {
-      "hardSkills": ["JavaScript", "React.js", "Node.js", "MongoDB", "HTML", "CSS"],
-      "softSkills": ["Teamwork", "Problem Solving", "Communication", "Time Management"]
-    },
-  
-    "education": [
-      {
-        "universityName": "University of Computer Science",
-        "titleName": "Bachelor of Science in Computer Science",
-        "levelName": "Undergraduate",
-        "dateFrom": "2014-09-01",
-        "dateTo": "2018-06-30",
-        "country": "United Kingdom"
-      }
-    ],
-  
-    "languages": [
-      {
-        "language": "English",
-        "level": "B2"
-      },
-      {
-        "language": "Polish",
-        "level": "C1"
-      },
-      {
-        "language": "Russian",
-        "level": "C2"
-      },
-      {
-        "language": "Belarussian",
-        "level": "C2"
-      },
-      {
-        "language": "Ukranian",
-        "level": "B1"
-      }
-    ],
-  
-    "certificates": [
-      {
-        "certificationName": "AWS Certified Developer - Associate",
-        "description": "Demonstrated proficiency in developing and maintaining applications on the AWS platform",
-        "dateIssued": "2020-08-20"
-      },
-      {
-        "certificationName": "Oracle Database Programming with SQL",
-        "description": "Created own database for managing train environment",
-        "dateIssued": "2022-02-14"
-      }
-    ],
-  
-    "services": [
-      {
-        "name": "Web Development",
-        "description": "Custom web development tailored to your business needs",
-        "priceFrom": 1000,
-        "priceTo": 5000,
-        "serviceId": "webDevelopment"
-      },
-      {
-        "name": "Consulting",
-        "description": "Expert advice on technology strategy and implementation",
-        "priceFrom": 200,
-        "priceTo": 800,
-        "serviceId": "consulting"
-      }
-    ],
+  "aboutMe": "\"I am a passionate software developer with a focus on creating innovative solutions to complex problems. I love learning new technologies and exploring the latest trends in the industry. Continuously learning and staying current, I'm motivated to tackle new challenges and enhance code quality through my skills.\"",
 
-    "contact": {
-      "telegram": {
-        "name": "@vlad_danik",
-        "link": "https://example.com/telegram"
-      },
-      "linkedin": {
-        "name": "@vladanik",
-        "link": "https://example.com/linkedin"
-      },
-      "github": {
-        "name": "@vladanik",
-        "link": "https://example.com/github"
-      },
-      "email": {
-        "name": "udanik@proton.me",
-        "link": "mailto:udanik@proton.me"
-      }
+  "experience": [
+    {
+      "company": "Accenture",
+      "position": "Salesforce Application Developer",
+      "experience": [
+        "Crafting backend logic for the application, including the creation of custom controllers and services", 
+        "Designing and implementing the front-end of a B2B Commerce application, utilizing technologies such as JS, CSS, Handlebars, and jQuery", 
+        "Enhancing code efficiency by applying Salesforce best practices, thereby boosting overall application performance", 
+        "Tailoring the application to meet WCAG requirements, ensuring accessibility for a diverse user base", 
+        "Formulating a development architecture that aligns with client specifications for new features and functionalities", 
+        "Actively participating in client demo sessions to showcase and discuss the progress of development efforts", 
+        "Reviewing and evaluating pull requests from team members to maintain code quality and adherence to standards", 
+        "Collaborating within an agile Scrum framework to ensure effective communication and efficient project delivery"
+      ],
+      "dateFrom": "2023-04-26",
+      "dateTo": "Present",
+      "country": "Poland",
+      "remote": true
+    },
+    {
+      "company": "ITransition",
+      "position": "Software Developer Intern (HTML, JS, Java, C#)",
+      "experience": [
+        "Gained hands-on experience in developing software solutions by working on a personal and command project centered around web services", 
+        "Developed effective communication and collaboration skills by working in a dynamic and multicultural environment"
+      ],
+      "dateFrom": "2022-07-01",
+      "dateTo": "2022-09-15",
+      "country": "Poland",
+      "remote": false
     }
-  }
+  ],
+
+  "projects": [
+    {
+      "name": "Own Company Website",
+      "description": "Website for ICT Uladzislau Danik, created in React Node.js",
+      "link": "/",
+      "code": "https://github.com/vladanik/ict-landing-project",
+      "projectId": "travelAgencyWebsite"
+    },
+    {
+      "name": "Travel Agency Website",
+      "description": "Studies Website project for travel agency, created using PHP",
+      "link": "https://vladanik.github.io/WakacjeStrona/",
+      "code": "https://github.com/vladanik/WakacjeStrona",
+      "projectId": "travelAgencyWebsite"
+    },
+    {
+      "name": "Snake Game",
+      "description": "Developed a simple Snake Game in Java using Swing",
+      "link": "https://github.com/vladanik/snakeGame",
+      "code": "https://github.com/vladanik/snakeGame",
+      "projectId": "snakeGame"
+    }
+  ],
+
+  "skills": {
+    "hardSkills": ["Java", "Force.com Apex", "Salesforce Development", "OOP Principles", "jQuery", "React.js", "SQL", "Git", "Scrum", "Out-of-the-Box Automation"],
+    "softSkills": ["Teamwork", "Problem Solving", "Communication", "Creativity", "Active Listening", "Critical Thinking", "Goal Setting"]
+  },
+
+  "education": [
+    {
+      "universityName": "University in Bialystok",
+      "titleName": "Information Technologies",
+      "levelName": "Bachleor's Degree",
+      "dateFrom": "2020-10-01",
+      "dateTo": "Present",
+      "country": "Poland"
+    }
+  ],
+
+  "languages": [
+    {
+      "language": "English",
+      "level": "B2"
+    },
+    {
+      "language": "Polish",
+      "level": "C1"
+    },
+    {
+      "language": "Russian",
+      "level": "C2"
+    },
+    {
+      "language": "Belarussian",
+      "level": "C2"
+    },
+    {
+      "language": "Ukranian",
+      "level": "B1"
+    }
+  ],
+
+  "certificates": [
+    {
+      "certificationName": "Salesforce Platform Developer I",
+      "description": "",
+      "dateIssued": "2024-04-26"
+    },
+    {
+      "certificationName": "Oracle Database Programming with SQL",
+      "description": "Created SQL Database Project for Managing Train and Stations Environment",
+      "dateIssued": "2022-02-14"
+    }
+  ],
+
+  "services": [
+    {
+      "name": "TBC",
+      "description": "TBC",
+      "priceFrom": 0,
+      "priceTo": 999999,
+      "serviceId": "test"
+    }
+  ],
+
+  "contact": {
+    "telegram": {
+      "name": "@vlad_danik",
+      "link": "https://t.me/vlad_danik"
+    },
+    "linkedin": {
+      "name": "/vladanik",
+      "link": "https://www.linkedin.com/in/vladanik/"
+    },
+    "github": {
+      "name": "/vladanik",
+      "link": "https://github.com/vladanik"
+    },
+    "email": {
+      "name": "udanik@proton.me",
+      "link": "mailto:udanik@proton.me"
+    }
+  },
+
+  "contactCategories": [
+    "Service Request", "Cooperation Proposal", "Improvement Suggestion", "General Message"
+  ]
+}
+
+  
   

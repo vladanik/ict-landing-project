@@ -1,10 +1,9 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Home.css' 
 
 function HomePage () {
     const [typedText, setTypedText] = useState('');
     const text = 'I CT';
-    const cursor = '_';
 
     useEffect(() => {
         let index = 0;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 function Experience({ data }) {
     return (
@@ -10,6 +10,7 @@ function Experience({ data }) {
                 <li>
                     <div>
                         <h5>{record.company}  - {record.country} {record.remote ? '(Remote)' : ''}</h5>
+                        <h6>{record.position}</h6>
                         <span>{record.dateFrom} - {record.dateTo}</span>
                         <ul className='experience-inner-list'>
                             {
