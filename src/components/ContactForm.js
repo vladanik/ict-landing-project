@@ -1,6 +1,6 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-function ContactForm() {
+function ContactForm({ data }) {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -67,9 +67,11 @@ function ContactForm() {
                 <label>
                     <select name='category' value={formData.category} onChange={handleChange} required>
                         <option value=''>Select category...</option>
-                        <option value='General'>General</option>
-                        <option value='Sales'>Sales</option>
-                        <option value='Support'>Support</option>
+                        {
+                            data.map(category =>
+                            <option value={category}>{category}</option>)
+                        }
+                        <option value='Other'>Other</option>
                     </select>
                 </label>
                 <button type='submit' id='submitButton' className='btn btn-success'>Submit</button>

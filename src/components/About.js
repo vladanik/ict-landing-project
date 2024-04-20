@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import AboutMe from './AboutMe';
 import Experience from './Experience';
 import Education from './Education';

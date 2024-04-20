@@ -1,3 +1,7 @@
+/*******************************
+APP
+********************************/
+
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +28,10 @@
   transform: translate(0, -50%);
   zoom: 2;
 }
+
+/*******************************
+HEADER
+********************************/
 
 #header {
   margin-bottom: 1rem;
@@ -87,6 +95,10 @@
   display: block;
 }
 
+/*******************************
+MAIN CONTENT
+********************************/
+
 main, .contact-form-container {
   display: flex;
   flex-direction: column;
@@ -112,6 +124,10 @@ main .page-header {
 .secition:hover {
   transform: scale(1.02);
 }
+
+/*******************************
+ABOUT ME COMPONENT
+********************************/
 
 .secition#aboutMe {
   display: flex;
@@ -141,13 +157,17 @@ main .page-header {
   }
 }
 
+/*******************************
+EDUCATION LANGUAGES SKILLS COMPONENTS
+********************************/
+
 #skillsLanguagesEducation {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 50%);
   grid-template-areas:
-    "education education"
     "skills skills"
+    "education education"
     "languages languages";
 }
 
@@ -177,8 +197,8 @@ main .page-header {
   #skillsLanguagesEducation {
     grid-template-columns: repeat(5, 20%);
     grid-template-areas:
-      "education education education languages languages"
-      ". skills skills skills .";
+      ". skills skills skills ."
+      "education education education languages languages";
   }
 
   .secition#skills {
@@ -186,6 +206,10 @@ main .page-header {
     padding-right: 40px;
   }
 }
+
+/*******************************
+EXPERIENCE CERTIFICATES COMPONENTS
+********************************/
 
 .secition#experience > ul, .secition#cerificates > ul {
   list-style: none;
@@ -197,6 +221,10 @@ main .page-header {
   margin: 5px auto 18px;
   padding-left: 15px;
 }
+
+/*******************************
+PROJECTS COMPONENT
+********************************/
 
 .single-project-section {
   width: 80%;
@@ -237,6 +265,10 @@ main .page-header {
   text-decoration: underline;
 }
 
+/*******************************
+SERIVICES COMPONENT
+********************************/
+
 #services {
   width: 90%;
 }
@@ -268,6 +300,10 @@ main .page-header {
   }
 }
 
+/*******************************
+CONTACT COMPONENT
+********************************/
+
 .secition#contact {
   width: 75%;
   display: flex;
@@ -298,6 +334,10 @@ main .page-header {
 .secition#contact li a:hover {
   text-decoration: underline;
 }
+
+/*******************************
+CONTACT FORM COMPONENT
+********************************/
 
 .secition#contactForm {
   width: 80%;
@@ -338,6 +378,10 @@ main .page-header {
     width: 100%;
   }
 }
+
+/*******************************
+CONTACT FORM EMAIL SENT POPUP
+********************************/
 
 .email-sent-modal {
   position: fixed;
