@@ -59,7 +59,7 @@
   ],
 
   "skills": {
-    "hardSkills": ["Java", "Force.com Apex", "Salesforce Development", "OOP Principles", "jQuery", "React.js", "SQL", "Git", "Scrum", "Out-of-the-Box Automation"],
+    "hardSkills": ["Java", "Force.com Apex", "Salesforce Development", "OOP Principles", "jQuery", "React.js", "SQL", "Git"],
     "softSkills": ["Teamwork", "Problem Solving", "Communication", "Creativity", "Active Listening", "Critical Thinking", "Goal Setting"]
   },
 
@@ -101,7 +101,7 @@
     {
       "certificationName": "Salesforce Platform Developer I",
       "description": "",
-      "dateIssued": "2024-04-26"
+      "dateIssued": "Planned :)"
     },
     {
       "certificationName": "Oracle Database Programming with SQL",
