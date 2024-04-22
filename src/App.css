@@ -402,6 +402,18 @@ CONTACT FORM EMAIL SENT POPUP
   margin: 24px auto 4px;
 }
 
+@media only screen and (max-width: 992px) {
+  .email-sent-modal {
+    left: 10%;
+    width: 80%;
+    text-align: center;
+  }
+
+  .email-sent-modal .modal-header .line-desktop-only {
+    display: none;
+  }
+}
+
 .email-sent-modal .modal-body {
   display: flex;
   flex-direction: column;
