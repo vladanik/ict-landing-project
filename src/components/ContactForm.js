@@ -78,7 +78,7 @@ function ContactForm({ data }) {
             </form>
         </div>
 
-        {/*showModal &&*/ (
+        {showModal && (
         <div class="email-sent-modal" id="emailSentModal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
