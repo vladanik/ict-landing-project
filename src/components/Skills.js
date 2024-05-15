@@ -8,7 +8,7 @@ function Skills({ data }) {
                 <ul>
                     {
                         data.softSkills.map(skill =>
-                        <li>
+                        <li key={skill.trim()}>
                             {skill}
                         </li>)
                     }
@@ -19,7 +19,7 @@ function Skills({ data }) {
                 <ul>
                     {
                         data.hardSkills.map(skill =>
-                        <li>
+                        <li key={skill.trim()}>
                             {skill}
                         </li>)
                     }

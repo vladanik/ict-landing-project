@@ -40,7 +40,7 @@
       "description": "Website for ICT Uladzislau Danik, created in React Node.js",
       "link": "/",
       "code": "https://github.com/vladanik/ict-landing-project",
-      "projectId": "travelAgencyWebsite"
+      "projectId": "ictWebsite"
     },
     {
       "name": "Travel Agency Website",
@@ -140,7 +140,20 @@
   },
 
   "contactCategories": [
-    "Service Request", "Cooperation Proposal", "Improvement Suggestion", "General Message"
+    "Service Request", "Cooperation Proposal", "Improvement Suggestion", "General Message", "Access Request"
+  ],
+
+  "dataAccess": [
+    {
+      "id": 1,
+      "email": "udanik@proton.me",
+      "pass": "bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a"
+    },
+    {
+      "id": 2,
+      "email": "dvoetochiedank@gmail.com",
+      "pass": "33a7d3da476a32ac237b3f603a1be62fad00299e0d4b5a8db8d913104edec629"
+    }
   ]
 }
 

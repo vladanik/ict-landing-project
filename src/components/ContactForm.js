@@ -66,12 +66,12 @@ function ContactForm({ data }) {
                 </label>
                 <label>
                     <select name='category' value={formData.category} onChange={handleChange} required>
-                        <option value=''>Select category...</option>
+                        <option value='' key='emptyOption'>Select category...</option>
                         {
                             data.map(category =>
-                            <option value={category}>{category}</option>)
+                            <option value={category} key={category.trim() + 'Option'}>{category}</option>)
                         }
-                        <option value='Other'>Other</option>
+                        <option value='Other' key='otherOption'>Other</option>
                     </select>
                 </label>
                 <button type='submit' id='submitButton' className='btn btn-success'>Submit</button>
