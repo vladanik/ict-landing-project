@@ -16,9 +16,7 @@ function About({ data }) {
       pass: ''
     });
     const [showRestrictedDetails, setShowRestrictedDetails] = useState(false);
-    const [showDetailsButtonText, setshowDetailsButtonText] = useState('Show More Details');
     const [accessGranted, setAccessGranted] = useState(false);
-    const [isErrorHidden, setIsErrorHidden] = useState(true);
 
     useEffect(() => {
         if (location.hash) {
@@ -95,7 +93,6 @@ function About({ data }) {
     }
 
     const hashPass = (pass) => {
-      console.log('hashed: ' + sha256(pass));
       return sha256(pass);
     }
 
