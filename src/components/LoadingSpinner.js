@@ -5,8 +5,8 @@ class LoadingSpinner extends Component {
     render() { 
         return (
             <div className='loading-container'>
-                <div class="spinner-border" role="status" id='loadingSpinner'>
-                    <span class="visually-hidden">Loading...</span>
+                <div className="spinner-border" role="status" id='loadingSpinner'>
+                    <span className="visually-hidden">Loading...</span>
                 </div>
             </div>
             

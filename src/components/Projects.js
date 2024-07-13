@@ -23,12 +23,12 @@ function Projects({ data }) {
                 data.map(project =>
                 <div id={project.projectId} className='secition single-project-section'>
                     <div className='project-description'>
-                        <h4><a href={project.link} className='project-link'>{project.name}</a></h4>
+                        <h4><a href={project.link} className='project-link' target='_blank' rel='noreferrer'>{project.name}</a></h4>
                         <span>{project.description}</span>
                     </div>
                     <div className='project-links'>
-                        <p><a href={project.link} className='project-link'>Open Project</a></p>
-                        <p><a href={project.code} className='project-link'>Open Code</a></p>
+                        <p><a href={project.link} className='project-link' target='_blank' rel='noreferrer'>Open Project</a></p>
+                        <p><a href={project.code} className='project-link' target='_blank' rel='noreferrer'>Open Code</a></p>
                     </div>
                 </div>)
             }
