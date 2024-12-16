@@ -11,22 +11,27 @@
       "items": [
         {
           "title": "Custom Software Development",
+          "img": "offers1",
           "paragraph": "Building tailored solutions using Java, Force.com Apex, React.js, and other leading technologies."
         },
         {
           "title": "Salesforce Development",
+          "img": "offers2",
           "paragraph": "Crafting robust Salesforce applications and optimizing workflows to maximize efficiency."
         },
         {
           "title": "Web and Frontend Development",
+          "img": "offers3",
           "paragraph": "Creating intuitive, responsive user interfaces with React.js and jQuery."
         },
         {
           "title": "Database Management",
+          "img": "offers4",
           "paragraph": "Designing and maintaining efficient SQL-based data solutions."
         },
         {
           "title": "Version Control & Collaboration",
+          "img": "offers5",
           "paragraph": "Ensuring seamless project management through Git and other tools."
         }
       ]
