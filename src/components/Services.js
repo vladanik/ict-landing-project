@@ -4,7 +4,7 @@ function Services({ data }) {
     return (
         <main>
             <h1 className='page-header'>Services</h1>
-            <div id='services' className='secition'>
+            <div id='services' className='section'>
                 <table>
                     <thead>
                         <tr>

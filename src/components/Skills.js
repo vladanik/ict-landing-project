@@ -2,7 +2,7 @@ import React from 'react';
 
 function Skills({ data }) {
     return (
-        <div id='skills' className='secition'>
+        <div id='skills' className='section'>
             <div className='soft-skills'>
                 <h4>Soft skills</h4>
                 <ul>

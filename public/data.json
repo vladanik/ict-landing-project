@@ -1,5 +1,83 @@
 {
-  "aboutMe": "\"I am a passionate software developer with a focus on creating innovative solutions to complex problems. I love learning new technologies and exploring the latest trends in the industry. Continuously learning and staying current, I'm motivated to tackle new challenges and enhance code quality through my skills.\"",
+  "companyName": "ICT",
+  "about": {
+    "aboutUs": {
+      "title": "About Us",
+      "paragraph": "At **ICT**, we are passionate about delivering innovative software solutions that tackle complex challenges and drive success for our clients. Our team of experienced professionals is dedicated to staying at the forefront of the technology landscape, continuously learning and leveraging cutting-edge tools and methodologies to deliver top-quality results."
+    },
+    "whatWeOffer": {
+      "title": "What We Offer",
+      "paragraph": "Our company specializes in a range of services designed to meet diverse client needs, including:",
+      "items": [
+        {
+          "title": "Custom Software Development",
+          "paragraph": "Building tailored solutions using Java, Force.com Apex, React.js, and other leading technologies."
+        },
+        {
+          "title": "Salesforce Development",
+          "paragraph": "Crafting robust Salesforce applications and optimizing workflows to maximize efficiency."
+        },
+        {
+          "title": "Web and Frontend Development",
+          "paragraph": "Creating intuitive, responsive user interfaces with React.js and jQuery."
+        },
+        {
+          "title": "Database Management",
+          "paragraph": "Designing and maintaining efficient SQL-based data solutions."
+        },
+        {
+          "title": "Version Control & Collaboration",
+          "paragraph": "Ensuring seamless project management through Git and other tools."
+        }
+      ]
+    },
+    "coreCompetencies": {
+      "title": "Core Competencies",
+      "paragraph": "We pride ourselves on combining technical expertise with essential soft skills to ensure project success:",
+      "items": [
+        {
+          "title": "Collaboration and Teamwork",
+          "paragraph": "Working closely with clients and teams to achieve shared goals."
+        },
+        {
+          "title": "Problem Solving and Critical Thinking",
+          "paragraph": "Tackling challenges with innovative, strategic approaches."
+        },
+        {
+          "title": "Clear Communication and Active Listening",
+          "paragraph": "Understanding client needs and translating them into actionable solutions."
+        },
+        {
+          "title": "Creativity and Goal Setting",
+          "paragraph": "Delivering fresh ideas and consistently meeting project objectives."
+        }
+      ]
+    },
+    "ourApproach": {
+      "title": "Our Approach",
+      "paragraph": "At **ICT**, we adhere to industry-standard Object-Oriented Programming (OOP) principles to develop scalable, maintainable systems. By integrating our expertise in Salesforce Development, React.js, and other advanced technologies, we provide clients with comprehensive, future-proof solutions."
+    },
+    "ourTeam": {
+      "title": "Our Team",
+      "paragraph": "Our multilingual team speaks **Polish**, **Russian**, and **English**, ensuring seamless communication across diverse projects. With a strong foundation in education and industry-recognized certifications, we deliver services grounded in expertise and trust."
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us?",
+      "paragraph": "Partner with **ICT** to benefit from:",
+      "items": [
+        {
+          "paragraph": "A commitment to excellence and innovation."
+        },
+        {
+          "paragraph": "A team that adapts to evolving trends and technologies."
+        },
+        {
+          "paragraph": "Solutions tailored to meet your unique business needs."
+        }
+      ]
+    }
+  },
+
 
   "experience": [
     {

@@ -1,11 +1,14 @@
 import React from 'react';
 import 'bootstrap';
+import logoWhite from '../assets/logo-w-text-white.png';
 
 function Header({ data }) {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark" id='header'>
             <div className="container-fluid">
-                <a className="navbar-brand" href="/">ICT</a>
+                <a className="navbar-brand" href="/">
+                    <img src={logoWhite} alt="Logo" width="75" className="d-inline-block align-top mb-2" />
+                </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>

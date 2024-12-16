@@ -21,7 +21,7 @@ function Projects({ data }) {
             <h1 className='page-header'>Projects</h1>
             {
                 data.map(project =>
-                <div id={project.projectId} className='secition single-project-section'>
+                <div id={project.projectId} className='section single-project-section'>
                     <div className='project-description'>
                         <h4><a href={project.link} className='project-link' target='_blank' rel='noreferrer'>{project.name}</a></h4>
                         <span>{project.description}</span>

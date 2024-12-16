@@ -4,7 +4,7 @@ function Contact({ data }) {
     return (
         <main>
             <h1 className='page-header'>Contact</h1>
-            <div id='contact' className='secition'>
+            <div id='contact' className='section'>
                 <ul>
                     <li>
                         <div className='contact-icon'>

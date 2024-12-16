@@ -9,13 +9,13 @@ APP
 
 .App {
   font-family: "Roboto", sans-serif;
-  background-image: url("back_blur.png");
+  background-image: url("assets/back_blur.png");
   background-size: cover;
   color: #fff;
 }
 
 .loading-container {
-  background-image: url("back_blur.png");
+  background-image: url("assets/back_blur.png");
   background-size: cover;
   color: #fff;
   width: 100%;
@@ -100,6 +100,20 @@ HEADER
 }
 
 /*******************************
+FOOTER
+********************************/
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.logo-container img {
+  width: 150px;
+}
+
+/*******************************
 MAIN CONTENT
 ********************************/
 
@@ -116,195 +130,20 @@ main .page-header {
   margin-bottom: 1rem;
 }
 
-.secition {
+.section {
   margin: 12px 24px;
   padding: 24px;
-  transition: transform 0.3s ease;
   border-radius: 10px;
   box-shadow: 10px 5px 25px #003655;
   background-color: rgba(0, 0, 0, 0.125);
 }
 
-.secition:hover {
-  transform: scale(1.02);
-}
-
 /*******************************
-ABOUT ME COMPONENT
+ABOUT COMPONENT
 ********************************/
 
-.secition#aboutMe {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  gap: 18px;
-}
-
-.secition#aboutMe img {
+.section#aboutUs {
   width: 90%;
-  border-radius: 14px;
-  box-shadow: 10px 5px 25px #003655;
-}
-
-.secition#aboutMe p {
-  font-size: 20px;
-}
-
-@media only screen and (min-width: 992px) {
-  .secition#aboutMe {
-    flex-direction: row-reverse;
-    gap: 40px
-  }
-
-  .secition#aboutMe img {
-    width: 50%;
-  }
-}
-
-/*******************************
-EDUCATION LANGUAGES SKILLS COMPONENTS
-********************************/
-
-#skillsLanguagesEducation {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  grid-template-areas:
-    "skills skills"
-    "education education"
-    "languages languages";
-}
-
-.secition#skills {
-  padding-left: 12px;
-  padding-right: 12px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  grid-area: skills;
-}
-
-.secition#languages {
-  grid-area: languages;
-}
-
-.secition#education {
-  grid-area: education;
-}
-
-.secition#skills ul, .secition#languages ul {
-  list-style-type: none;
-  padding-left: 4px;
-}
-
-@media only screen and (min-width: 700px) {
-  #skillsLanguagesEducation {
-    grid-template-columns: repeat(5, 20%);
-    grid-template-areas:
-      ". skills skills skills ."
-      "education education education languages languages";
-  }
-
-  .secition#skills {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-
-/*******************************
-EXPERIENCE CERTIFICATES COMPONENTS
-********************************/
-
-.secition#experience > ul, .secition#cerificates > ul {
-  list-style: none;
-  padding: 4px;
-}
-
-.secition#experience .experience-inner-list {
-  list-style-type: disc;
-  margin: 5px auto 18px;
-  padding-left: 15px;
-}
-
-/*******************************
-RESTRICTED FIELDS ACCESS POPUP
-********************************/
-
-.resticted-details-modal {
-  position: fixed;
-  top: 30%;
-  left: 35%;
-  width: 30%;
-  background: #fff;
-  border-radius: 10px;
-  color: #000;
-  padding: 24px;
-  text-align: justify;
-  z-index: 2;
-}
-
-.resticted-details-modal .modal-header {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.resticted-details-modal .modal-body form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.resticted-details-modal .modal-body form input, 
-.resticted-details-modal .modal-body form button {
-  height: 40px;
-  margin: 8px;
-  border-radius: 6px;
-  padding: 8px;
-}
-
-.restricted-details-button {
-  margin-top: 1.5rem;
-}
-
-
-.restricted-details-button span {
-  font-size: 20px;
-}
-
-body.restricted-modal-open {
-  overflow: hidden;
-}
-
-.restricted-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.restricted-details-incorrect-data {
-  color: #cc0000;
-  font-size: 14px;
-}
-
-@media only screen and (max-width: 992px) {
-  .resticted-details-modal {
-    left: 10%;
-    top: 15%;
-    width: 80%;
-  }
-
-  .resticted-details-modal .modal-header {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-end;
-    gap: 8px;
-  }
 }
 
 /*******************************
@@ -351,7 +190,7 @@ PROJECTS COMPONENT
 }
 
 /*******************************
-SERIVICES COMPONENT
+SERVICES COMPONENT
 ********************************/
 
 #services {
@@ -389,34 +228,34 @@ SERIVICES COMPONENT
 CONTACT COMPONENT
 ********************************/
 
-.secition#contact {
+.section#contact {
   width: 75%;
   display: flex;
   justify-content: center;
   padding: 12px;
 }
 
-.secition#contact ul {
+.section#contact ul {
   list-style: none;
 }
 
-.secition#contact li {
+.section#contact li {
   display: flex;
   flex-direction: row;
   gap: 24px;
   margin: 24px;
 }
 
-.secition#contact li:last-child {
+.section#contact li:last-child {
   margin-bottom: 0;
 }
 
-.secition#contact li a {
+.section#contact li a {
   color: #fff;
   text-decoration: none;
 }
 
-.secition#contact li a:hover {
+.section#contact li a:hover {
   text-decoration: underline;
 }
 
@@ -424,22 +263,22 @@ CONTACT COMPONENT
 CONTACT FORM COMPONENT
 ********************************/
 
-.secition#contactForm {
+.section#contactForm {
   width: 80%;
   margin-top: 48px;
 }
 
-.secition#contactForm form {
+.section#contactForm form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.secition#contactForm form input, 
-.secition#contactForm form select, 
-.secition#contactForm form button, 
-.secition#contactForm form textarea {
+.section#contactForm form input, 
+.section#contactForm form select, 
+.section#contactForm form button, 
+.section#contactForm form textarea {
   width: 500px;
   height: 40px;
   margin: 8px;
@@ -447,19 +286,19 @@ CONTACT FORM COMPONENT
   padding: 8px;
 }
 
-.secition#contactForm form textarea {
+.section#contactForm form textarea {
   min-height: 120px;
 }
 
 @media only screen and (max-width: 700px) {
-  .secition#contactForm {
+  .section#contactForm {
     width: 90%;
   }
 
-  .secition#contactForm form input, 
-  .secition#contactForm form select, 
-  .secition#contactForm form button, 
-  .secition#contactForm form textarea {
+  .section#contactForm form input, 
+  .section#contactForm form select, 
+  .section#contactForm form button, 
+  .section#contactForm form textarea {
     width: 100%;
   }
 }
