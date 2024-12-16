@@ -20,7 +20,6 @@ function About({ data }) {
 
     return (
         <main>
-            <h1 className='page-header'>{data.companyName}</h1>
             {Object.entries(data.about).map(
                 (value) =>  <AboutSection data={value} />
             )}
