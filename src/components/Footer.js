@@ -12,7 +12,7 @@ class Footer extends Component {
                         <li className="nav-item"><a href="/about" className="nav-link px-2 text-body-secondary">About</a></li>
                         <li className="nav-item"><a href="/contact" className="nav-link px-2 text-body-secondary">Contact</a></li>
                     </ul>
-                    <p className="text-center text-body-secondary">© 2024 ICT Uladzislau Danik</p>
+                    <p className="text-center text-body-secondary">© 2025 ICT Władysław Danik</p>
                     <div className="logo-container">
                         <img src={logo} alt="ICT Logo" className="justity-center"/>
                     </div>

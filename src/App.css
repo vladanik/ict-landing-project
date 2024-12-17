@@ -58,47 +58,6 @@ HEADER
   }
 }
 
-.link-content {
-  display: none;
-  position: absolute;
-  min-width: 160px;
-  z-index: 1;
-}
-
-.link-content-list {
-  list-style-type: none;
-  background-color: #f1f1f1;
-  padding: 0;
-  border-radius: 8px;
-}
-
-.link-content-list li {
-  margin: 8px 16px;
-  padding: 8px;
-}
-
-.link-content-list li:first-child {
-  padding-top: 16px;
-}
-
-.link-content-list li:last-child {
-  padding-bottom: 16px;
-}
-
-.link-content-list a {
-  color: #707070;
-  text-decoration: none;
-}
-
-.link-content-list a:hover {
-  color: #000000;
-  text-decoration: underline;
-}
-
-.nav-item:hover .link-content {
-  display: block;
-}
-
 /*******************************
 FOOTER
 ********************************/
@@ -143,6 +102,10 @@ main .page-header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.section-warning {
+  background: rgba(0, 255, 255, 0.3);
 }
 
 /*******************************
@@ -219,32 +182,6 @@ PROJECTS COMPONENT
 
 .single-project-section {
   width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.project-links {
-  width: 100%;
-  margin-right: 12px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-@media only screen and (min-width: 868px) {
-  .single-project-section {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .project-links {
-    width: 20%;
-    align-items: center;
-    justify-content: space-between;
-  }
 }
 
 .project-link {
@@ -254,6 +191,13 @@ PROJECTS COMPONENT
 
 .project-link:hover {
   text-decoration: underline;
+}
+
+.worked-with-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
 }
 
 /*******************************
@@ -285,7 +229,7 @@ SERVICES COMPONENT
   font-weight: 600;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .mobile-hidden {
     display: none;
   }

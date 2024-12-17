@@ -85,37 +85,101 @@
     }
   },
 
-  "projects": [
-    {
-      "name": "Own Company Website",
-      "description": "Website for ICT Uladzislau Danik, created in React Node.js",
-      "link": "/",
-      "code": "https://github.com/vladanik/ict-landing-project",
-      "projectId": "ictWebsite"
-    },
-    {
-      "name": "Travel Agency Website",
-      "description": "Studies Website project for travel agency, created using PHP",
-      "link": "https://vladanik.github.io/WakacjeStrona/",
-      "code": "https://github.com/vladanik/WakacjeStrona",
-      "projectId": "travelAgencyWebsite"
-    },
-    {
-      "name": "Snake Game",
-      "description": "Developed a simple Snake Game in Java using Swing",
-      "link": "https://github.com/vladanik/snakeGame",
-      "code": "https://github.com/vladanik/snakeGame",
-      "projectId": "snakeGame"
-    }
-  ],
+  "projects": {
+    "projects" : [
+      {
+        "name": "Own Company Website",
+        "description": "Website for ICT Władysław Danik, created in React Node.js",
+        "link": "/",
+        "projectId": "ictWebsite"
+      },
+      {
+        "name": "Travel Agency Website",
+        "description": "Studies Website project for travel agency, created using PHP",
+        "link": "https://vladanik.github.io/WakacjeStrona/",
+        "projectId": "travelAgencyWebsite"
+      },
+      {
+        "name": "Snake Game",
+        "description": "Developed a simple Snake Game in Java using Swing",
+        "link": "https://github.com/vladanik/snakeGame",
+        "projectId": "snakeGame"
+      }
+    ],
+    "workWith": [
+      {
+        "name": "Accenture",
+        "img": "logo_ACN"
+      },
+      {
+        "name": "Adobe",
+        "img": "logo_ADBE"
+      },
+      {
+        "name": "Meta",
+        "img": "logo_META"
+      },
+      {
+        "name": "Salesforce",
+        "img": "logo_CRM"
+      },
+      {
+        "name": "Oracle",
+        "img": "logo_ORCL"
+      }
+    ]
+  },
 
   "services": [
     {
-      "name": "TBC",
-      "description": "TBC",
-      "priceFrom": 0,
-      "priceTo": 999999,
-      "serviceId": "test"
+      "name": "Custom Software Development",
+      "description": "Tailor-made software solutions using modern technologies such as Java, Apex (Salesforce), React.js, and SQL to meet your unique business needs.",
+      "pricing": {
+        "USD": { "from": 500, "to": 5000 },
+        "PLN": { "from": 2000, "to": 20000 },
+        "EUR": { "from": 475.0, "to": 4750.0 }
+      },
+      "serviceId": "custom_software_dev"
+    },
+    {
+      "name": "Salesforce Development",
+      "description": "End-to-end Salesforce development, including Apex programming, customization, workflows, and Lightning Web Components (LWC) to enhance your CRM processes.",
+      "pricing": {
+        "USD": { "from": 800, "to": 6000 },
+        "PLN": { "from": 3200, "to": 24000 },
+        "EUR": { "from": 760.0, "to": 5700.0 }
+      },
+      "serviceId": "salesforce_dev"
+    },
+    {
+      "name": "Web and Frontend Development",
+      "description": "Responsive and modern user interfaces built with React.js, JavaScript, and jQuery to create intuitive user experiences.",
+      "pricing": {
+        "USD": { "from": 400, "to": 3000 },
+        "PLN": { "from": 1600, "to": 12000 },
+        "EUR": { "from": 380.0, "to": 2850.0 }
+      },
+      "serviceId": "frontend_dev"
+    },
+    {
+      "name": "API and Backend Services",
+      "description": "Robust backend systems and APIs using Java and SQL for efficient data processing and integration with frontend applications.",
+      "pricing": {
+        "USD": { "from": 700, "to": 4000 },
+        "PLN": { "from": 2800, "to": 16000 },
+        "EUR": { "from": 665.0, "to": 3800.0 }
+      },
+      "serviceId": "backend_services"
+    },
+    {
+      "name": "Code Quality and Optimization",
+      "description": "Review and refactor your existing codebase to improve performance, scalability, and maintainability, adhering to OOP principles and industry best practices.",
+      "serviceId": "code_optimization"
+    },
+    {
+      "name": "Consultation and Training",
+      "description": "Expert consultation on Salesforce, React.js, and software development best practices, along with hands-on training sessions for teams.",
+      "serviceId": "consultation_training"
     }
   ],
 

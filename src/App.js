@@ -34,7 +34,7 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <Header data={data} />
+        <Header />
 
         <Switch>
           <Route exact path='/' Component={() => <HomePage />} />

@@ -15,7 +15,7 @@ function HomePage () {
                         <h2>DELIVERING_RESULTS</h2>
                     </div>
                 </div>
-                <p><a href="/about">Who we are?</a></p>
+                <p><a href="/about">Who we are</a></p>
             </div>
         </main>
     );
