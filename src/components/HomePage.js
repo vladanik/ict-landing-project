@@ -15,10 +15,7 @@ function HomePage () {
                         <h2>DELIVERING_RESULTS</h2>
                     </div>
                 </div>
-                <p>
-                    <span>Use the menu to get on the page you want.</span>
-                    <a href='#contactForm'>Contact Form</a>
-                </p>
+                <p><a href="/about">Who we are?</a></p>
             </div>
         </main>
     );

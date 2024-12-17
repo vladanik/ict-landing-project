@@ -139,6 +139,12 @@ main .page-header {
   background-color: rgba(0, 0, 0, 0.125);
 }
 
+.section-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /*******************************
 ABOUT COMPONENT
 ********************************/
@@ -146,12 +152,13 @@ ABOUT COMPONENT
 .about-offers {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  column-gap: .5em;
   row-gap: 10px;
 }
 
 .about-offers-section {
   margin: 0;
-  /*padding: 0;*/
+  width: 100%;
 }
 
 .about-offers-section h5 {
@@ -163,6 +170,47 @@ ABOUT COMPONENT
   border-radius: 10px;
   margin-top: 10px;
   margin-bottom: 15%;
+}
+
+.about-offers-section p {
+  margin-bottom: 15%;
+}
+
+.about-competencies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.about-competencies-section {
+  margin: 0;
+  padding: 10px 0;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-competencies-section h6, .about-competencies-section p {
+  margin: 0;
+  padding: 3px 15px;
+  text-align: center;
+}
+
+#ourTeam .section-image img {
+  width: 30%;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  #ourApproach, #ourTeam {
+    width: 75%;
+  }
+  #whyChooseUs {
+    width: 50%;
+  }
 }
 
 /*******************************
