@@ -1,8 +1,15 @@
 # ICT Website
 
-Company: **ICT Władysław Danik**
-**MIT License**
+Company: **ICT Władysław Danik** 
+
+**MIT License** \
 Copyright (c) 2025 ICT Władysław Danik
+
+## Cookies
+
+### Cookie Notification
+We use a single cookie to remember that you’ve acknowledged this notice. When you visit our website for the first time, this banner appears. By clicking **Got it!**, you agree to store this cookie on your device for the next 365 days, during which this notification will no longer be shown. \
+No other cookies are currently used on this website.
 
 ## Release Notes
 
