@@ -1,8 +1,16 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import logo_ACN from '../assets/logo_ACN.png';
+import logo_ADBE from '../assets/logo_ADBE.png';
+import logo_CRM from '../assets/logo_CRM.png';
+import logo_META from '../assets/logo_META.png';
+import logo_ORCL from '../assets/logo_ORCL.png';
 
 function Projects({ data }) {
     const location = useLocation();
+    const images = {
+        logo_ACN, logo_ADBE, logo_CRM, logo_META, logo_ORCL
+    }
 
     useEffect(() => {
         if (location.hash) {
@@ -19,21 +27,25 @@ function Projects({ data }) {
     return (
         <main>
             <h1 className='page-header'>Projects</h1>
-            {
-                data.map(project =>
-                <div id={project.projectId} className='secition single-project-section'>
+            {data.projects.map(project =>
+                <div id={project.projectId} key={project.projectId} className='section single-project-section'>
                     <div className='project-description'>
-                        <h4><a href={project.link} className='project-link' target='_blank' rel='noreferrer'>{project.name}</a></h4>
+                        <h4><a href={project.link} className='project-link' target='_blank'
+                               rel='noreferrer'>{project.name}</a></h4>
                         <span>{project.description}</span>
                     </div>
-                    <div className='project-links'>
-                        <p><a href={project.link} className='project-link' target='_blank' rel='noreferrer'>Open Project</a></p>
-                        <p><a href={project.code} className='project-link' target='_blank' rel='noreferrer'>Open Code</a></p>
-                    </div>
-                </div>)
-            }
+                </div>
+            )}
+            <div id='workedWith' className='section single-project-section'>
+                <h4>Also we are working with</h4>
+                <div className='worked-with-container'>
+                    {data.workWith.map(cmp =>
+                        <img src={images[cmp.img]} alt={cmp.name} title={cmp.name} key={cmp.name} width="10%" height="100%" />
+                    )}
+                </div>
+            </div>
         </main>
     );
 }
- 
+
 export default Projects;

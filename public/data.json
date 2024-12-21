@@ -1,122 +1,185 @@
 {
-  "aboutMe": "\"I am a passionate software developer with a focus on creating innovative solutions to complex problems. I love learning new technologies and exploring the latest trends in the industry. Continuously learning and staying current, I'm motivated to tackle new challenges and enhance code quality through my skills.\"",
-
-  "experience": [
-    {
-      "company": "Accenture",
-      "position": "Salesforce Application Developer",
-      "experience": [
-        "Crafting backend logic for the application, including the creation of custom controllers and services", 
-        "Designing and implementing the front-end of a B2B Commerce application, utilizing technologies such as JS, CSS, Handlebars, and jQuery", 
-        "Enhancing code efficiency by applying Salesforce best practices, thereby boosting overall application performance", 
-        "Tailoring the application to meet WCAG requirements, ensuring accessibility for a diverse user base", 
-        "Formulating a development architecture that aligns with client specifications for new features and functionalities", 
-        "Actively participating in client demo sessions to showcase and discuss the progress of development efforts", 
-        "Reviewing and evaluating pull requests from team members to maintain code quality and adherence to standards", 
-        "Collaborating within an agile Scrum framework to ensure effective communication and efficient project delivery"
-      ],
-      "dateFrom": "2023-04-26",
-      "dateTo": "Present",
-      "country": "Poland",
-      "remote": true
+  "companyName": "ICT",
+  "about": {
+    "aboutUs": {
+      "title": "About Us",
+      "img": "logo",
+      "paragraph": "At **ICT**, we are passionate about delivering innovative software solutions that tackle complex challenges and drive success for our clients. Our team of experienced professionals is dedicated to staying at the forefront of the technology landscape, continuously learning and leveraging cutting-edge tools and methodologies to deliver top-quality results."
     },
-    {
-      "company": "ITransition",
-      "position": "Software Developer Intern (HTML, JS, Java, C#)",
-      "experience": [
-        "Gained hands-on experience in developing software solutions by working on a personal and command project centered around web services", 
-        "Developed effective communication and collaboration skills by working in a dynamic and multicultural environment"
-      ],
-      "dateFrom": "2022-07-01",
-      "dateTo": "2022-09-15",
-      "country": "Poland",
-      "remote": false
+    "whatWeOffer": {
+      "title": "What We Offer",
+      "paragraph": "Our company specializes in a range of services designed to meet diverse client needs, including:",
+      "items": [
+        {
+          "title": "Custom Software Development",
+          "img": "offers1",
+          "paragraph": "Building tailored solutions using Java, Force.com Apex, React.js, and other leading technologies."
+        },
+        {
+          "title": "Salesforce Development",
+          "img": "offers2",
+          "paragraph": "Crafting robust Salesforce applications and optimizing workflows to maximize efficiency."
+        },
+        {
+          "title": "Web and Frontend Development",
+          "img": "offers3",
+          "paragraph": "Creating intuitive, responsive user interfaces with React.js and jQuery."
+        },
+        {
+          "title": "Database Management",
+          "img": "offers4",
+          "paragraph": "Designing and maintaining efficient SQL-based data solutions."
+        },
+        {
+          "title": "Version Control & Collaboration",
+          "img": "offers5",
+          "paragraph": "Ensuring seamless project management through Git and other tools."
+        }
+      ]
+    },
+    "coreCompetencies": {
+      "title": "Core Competencies",
+      "paragraph": "We pride ourselves on combining technical expertise with essential soft skills to ensure project success:",
+      "items": [
+        {
+          "title": "Collaboration and Teamwork",
+          "paragraph": "Working closely with clients and teams to achieve shared goals."
+        },
+        {
+          "title": "Problem Solving and Critical Thinking",
+          "paragraph": "Tackling challenges with innovative, strategic approaches."
+        },
+        {
+          "title": "Clear Communication and Active Listening",
+          "paragraph": "Understanding client needs and translating them into actionable solutions."
+        },
+        {
+          "title": "Creativity and Goal Setting",
+          "paragraph": "Delivering fresh ideas and consistently meeting project objectives."
+        }
+      ]
+    },
+    "ourApproach": {
+      "title": "Our Approach",
+      "paragraph": "At **ICT**, we adhere to industry-standard Object-Oriented Programming (OOP) principles to develop scalable, maintainable systems. By integrating our expertise in Salesforce Development, React.js, and other advanced technologies, we provide clients with comprehensive, future-proof solutions."
+    },
+    "ourTeam": {
+      "title": "Our Team",
+      "img": "multilingual",
+      "paragraph": "Our team speaks **Polish**, **Russian**, and **English**, ensuring seamless communication across diverse projects. With a strong foundation in education and industry-recognized certifications, we deliver services grounded in expertise and trust."
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us?",
+      "paragraph": "Partner with **ICT** to benefit from:",
+      "items": [
+        {
+          "paragraph": "A commitment to excellence and innovation."
+        },
+        {
+          "paragraph": "A team that adapts to evolving trends and technologies."
+        },
+        {
+          "paragraph": "Solutions tailored to meet your unique business needs."
+        }
+      ]
     }
-  ],
-
-  "projects": [
-    {
-      "name": "Own Company Website",
-      "description": "Website for ICT Uladzislau Danik, created in React Node.js",
-      "link": "/",
-      "code": "https://github.com/vladanik/ict-landing-project",
-      "projectId": "ictWebsite"
-    },
-    {
-      "name": "Travel Agency Website",
-      "description": "Studies Website project for travel agency, created using PHP",
-      "link": "https://vladanik.github.io/WakacjeStrona/",
-      "code": "https://github.com/vladanik/WakacjeStrona",
-      "projectId": "travelAgencyWebsite"
-    },
-    {
-      "name": "Snake Game",
-      "description": "Developed a simple Snake Game in Java using Swing",
-      "link": "https://github.com/vladanik/snakeGame",
-      "code": "https://github.com/vladanik/snakeGame",
-      "projectId": "snakeGame"
-    }
-  ],
-
-  "skills": {
-    "hardSkills": ["Java", "Force.com Apex", "Salesforce Development", "OOP Principles", "jQuery", "React.js", "SQL", "Git"],
-    "softSkills": ["Teamwork", "Problem Solving", "Communication", "Creativity", "Active Listening", "Critical Thinking", "Goal Setting"]
   },
 
-  "education": [
-    {
-      "universityName": "University in Bialystok",
-      "titleName": "Information Technologies",
-      "levelName": "Bachleor's Degree",
-      "dateFrom": "2020-10-01",
-      "dateTo": "Present",
-      "country": "Poland"
-    }
-  ],
-
-  "languages": [
-    {
-      "language": "English",
-      "level": "B2"
-    },
-    {
-      "language": "Polish",
-      "level": "C1"
-    },
-    {
-      "language": "Russian",
-      "level": "C2"
-    },
-    {
-      "language": "Belarussian",
-      "level": "C2"
-    },
-    {
-      "language": "Ukranian",
-      "level": "B1"
-    }
-  ],
-
-  "certificates": [
-    {
-      "certificationName": "Salesforce Platform Developer I",
-      "description": "",
-      "dateIssued": "Planned :)"
-    },
-    {
-      "certificationName": "Oracle Database Programming with SQL",
-      "description": "Created SQL Database Project for Managing Train and Stations Environment",
-      "dateIssued": "2022-02-14"
-    }
-  ],
+  "projects": {
+    "projects" : [
+      {
+        "name": "Own Company Website",
+        "description": "Website for ICT Władysław Danik, created in React Node.js",
+        "link": "/",
+        "projectId": "ictWebsite"
+      },
+      {
+        "name": "Travel Agency Website",
+        "description": "Studies Website project for travel agency, created using PHP",
+        "link": "https://vladanik.github.io/WakacjeStrona/",
+        "projectId": "travelAgencyWebsite"
+      },
+      {
+        "name": "Snake Game",
+        "description": "Developed a simple Snake Game in Java using Swing",
+        "link": "https://github.com/vladanik/snakeGame",
+        "projectId": "snakeGame"
+      }
+    ],
+    "workWith": [
+      {
+        "name": "Accenture",
+        "img": "logo_ACN"
+      },
+      {
+        "name": "Adobe",
+        "img": "logo_ADBE"
+      },
+      {
+        "name": "Meta",
+        "img": "logo_META"
+      },
+      {
+        "name": "Salesforce",
+        "img": "logo_CRM"
+      },
+      {
+        "name": "Oracle",
+        "img": "logo_ORCL"
+      }
+    ]
+  },
 
   "services": [
     {
-      "name": "TBC",
-      "description": "TBC",
-      "priceFrom": 0,
-      "priceTo": 999999,
-      "serviceId": "test"
+      "name": "Custom Software Development",
+      "description": "Tailor-made software solutions using modern technologies such as Java, Apex (Salesforce), React.js, and SQL to meet your unique business needs.",
+      "pricing": {
+        "USD": { "from": 500, "to": 5000 },
+        "PLN": { "from": 2000, "to": 20000 },
+        "EUR": { "from": 475.0, "to": 4750.0 }
+      },
+      "serviceId": "custom_software_dev"
+    },
+    {
+      "name": "Salesforce Development",
+      "description": "End-to-end Salesforce development, including Apex programming, customization, workflows, and Lightning Web Components (LWC) to enhance your CRM processes.",
+      "pricing": {
+        "USD": { "from": 800, "to": 6000 },
+        "PLN": { "from": 3200, "to": 24000 },
+        "EUR": { "from": 760.0, "to": 5700.0 }
+      },
+      "serviceId": "salesforce_dev"
+    },
+    {
+      "name": "Web and Frontend Development",
+      "description": "Responsive and modern user interfaces built with React.js, JavaScript, and jQuery to create intuitive user experiences.",
+      "pricing": {
+        "USD": { "from": 400, "to": 3000 },
+        "PLN": { "from": 1600, "to": 12000 },
+        "EUR": { "from": 380.0, "to": 2850.0 }
+      },
+      "serviceId": "frontend_dev"
+    },
+    {
+      "name": "API and Backend Services",
+      "description": "Robust backend systems and APIs using Java and SQL for efficient data processing and integration with frontend applications.",
+      "pricing": {
+        "USD": { "from": 700, "to": 4000 },
+        "PLN": { "from": 2800, "to": 16000 },
+        "EUR": { "from": 665.0, "to": 3800.0 }
+      },
+      "serviceId": "backend_services"
+    },
+    {
+      "name": "Code Quality and Optimization",
+      "description": "Review and refactor your existing codebase to improve performance, scalability, and maintainability, adhering to OOP principles and industry best practices.",
+      "serviceId": "code_optimization"
+    },
+    {
+      "name": "Consultation and Training",
+      "description": "Expert consultation on Salesforce, React.js, and software development best practices, along with hands-on training sessions for teams.",
+      "serviceId": "consultation_training"
     }
   ],
 
@@ -140,20 +203,7 @@
   },
 
   "contactCategories": [
-    "Service Request", "Cooperation Proposal", "Improvement Suggestion", "General Message", "Access Request"
-  ],
-
-  "dataAccess": [
-    {
-      "id": 1,
-      "email": "udanik@proton.me",
-      "pass": "bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a"
-    },
-    {
-      "id": 2,
-      "email": "dvoetochiedank@gmail.com",
-      "pass": "33a7d3da476a32ac237b3f603a1be62fad00299e0d4b5a8db8d913104edec629"
-    }
+    "Service Request", "Cooperation Proposal", "Improvement Suggestion", "General Message", "Access Request", "Feedback", "Bug Report"
   ]
 }
 

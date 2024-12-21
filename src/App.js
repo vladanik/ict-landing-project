@@ -8,8 +8,9 @@ import Projects from './components/Projects';
 import ContactForm from './components/ContactForm';
 import Services from './components/Services';
 import Contact from './components/Contact';
-import './App.css';
+import Legal from "./components/Legal";
 import LoadingSpinner from './components/LoadingSpinner';
+import './App.css';
 
 function App() {
   const [data, setData] = useState(null);
@@ -34,7 +35,7 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <Header data={data} />
+        <Header />
 
         <Switch>
           <Route exact path='/' Component={() => <HomePage />} />
@@ -42,6 +43,7 @@ function App() {
           <Route path='/projects' Component={() => <Projects data={data.projects} />} />
           <Route path='/services' Component={() => <Services data={data.services} />} />
           <Route path='/contact' Component={() => <Contact data={data.contact} />} />
+          <Route path='/legal' Component={() => <Legal />} />
         </Switch>
 
         <ContactForm data={data.contactCategories} />
