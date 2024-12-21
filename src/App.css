@@ -367,3 +367,40 @@ CONTACT FORM EMAIL SENT POPUP
   justify-content: center;
   margin: 4px auto 24px;
 }
+
+/*******************************
+COOKIE BANNER
+********************************/
+
+.cookie-banner-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 10px;
+  background: rgba(0, 54, 85, 0.75);
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.cookie-banner p a {
+  color: #ffffff;
+}
+
+.cookie-banner button {
+  width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .cookie-banner {
+    flex-direction: column;
+  }
+}

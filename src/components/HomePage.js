@@ -1,8 +1,28 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import '../Home.css';
+import Cookies from "js-cookie";
+import CookieBanner from "./CookieBanner";
 
 function HomePage () {
-    return (
+    const [showCookieBanner, setShowCookieBanner] = useState(false);
+
+    const checkCookieBanner = () => {
+        const consent = Cookies.get('cookieBannerSeen');
+        if (!consent) {
+            setShowCookieBanner(true);
+        }
+    }
+
+    const acceptCookies = () => {
+        Cookies.set('cookieBannerSeen', true, { expires: 365 });
+        setShowCookieBanner(false);
+    }
+
+    useEffect(() => {
+        checkCookieBanner();
+    }, []);
+
+    return (<>
         <main>
             <div className='home-container'>
                 <div className="slogan">
@@ -18,7 +38,9 @@ function HomePage () {
                 <p><a href="/about">Who we are</a></p>
             </div>
         </main>
-    );
+
+        <CookieBanner show={showCookieBanner} close={() => acceptCookies()} />
+    </>);
 }
  
 export default HomePage;
