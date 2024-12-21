@@ -22,12 +22,12 @@ function Services({ data }) {
                     <tbody>
                     {
                         data.map(s =>
-                            <tr id={s.serviceId}>
+                            <tr id={s.serviceId} key={s.serviceId}>
                                 <td width='25%' className='service-name'>{s.name}</td>
                                 <td width='45%' className='service-description'>{s.description}</td>
                                 <td width='25%' className='service-price mobile-hidden'>
                                     {s.pricing && Object.entries(s.pricing).map(([key, value]) => (
-                                        <span>{key + ' ' + value.from + '-' + value.to}<br/></span>
+                                        <span key={key}>{key + ' ' + value.from + '-' + value.to}<br/></span>
                                     ))}
                                     {!s.pricing && (<span>Individual</span>)}
                                 </td>

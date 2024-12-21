@@ -21,7 +21,7 @@ function About({ data }) {
     return (
         <main>
             {Object.entries(data.about).map(
-                (value) =>  <AboutSection data={value} />
+                (value) =>  <AboutSection data={value} key={value[0]} />
             )}
         </main>
     );
