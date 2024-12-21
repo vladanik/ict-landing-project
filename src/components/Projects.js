@@ -28,7 +28,7 @@ function Projects({ data }) {
         <main>
             <h1 className='page-header'>Projects</h1>
             {data.projects.map(project =>
-                <div id={project.projectId} className='section single-project-section'>
+                <div id={project.projectId} key={project.projectId} className='section single-project-section'>
                     <div className='project-description'>
                         <h4><a href={project.link} className='project-link' target='_blank'
                                rel='noreferrer'>{project.name}</a></h4>
@@ -40,7 +40,7 @@ function Projects({ data }) {
                 <h4>Also we are working with</h4>
                 <div className='worked-with-container'>
                     {data.workWith.map(cmp =>
-                        <img src={images[cmp.img]} alt={cmp.name} title={cmp.name} width="10%" height="100%" />
+                        <img src={images[cmp.img]} alt={cmp.name} title={cmp.name} key={cmp.name} width="10%" height="100%" />
                     )}
                 </div>
             </div>
