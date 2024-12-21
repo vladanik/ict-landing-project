@@ -10,3 +10,6 @@ export const NOTE_SERVICES_PRICES = '**Note:** The prices listed are approximate
 
 export const LEGAL_DIVIDER = '________________________________________';
 export const LEGAL_HEADER_DIVIDER = '!!!';
+
+export const COOKIE_BANNER_MESSAGE = 'This website uses cookies to improve your experience. By continuing to use this site, you agree to our use of cookies. You can find our Cookie Policy on <a href=\'/legal\'>Legal Notices</a> page.';
+export const COOKIE_BANNER_CLOSE = 'Got it!';
