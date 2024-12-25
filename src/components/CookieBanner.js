@@ -8,7 +8,7 @@ function CookieBanner({ show, close }) {
             {show && (
                 <div className='cookie-banner section'>
                     <p dangerouslySetInnerHTML={formatText(COOKIE_BANNER_MESSAGE)}></p>
-                    <button className='btn btn-dark' onClick={close}>{COOKIE_BANNER_CLOSE}</button>
+                    <button className='btn btn-success' onClick={close}>{COOKIE_BANNER_CLOSE}</button>
                 </div>
                 )}
         </div>
