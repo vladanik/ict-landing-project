@@ -15,7 +15,7 @@ Our Site may include links to third-party websites or services. We are not respo
 **7. Disclaimer of Warranties** \\
 To the extent permitted by Polish and EU law, the Site is provided “as is” and “as available” without any warranties, express or implied. We do not guarantee the accuracy, completeness, or reliability of the Site’s content. Your use of the Site is at your own risk.\\
 **8. Limitation of Liability** \\
-Except as required by applicable Polish or EU consumer protection law, [Company Name], its affiliates, and employees shall not be liable for indirect, incidental, special, or consequential damages arising from your use of the Site. This limitation does not exclude liability for damages resulting from willful misconduct or gross negligence, or for any liability that cannot be limited or excluded under applicable law. \\
+Except as required by applicable Polish or EU consumer protection law, ICT, its affiliates, and employees shall not be liable for indirect, incidental, special, or consequential damages arising from your use of the Site. This limitation does not exclude liability for damages resulting from willful misconduct or gross negligence, or for any liability that cannot be limited or excluded under applicable law. \\
 **9. Indemnification** \\
 You agree to indemnify and hold harmless ICT Władysław Danik, its affiliates, and employees from any claims, damages, losses, or expenses (including reasonable legal fees) arising from your use of the Site, your violation of these Terms, or any infringement by you of the rights of third parties. \\
 **10. Governing Law and Jurisdiction** \\
@@ -32,9 +32,9 @@ ICT Władysław Danik (“we,” “us,” or “our”) respects your privacy a
 **2. Data Controller** \\
 For the purposes of the GDPR and other applicable data protection laws, ICT Władysław Danik, registered in Poland, is the data controller of your personal data. \\
 **3. Personal Data We Collect** \\
-•	Contact Information: Name, email address, and any other information you provide through forms or communications with us. \\
-•	Technical Data: IP address, browser type, device details, operating system, and other technical information collected through cookies and similar technologies. \\
-•	Usage Data: Information about how you interact with the Site, such as pages visited, time spent, and navigation paths. \\
+•	**Contact Information:** Name, email address, and any other information you provide through forms or communications with us. \\
+•	**Technical Data:** IP address, browser type, device details, operating system, and other technical information collected through cookies and similar technologies. \\
+•	**Usage Data:** Information about how you interact with the Site, such as pages visited, time spent, and navigation paths. \\
 **4. How We Use Your Personal Data** \\
 We process your personal data for the following purposes: \\
 •	To provide and maintain our Site’s functionality. \\
@@ -43,14 +43,14 @@ We process your personal data for the following purposes: \\
 •	To comply with our legal obligations under Polish and EU law. \\
 **5. Legal Bases for Processing** \\
 We rely on the following legal grounds for processing personal data: \\
-•	Consent: Where you have given consent for specific processing activities. \\
-•	Contractual Necessity: Where processing is necessary to provide services you requested. \\
-•	Legal Obligation: To comply with Polish and EU laws (e.g., accounting or tax obligations). \\
-•	Legitimate Interests: For security, fraud prevention, or improving our Site, provided that these interests do not override your fundamental rights. \\
+•	**Consent:** Where you have given consent for specific processing activities. \\
+•	**Contractual Necessity:** Where processing is necessary to provide services you requested. \\
+•	**Legal Obligation:** To comply with Polish and EU laws (e.g., accounting or tax obligations). \\
+•	**Legitimate Interests:** For security, fraud prevention, or improving our Site, provided that these interests do not override your fundamental rights. \\
 **6. Disclosure of Your Personal Data** \\
 We may share your data with: \\
-•	Service Providers: Third parties providing hosting, analytics, or other services on our behalf, bound by data protection obligations. \\
-•	Legal or Regulatory Authorities: Where required by Polish or EU law, or to enforce our rights or comply with judicial proceedings. \\
+•	**Service Providers:** Third parties providing hosting, analytics, or other services on our behalf, bound by data protection obligations. \\
+•	**Legal or Regulatory Authorities:** Where required by Polish or EU law, or to enforce our rights or comply with judicial proceedings. \\
 **7. International Data Transfers** \\
 If we transfer your personal data outside the European Economic Area (EEA), we ensure appropriate safeguards are in place (e.g., Standard Contractual Clauses) to protect your data. \\
 **8. Data Retention** \\
@@ -80,10 +80,10 @@ This Cookie Policy explains what cookies are, how we use them, and how you can m
 **2. What Are Cookies?** \\
 Cookies are small text files placed on your device to store information about your browsing activities. They help us understand how you use our Site and improve your experience. \\
 **3. Types of Cookies We Use** \\
-•	Essential Cookies: Necessary for the Site’s operation (e.g., enabling navigation and access to secure areas). \\
-•	Analytics/Performance Cookies: Help us understand how users interact with our Site, allowing us to improve functionality (e.g., Google Analytics). \\
-•	Functionality Cookies: Remember your preferences and settings. \\
-•	Targeting/Advertising Cookies (if applicable): Deliver content or advertisements tailored to your interests. \\
+•	**Essential Cookies:** Necessary for the Site’s operation (e.g., enabling navigation and access to secure areas). \\
+•	**Analytics/Performance** Cookies: Help us understand how users interact with our Site, allowing us to improve functionality (e.g., Google Analytics). \\
+•	**Functionality Cookies:** Remember your preferences and settings. \\
+•	**Targeting/Advertising Cookies (if applicable):** Deliver content or advertisements tailored to your interests. \\
 **4. Managing Cookies** \\
 You can control or delete cookies at any time through your browser settings. Disabling certain cookies may affect the Site’s functionality. \\
 **5. Third-Party Cookies** \\
