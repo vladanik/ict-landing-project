@@ -13,6 +13,11 @@ No other cookies are currently used on this website.
 
 ## Release Notes
 
+### v2.1
+
+- Data was moved from static file to the database
+- Web service initialized (private)
+
 ### v2.0
 
 - License created
