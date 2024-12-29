@@ -2,9 +2,11 @@ import React, {useEffect, useState} from 'react';
 import '../Home.css';
 import Cookies from "js-cookie";
 import CookieBanner from "./CookieBanner";
+import NewsletterBanner from "./NewsletterBanner";
 
 function HomePage () {
     const [showCookieBanner, setShowCookieBanner] = useState(false);
+    const [showNewsletterBanner, setShowNewsletterBanner] = useState(false);
 
     const checkCookieBanner = () => {
         const consent = Cookies.get('cookieBannerSeen');
@@ -18,9 +20,24 @@ function HomePage () {
         setShowCookieBanner(false);
     }
 
+    const checkNewsletterBanner = () => {
+        const cookiesAccepted = Cookies.get('cookieBannerSeen');
+        const newsletterSeen = Cookies.get('newsletterSeen');
+        if (cookiesAccepted && !newsletterSeen) {
+            setShowNewsletterBanner(true);
+        }
+    }
+
+    const newsletterShown = (state) => {
+        const expiry = state === 'declined' ? 7 : 365;
+        Cookies.set('newsletterSeen', true, { expires: expiry });
+        setShowNewsletterBanner(false);
+    }
+
     useEffect(() => {
         checkCookieBanner();
-    }, []);
+        checkNewsletterBanner()
+    }, [showCookieBanner]);
 
     return (<>
         <main>
@@ -40,6 +57,7 @@ function HomePage () {
         </main>
 
         <CookieBanner show={showCookieBanner} close={() => acceptCookies()} />
+        <NewsletterBanner show={showNewsletterBanner} close={(state) => newsletterShown(state)} />
     </>);
 }
  

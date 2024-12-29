@@ -10,6 +10,7 @@ import ContactForm from './components/ContactForm';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Legal from "./components/Legal";
+import NewsletterUnsubscribe from "./components/NewsletterUnsubscribe";
 import LoadingSpinner from './components/LoadingSpinner';
 import './App.css';
 
@@ -45,6 +46,7 @@ function App() {
           <Route path='/services' Component={() => <Services data={data.services} />} />
           <Route path='/contact' Component={() => <Contact data={data.contact} />} />
           <Route path='/legal' Component={() => <Legal />} />
+          <Route path='/unsubscribe' Component={() => <NewsletterUnsubscribe />} />
         </Switch>
 
         <ContactForm data={data.contactCategories} />

@@ -4,7 +4,7 @@ import {formatText} from "../utils/Utils";
 
 function CookieBanner({ show, close }) {
     return (
-        <div className='cookie-banner-container'>
+        <div className='cookie-banner-container banner-container'>
             {show && (
                 <div className='cookie-banner section'>
                     <p dangerouslySetInnerHTML={formatText(COOKIE_BANNER_MESSAGE)}></p>
