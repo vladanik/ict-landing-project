@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch ('https://ict-backend.onrender.com/api/data');
+        const response = await fetch ('/data.json');
         const jsonData = await response.json();
         setData(jsonData.data);
       } catch (error) {
