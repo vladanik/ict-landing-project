@@ -16,7 +16,7 @@ function AboutSection({ data }) {
 
     return (
         <div id={sectionId} className='section'>
-            <h4>{sectionData.title}</h4>
+            <h2>{sectionData.title}</h2>
             {sectionData.img &&
                 <div className='section-image'>
                     <img src={images[sectionData.img]} alt={sectionData.title} />

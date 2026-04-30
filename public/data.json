@@ -1,0 +1,214 @@
+{
+  "companyName": "ICT",
+  "about": {
+    "aboutUs": {
+      "title": "About ICT",
+      "img": "logo",
+      "paragraph": "**ICT** is a software development brand led by Władysław Danik. The work focuses on practical, maintainable business applications with Salesforce, Apex, Lightning Web Components, React, Java, SQL and API integrations."
+    },
+    "whatWeOffer": {
+      "title": "What I Offer",
+      "paragraph": "Support is available for focused development, modernization and integration work across business systems and web applications.",
+      "items": [
+        {
+          "title": "Custom Software Development",
+          "img": "offers1",
+          "paragraph": "Building tailored features and internal tools with Java, React, SQL and API-first architecture."
+        },
+        {
+          "title": "Salesforce Development",
+          "img": "offers2",
+          "paragraph": "Creating and improving Salesforce solutions with Apex, Lightning Web Components, flows and platform integrations."
+        },
+        {
+          "title": "Web and Frontend Development",
+          "img": "offers3",
+          "paragraph": "Designing responsive React interfaces that are clear, accessible and easy to maintain."
+        },
+        {
+          "title": "Database and API Work",
+          "img": "offers4",
+          "paragraph": "Structuring SQL data access, backend services and integrations so systems exchange information reliably."
+        },
+        {
+          "title": "Code Quality and Collaboration",
+          "img": "offers5",
+          "paragraph": "Improving code readability, Git workflows and implementation practices for long-term maintainability."
+        }
+      ]
+    },
+    "coreCompetencies": {
+      "title": "Core Competencies",
+      "paragraph": "The goal is dependable delivery: clear requirements, thoughtful implementation and code that can be extended later.",
+      "items": [
+        {
+          "title": "Salesforce Platform",
+          "paragraph": "Apex, Lightning Web Components, declarative automation, CRM customization and integrations."
+        },
+        {
+          "title": "Frontend Engineering",
+          "paragraph": "React, JavaScript, responsive layouts, accessibility and reusable UI components."
+        },
+        {
+          "title": "Backend and Data",
+          "paragraph": "Java, SQL, REST APIs, data modeling and practical application architecture."
+        },
+        {
+          "title": "Communication",
+          "paragraph": "Requirements are translated into concrete implementation steps with regular, direct updates."
+        }
+      ]
+    },
+    "ourApproach": {
+      "title": "Approach",
+      "paragraph": "ICT favors straightforward architecture, readable code and incremental delivery. Each project starts with the business problem, then moves toward a solution that is simple enough to operate and flexible enough to grow."
+    },
+    "ourTeam": {
+      "title": "Communication",
+      "img": "multilingual",
+      "paragraph": "Communication is available in **Polish**, **English** and **Russian**. This makes it easier to clarify requirements, document decisions and keep collaboration moving without unnecessary friction."
+    },
+    "whyChooseUs": {
+      "title": "Why Work With ICT?",
+      "paragraph": "ICT is a good fit when you need hands-on implementation, careful modernization or focused technical support without unnecessary overhead.",
+      "items": [
+        {
+          "paragraph": "Practical solutions shaped around real business workflows."
+        },
+        {
+          "paragraph": "Experience across Salesforce, React, Java, SQL and APIs."
+        },
+        {
+          "paragraph": "Direct communication with the person doing the development work."
+        }
+      ]
+    }
+  },
+  "projects": {
+    "projects": [
+      {
+        "name": "ICT Company Website",
+        "description": "A React landing page for ICT Władysław Danik with reusable content data, legal notices and a contact flow.",
+        "internalPath": "/",
+        "projectId": "ictWebsite",
+        "techStack": ["React", "React Router", "EmailJS", "CSS"]
+      },
+      {
+        "name": "Travel Agency Website",
+        "description": "A study project for a travel agency website, built as a PHP-based web experience.",
+        "demoLink": "https://vladanik.github.io/WakacjeStrona/",
+        "projectId": "travelAgencyWebsite",
+        "techStack": ["PHP", "HTML", "CSS"]
+      },
+      {
+        "name": "Snake Game",
+        "description": "A simple desktop Snake game implemented in Java with Swing.",
+        "githubLink": "https://github.com/vladanik/snakeGame",
+        "projectId": "snakeGame",
+        "techStack": ["Java", "Swing"]
+      }
+    ],
+    "workWithNote": "The logos below indicate technology platforms, tooling ecosystems and professional context. They are not presented as direct ICT clients or formal partners.",
+    "workWith": [
+      {
+        "name": "Accenture",
+        "img": "logo_ACN"
+      },
+      {
+        "name": "Adobe",
+        "img": "logo_ADBE"
+      },
+      {
+        "name": "Meta",
+        "img": "logo_META"
+      },
+      {
+        "name": "Salesforce",
+        "img": "logo_CRM"
+      },
+      {
+        "name": "Oracle",
+        "img": "logo_ORCL"
+      }
+    ]
+  },
+  "services": [
+    {
+      "name": "Custom Software Development",
+      "description": "Tailored business functionality built with Java, Apex, React and SQL, focused on maintainability and practical workflows.",
+      "pricing": {
+        "USD": { "from": 500, "to": 5000 },
+        "PLN": { "from": 2000, "to": 20000 },
+        "EUR": { "from": 475, "to": 4750 }
+      },
+      "serviceId": "custom_software_dev"
+    },
+    {
+      "name": "Salesforce Development",
+      "description": "Salesforce customization and development with Apex, Lightning Web Components, automations and CRM process improvements.",
+      "pricing": {
+        "USD": { "from": 800, "to": 6000 },
+        "PLN": { "from": 3200, "to": 24000 },
+        "EUR": { "from": 760, "to": 5700 }
+      },
+      "serviceId": "salesforce_dev"
+    },
+    {
+      "name": "Web and Frontend Development",
+      "description": "Responsive React interfaces, landing pages and frontend features designed for clarity, accessibility and easy future changes.",
+      "pricing": {
+        "USD": { "from": 400, "to": 3000 },
+        "PLN": { "from": 1600, "to": 12000 },
+        "EUR": { "from": 380, "to": 2850 }
+      },
+      "serviceId": "frontend_dev"
+    },
+    {
+      "name": "API and Backend Services",
+      "description": "Backend services, REST APIs and SQL-backed integrations that connect applications and business processes reliably.",
+      "pricing": {
+        "USD": { "from": 700, "to": 4000 },
+        "PLN": { "from": 2800, "to": 16000 },
+        "EUR": { "from": 665, "to": 3800 }
+      },
+      "serviceId": "backend_services"
+    },
+    {
+      "name": "Code Quality and Optimization",
+      "description": "Reviewing and refactoring existing code to improve readability, performance, reliability and maintainability.",
+      "serviceId": "code_optimization"
+    },
+    {
+      "name": "Consultation and Training",
+      "description": "Focused guidance on Salesforce, React and software development practices for individuals or small teams.",
+      "serviceId": "consultation_training"
+    }
+  ],
+  "contact": {
+    "telegram": {
+      "name": "@vlad_danik",
+      "link": "https://t.me/vlad_danik"
+    },
+    "linkedin": {
+      "name": "/vladanik",
+      "link": "https://www.linkedin.com/in/vladanik/"
+    },
+    "github": {
+      "name": "/vladanik",
+      "link": "https://github.com/vladanik"
+    },
+    "email": {
+      "name": "udanik@proton.me",
+      "link": "mailto:udanik@proton.me"
+    }
+  },
+  "contactCategories": [
+    "Service Request",
+    "Cooperation Proposal",
+    "Improvement Suggestion",
+    "General Message",
+    "Access Request",
+    "Feedback",
+    "Bug Report"
+  ]
+}
