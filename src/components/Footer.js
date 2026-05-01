@@ -1,24 +1,22 @@
-import React, { Component } from 'react';
-import logo from '../assets/logo-w-text.png';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../assets/ICT_cmpl_black.png';
 
-class Footer extends Component {
-    state = {  } 
-    render() { 
-        return (
-            <div className="bg-light" id='footer'>
-                <footer className="py-3 my-4">
-                    <ul className="nav justify-content-center border-bottom pb-3 mb-3">
-                        <li className="nav-item"><a href="/" className="nav-link px-2 text-body-secondary">ICT</a></li>
-                        <li className="nav-item"><a href="/legal" className="nav-link px-2 text-body-secondary">Legal Notices</a></li>
-                    </ul>
-                    <p className="text-center text-body-secondary">© 2025 ICT Władysław Danik</p>
-                    <div className="logo-container">
-                        <img src={logo} alt="ICT Logo" className="justity-center"/>
-                    </div>
-                </footer>
+function Footer() {
+    return (
+        <footer id='footer'>
+            <div className='site-container footer-inner'>
+                <Link to='/' className='footer-logo' aria-label='ICT Wladyslaw Danik home'>
+                    <img src={logo} alt='ICT Wladyslaw Danik logo' />
+                </Link>
+                <nav className='footer-links' aria-label='Footer navigation'>
+                    <Link to='/'>ICT</Link>
+                    <Link to='/legal'>Legal Notices</Link>
+                </nav>
+                <p>© 2026 ICT Władysław Danik</p>
             </div>
-        );
-    }
+        </footer>
+    );
 }
- 
+
 export default Footer;

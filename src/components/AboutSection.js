@@ -3,7 +3,7 @@ import { formatText } from "../utils/Utils";
 import {ABOUT_COMPET_ID, ABOUT_OFFER_ID} from "../utils/Constant";
 import AboutOffers from "./AboutOffers";
 import AboutCompetencies from "./AboutCompetencies";
-import logoIcon from "../assets/logo-icon.png";
+import logoIcon from "../assets/ICT_cmpl_cloud.png";
 import multiLing from "../assets/multilingual.png";
 
 function AboutSection({ data }) {
@@ -16,7 +16,7 @@ function AboutSection({ data }) {
 
     return (
         <div id={sectionId} className='section'>
-            <h4>{sectionData.title}</h4>
+            <h2>{sectionData.title}</h2>
             {sectionData.img &&
                 <div className='section-image'>
                     <img src={images[sectionData.img]} alt={sectionData.title} />

@@ -17,11 +17,11 @@ function AboutOffers({ data }) {
     return (
         <div className='about-offers'>
             {data.map(offerItem => (
-                <div key={offerItem.title} className='section about-offers-section'>
-                    <h5>{offerItem.title}</h5>
+                <article key={offerItem.title} className='about-offers-section'>
+                    <h3>{offerItem.title}</h3>
                     <img src={images[offerItem.img]} alt={offerItem.title} />
                     <p>{offerItem.paragraph}</p>
-                </div>
+                </article>
             ))}
         </div>
     );

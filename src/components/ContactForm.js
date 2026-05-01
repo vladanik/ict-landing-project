@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import emailjs from 'emailjs-com';
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, EMAILJS_PUBLIC_ID } from '../utils/Constant';
+
 function ContactForm({ data }) {
     const [formData, setFormData] = useState({
+        caller: '',
         name: '',
         email: '',
         phone: '',
         message: '',
         category: ''
     });
-    const [showModal, setShowModal] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [statusMessage, setStatusMessage] = useState('');
+    const [statusType, setStatusType] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -19,87 +25,91 @@ function ContactForm({ data }) {
     };
 
     const handleSubmit = (e) => {
-        var submitButton = document.getElementById('submitButton');
         e.preventDefault();
-        submitButton.disabled = true;
-        emailjs.sendForm('service_p1k0wj6', 'template_zm7j5yt', e.target, 'Y5iCY22lD0Of2r2Hx')
+        setIsSubmitting(true);
+        setStatusMessage('');
+        setStatusType('');
+
+        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, e.target, EMAILJS_PUBLIC_ID)
             .then(() => {
-                setShowModal(true);
+                setStatusType('success');
+                setStatusMessage('Email was sent successfully. Thank you, We will respond as soon as possible.');
                 setFormData({
+                    caller: '',
                     name: '',
                     email: '',
                     phone: '',
                     message: '',
                     category: ''
                 });
-                submitButton.disabled = false;
                 setTimeout(() => {
-                    setShowModal(false);
-                }, 4000);
+                    setStatusMessage('');
+                    setStatusType('');
+                }, 5000);
             }, (error) => {
-                    console.error(error);
-                    alert('Send unsuccessfull, please contact Administrator in any way on Contact page:\n' + error.text);
-                    submitButton.disabled = false;
-            });        
+                console.error(error);
+                setStatusType('error');
+                setStatusMessage('Send unsuccessful. Please use one of the contact methods above or try again later.');
+            })
+            .finally(() => {
+                setIsSubmitting(false);
+            });
     };
 
-    const closeModal = (e) => {
-        e.preventDefault();
-        setShowModal(false);
-    }
+    return (
+        <div className='contact-form-container'>
+            <section id='contactForm' className='section'>
+                <h2>Contact Us</h2>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor='caller'>Who are you?</label>
+                    <select id='caller' name='caller' value={formData.caller} onChange={handleChange} required>
+                        <option value='' key='emptyOption'>Select caller type...</option>
+                        {data.callerTypes.map((type) => (
+                            <option value={type} key={type.trim() + 'Option'}>{type}</option>
+                        ))}
+                    </select>
 
-    return (<div className='contact-form-container'>
-        <div id='contactForm' className='section'>
-            <h2>Contact Us</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <input type='text' name='name' value={formData.name} onChange={handleChange} required placeholder='Name' />
-                </label>
-                <label>
-                    <input type='email' name='email' value={formData.email} onChange={handleChange} required placeholder='Email' />
-                </label>
-                <label>
-                    <input type='tel' name='phone' value={formData.phone} onChange={handleChange} placeholder='Phone (Optional)' />
-                </label>
-                <label>
-                    <textarea name='message' value={formData.message} onChange={handleChange} required placeholder='Type your message...' />
-                </label>
-                <label>
-                    <select name='category' value={formData.category} onChange={handleChange} required>
+                    <label htmlFor='name'>Name</label>
+                    <input id='name' type='text' name='name' value={formData.name} onChange={handleChange} required placeholder='Your name' autoComplete='name' />
+
+                    <label htmlFor='email'>Email</label>
+                    <input id='email' type='email' name='email' value={formData.email} onChange={handleChange} required placeholder='you@example.com' autoComplete='email' />
+
+                    <label htmlFor='phone'>Phone <span>(optional)</span></label>
+                    <input id='phone' type='tel' name='phone' value={formData.phone} onChange={handleChange} placeholder='Phone number' autoComplete='tel' />
+
+                    <label htmlFor='message'>Message</label>
+                    <textarea id='message' name='message' value={formData.message} onChange={handleChange} required minLength='10' placeholder='Tell me what you would like to build or improve.' />
+
+                    <label htmlFor='category'>Category</label>
+                    <select id='category' name='category' value={formData.category} onChange={handleChange} required>
                         <option value='' key='emptyOption'>Select category...</option>
-                        {
-                            data.map(category =>
-                            <option value={category} key={category.trim() + 'Option'}>{category}</option>)
-                        }
+                        {data.contactCategories.map(category =>
+                            <option value={category} key={category.trim() + 'Option'}>{category}</option>
+                        )}
                         <option value='Other' key='otherOption'>Other</option>
                     </select>
-                </label>
-                <button type='submit' id='submitButton' className='btn btn-success'>Submit</button>
-            </form>
-        </div>
 
-        {showModal && (
-        <div className="email-sent-modal" id="emailSentModal">
-            <div className="modal-dialog" role="document">
-                <div className="modal-content">
-                    <div className="modal-header">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#00e613" className="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                        </svg>
-                        <p><span>________________</span><span className='line-desktop-only'>____________________________</span></p>
-                    </div>
-                    <div className="modal-body">
-                        <p>Email was sent succesfully!</p>
-                        <p>Thank You! We will respond ASAP</p>
-                    </div>
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-dark" onClick={closeModal}>Close</button>
-                    </div>
-                </div>
-            </div>
+                    {statusMessage && (
+                        <div className={`form-status ${statusType}`} role='status' aria-live='polite'>
+                            {statusMessage}
+                        </div>
+                    )}
+
+                    <button type='submit' className='btn btn-success' disabled={isSubmitting}>
+                        {isSubmitting ? 'Sending...' : 'Submit'}
+                    </button>
+                </form>
+            </section>
         </div>
-        )}
-    </div>);
+    );
 }
- 
+
+ContactForm.propTypes = {
+  data: PropTypes.shape({
+    callerTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
+    contactCategories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+};
+
 export default ContactForm;
