@@ -3,7 +3,7 @@ import { formatText } from "../utils/Utils";
 import {ABOUT_COMPET_ID, ABOUT_OFFER_ID} from "../utils/Constant";
 import AboutOffers from "./AboutOffers";
 import AboutCompetencies from "./AboutCompetencies";
-import logoIcon from "../assets/logo-icon.png";
+import logoIcon from "../assets/ICT_cmpl_cloud.png";
 import multiLing from "../assets/multilingual.png";
 
 function AboutSection({ data }) {

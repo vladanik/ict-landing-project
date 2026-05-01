@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import 'bootstrap';
-import logoWhite from '../assets/logo-w-text-white.png';
+import logoWhite from '../assets/ICT_cmpl_white.png';
 
 function Header() {
     const navItems = [

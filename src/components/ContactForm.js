@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, EMAILJS_PUBLIC_ID } from '../utils/Constant';
 
 function ContactForm({ data }) {
     const [formData, setFormData] = useState({
+        caller: '',
         name: '',
         email: '',
         phone: '',
@@ -27,11 +29,14 @@ function ContactForm({ data }) {
         setStatusMessage('');
         setStatusType('');
 
-        emailjs.sendForm('service_p1k0wj6', 'template_zm7j5yt', e.target, 'Y5iCY22lD0Of2r2Hx')
+        console.log(import.meta.env);
+
+        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, e.target, EMAILJS_PUBLIC_ID)
             .then(() => {
                 setStatusType('success');
-                setStatusMessage('Email was sent successfully. Thank you, I will respond as soon as possible.');
+                setStatusMessage('Email was sent successfully. Thank you, We will respond as soon as possible.');
                 setFormData({
+                    caller: '',
                     name: '',
                     email: '',
                     phone: '',
@@ -55,8 +60,16 @@ function ContactForm({ data }) {
     return (
         <div className='contact-form-container'>
             <section id='contactForm' className='section'>
-                <h2>Contact Me</h2>
+                <h2>Contact Us</h2>
                 <form onSubmit={handleSubmit}>
+                    <label htmlFor='caller'>Who are you?</label>
+                    <select id='caller' name='caller' value={formData.caller} onChange={handleChange} required>
+                        <option value='' key='emptyOption'>Select caller type...</option>
+                        {data.callerTypes.map((type) => (
+                            <option value={type} key={type.trim() + 'Option'}>{type}</option>
+                        ))}
+                    </select>
+
                     <label htmlFor='name'>Name</label>
                     <input id='name' type='text' name='name' value={formData.name} onChange={handleChange} required placeholder='Your name' autoComplete='name' />
 
@@ -72,7 +85,7 @@ function ContactForm({ data }) {
                     <label htmlFor='category'>Category</label>
                     <select id='category' name='category' value={formData.category} onChange={handleChange} required>
                         <option value='' key='emptyOption'>Select category...</option>
-                        {data.map(category =>
+                        {data.contactCategories.map(category =>
                             <option value={category} key={category.trim() + 'Option'}>{category}</option>
                         )}
                         <option value='Other' key='otherOption'>Other</option>

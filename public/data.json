@@ -2,12 +2,12 @@
   "companyName": "ICT",
   "about": {
     "aboutUs": {
-      "title": "About ICT",
+      "title": "About ICT Services",
       "img": "logo",
-      "paragraph": "**ICT** is a software development brand led by Władysław Danik. The work focuses on practical, maintainable business applications with Salesforce, Apex, Lightning Web Components, React, Java, SQL and API integrations."
+      "paragraph": "**ICT Services** is a software development brand led by Władysław Danik. The work focuses on practical, maintainable business applications with Salesforce, Apex, Lightning Web Components, React, Java, SQL and API integrations."
     },
     "whatWeOffer": {
-      "title": "What I Offer",
+      "title": "What We Offer",
       "paragraph": "Support is available for focused development, modernization and integration work across business systems and web applications.",
       "items": [
         {
@@ -61,7 +61,7 @@
     },
     "ourApproach": {
       "title": "Approach",
-      "paragraph": "ICT favors straightforward architecture, readable code and incremental delivery. Each project starts with the business problem, then moves toward a solution that is simple enough to operate and flexible enough to grow."
+      "paragraph": "ICT Services favors straightforward architecture, readable code and incremental delivery. Each project starts with the business problem, then moves toward a solution that is simple enough to operate and flexible enough to grow."
     },
     "ourTeam": {
       "title": "Communication",
@@ -69,8 +69,8 @@
       "paragraph": "Communication is available in **Polish**, **English** and **Russian**. This makes it easier to clarify requirements, document decisions and keep collaboration moving without unnecessary friction."
     },
     "whyChooseUs": {
-      "title": "Why Work With ICT?",
-      "paragraph": "ICT is a good fit when you need hands-on implementation, careful modernization or focused technical support without unnecessary overhead.",
+      "title": "Why Work With ICT Services?",
+      "paragraph": "ICT Services is a good fit when you need hands-on implementation, careful modernization or focused technical support without unnecessary overhead.",
       "items": [
         {
           "paragraph": "Practical solutions shaped around real business workflows."
@@ -87,49 +87,54 @@
   "projects": {
     "projects": [
       {
-        "name": "ICT Company Website",
-        "description": "A React landing page for ICT Władysław Danik with reusable content data, legal notices and a contact flow.",
+        "name": "ICT Services Landing Platform",
+        "description": "A modern React-based landing platform for ICT Services featuring reusable content configuration, legal compliance sections, and a functional contact workflow.",
         "internalPath": "/",
         "projectId": "ictWebsite",
-        "techStack": ["React", "React Router", "EmailJS", "CSS"]
+        "techStack": ["React", "React Router", "EmailJS", "CSS", "Vercel"]
       },
       {
-        "name": "Travel Agency Website",
-        "description": "A study project for a travel agency website, built as a PHP-based web experience.",
+        "name": "Dream Analyzer AI",
+        "description": "A full-stack AI-powered web application that analyzes user-described dreams and generates multiple interpretations using OpenAI API.",
+        "demoLink": "https://dream-analyzer-ai.vercel.app/",
+        "projectId": "dreamAnalyzerAI",
+        "techStack": ["React", "Java", "Spring Boot", "OpenAI API", "Vercel", "Render"]
+      },
+      {
+        "name": "Pattern Hasher Library",
+        "description": "A lightweight Java hashing library implementing a custom pattern-based transformation algorithm, designed for consistent and efficient string hashing across applications.",
+        "githubLink": "https://github.com/vladanik/pattern-hasher",
+        "projectId": "patternHasher",
+        "techStack": ["Java", "Spring Boot"]
+      },
+      {
+        "name": "Travel Agency Web Experience",
+        "description": "A PHP-based web experience simulating a travel agency platform, focused on structured content delivery and responsive UI design.",
         "demoLink": "https://vladanik.github.io/WakacjeStrona/",
         "projectId": "travelAgencyWebsite",
         "techStack": ["PHP", "HTML", "CSS"]
       },
       {
-        "name": "Snake Game",
-        "description": "A simple desktop Snake game implemented in Java with Swing.",
+        "name": "Snake Desktop Game",
+        "description": "A classic Snake game implemented as a desktop application using Java Swing, focusing on event-driven programming and UI rendering.",
         "githubLink": "https://github.com/vladanik/snakeGame",
         "projectId": "snakeGame",
         "techStack": ["Java", "Swing"]
       }
     ],
-    "workWithNote": "The logos below indicate technology platforms, tooling ecosystems and professional context. They are not presented as direct ICT clients or formal partners.",
+    "workWithNote": "The logos below represent platforms, tools, and ecosystems we have experience working with. They do not imply direct partnerships or client relationships.",
     "workWith": [
-      {
-        "name": "Accenture",
-        "img": "logo_ACN"
-      },
-      {
-        "name": "Adobe",
-        "img": "logo_ADBE"
-      },
-      {
-        "name": "Meta",
-        "img": "logo_META"
-      },
-      {
-        "name": "Salesforce",
-        "img": "logo_CRM"
-      },
-      {
-        "name": "Oracle",
-        "img": "logo_ORCL"
-      }
+      { "name": "Salesforce",  "img": "logo_CRM" },
+      { "name": "Google",      "img": "logo_GLE" },
+      { "name": "React",       "img": "logo_REACT" },
+      { "name": "Java",        "img": "logo_JAVA" },
+      { "name": "Docker",      "img": "logo_DOCKER" },
+      { "name": "Spring Boot", "img": "logo_SPRING" },
+      { "name": "OpenAI",      "img": "logo_OPENAI" },
+      { "name": "Oracle",      "img": "logo_ORCL" },
+      { "name": "Adobe",       "img": "logo_ADBE" },
+      { "name": "Vercel",      "img": "logo_VERCEL" },
+      { "name": "Render",      "img": "logo_RENDER" }
     ]
   },
   "services": [
@@ -139,7 +144,8 @@
       "pricing": {
         "USD": { "from": 500, "to": 5000 },
         "PLN": { "from": 2000, "to": 20000 },
-        "EUR": { "from": 475, "to": 4750 }
+        "EUR": { "from": 475, "to": 4750 },
+        "useFrom": true
       },
       "serviceId": "custom_software_dev"
     },
@@ -149,7 +155,8 @@
       "pricing": {
         "USD": { "from": 800, "to": 6000 },
         "PLN": { "from": 3200, "to": 24000 },
-        "EUR": { "from": 760, "to": 5700 }
+        "EUR": { "from": 760, "to": 5700 },
+        "useFrom": true
       },
       "serviceId": "salesforce_dev"
     },
@@ -159,7 +166,8 @@
       "pricing": {
         "USD": { "from": 400, "to": 3000 },
         "PLN": { "from": 1600, "to": 12000 },
-        "EUR": { "from": 380, "to": 2850 }
+        "EUR": { "from": 380, "to": 2850 },
+        "useFrom": true
       },
       "serviceId": "frontend_dev"
     },
@@ -169,7 +177,8 @@
       "pricing": {
         "USD": { "from": 700, "to": 4000 },
         "PLN": { "from": 2800, "to": 16000 },
-        "EUR": { "from": 665, "to": 3800 }
+        "EUR": { "from": 665, "to": 3800 },
+        "useFrom": true
       },
       "serviceId": "backend_services"
     },
@@ -198,17 +207,28 @@
       "link": "https://github.com/vladanik"
     },
     "email": {
-      "name": "udanik@proton.me",
-      "link": "mailto:udanik@proton.me"
+      "name": "ictxservices@gmail.com",
+      "link": "mailto:ictxservices@gmail.com"
     }
   },
-  "contactCategories": [
-    "Service Request",
-    "Cooperation Proposal",
-    "Improvement Suggestion",
-    "General Message",
-    "Access Request",
-    "Feedback",
-    "Bug Report"
-  ]
+  "contactForm": {
+    "callerTypes": [
+      "Business Client",
+      "Startup Founder",
+      "Recruiter / HR",
+      "Software Developer",
+      "Potential Partner",
+      "Student / Learning",
+      "Other"
+    ],
+    "contactCategories": [
+      "Service Request",
+      "Cooperation Proposal",
+      "Improvement Suggestion",
+      "General Message",
+      "Access Request",
+      "Feedback",
+      "Bug Report"
+    ]
+  }
 }

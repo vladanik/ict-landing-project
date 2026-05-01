@@ -3,14 +3,23 @@ import { Link } from 'react-router-dom';
 import {formatText} from "../utils/Utils";
 import {NOTE_SERVICES_DEMO, NOTE_SERVICES_PRICES} from "../utils/Constant";
 
+const defaultCurrency = 'USD';
+
 function ServicePricing({ pricing }) {
     if (!pricing) {
         return <span>Individual estimate</span>;
     }
 
-    return Object.entries(pricing).map(([currency, value]) => (
-        <span key={currency}>Estimated {currency}: {value.from}-{value.to}<br /></span>
-    ));
+    const { useFrom, ...currencies } = pricing;
+    const selectedCurrency = currencies[defaultCurrency];
+
+    if (useFrom && selectedCurrency) {
+        return (<span key={defaultCurrency}>Estimated from {defaultCurrency} {selectedCurrency.from}<br /></span>);
+    }
+
+    return Object.entries(currencies).map(([currency, value]) => {
+        return (<span key={currency}>Estimated {currency}: {value.from}-{value.to}<br /></span>);
+    });
 }
 
 function Services({ data }) {
@@ -27,7 +36,7 @@ function Services({ data }) {
                         <th>Service</th>
                         <th>Description</th>
                         <th className='service-price mobile-hidden'>Estimated Price</th>
-                        <th className='service-contact mobile-hidden'>Contact</th>
+                        <th className='service-contact mobile-hidden'>Actions</th>
                     </tr>
                     </thead>
                     <tbody>

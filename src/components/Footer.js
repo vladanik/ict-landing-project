@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo-w-text.png';
+import logo from '../assets/ICT_cmpl_black.png';
+// import logo from '../assets/logo-w-text.png';
 
 function Footer() {
     return (
@@ -13,7 +14,7 @@ function Footer() {
                     <Link to='/'>ICT</Link>
                     <Link to='/legal'>Legal Notices</Link>
                 </nav>
-                <p>© 2025 ICT Władysław Danik</p>
+                <p>© 2026 ICT Władysław Danik</p>
             </div>
         </footer>
     );

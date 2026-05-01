@@ -531,7 +531,7 @@ main .page-header {
 }
 
 .section#contactForm button {
-  justify-self: start;
+  justify-self: end;
   min-width: 142px;
   margin-top: 8px;
 }
@@ -556,9 +556,9 @@ main .page-header {
 
 .cookie-banner-container {
   position: fixed;
-  left: 0;
+  width: 50%;
   right: 0;
-  bottom: 18px;
+  bottom: 32px;
   z-index: 30;
   display: flex;
   justify-content: center;
@@ -687,6 +687,10 @@ main .page-header {
 
   .contact-method {
     align-items: flex-start;
+  }
+
+  .cookie-banner-container{
+    width: 100%;
   }
 
   .cookie-banner {

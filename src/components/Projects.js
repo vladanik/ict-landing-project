@@ -1,15 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo_ACN from '../assets/logo_ACN.png';
-import logo_ADBE from '../assets/logo_ADBE.png';
-import logo_CRM from '../assets/logo_CRM.png';
-import logo_META from '../assets/logo_META.png';
-import logo_ORCL from '../assets/logo_ORCL.png';
+
+import logo_CRM    from '../assets/logo_CRM.png';
+import logo_GLE    from '../assets/logo_GLE.png';
+import logo_REACT  from '../assets/logo_REACT.png';
+import logo_JAVA   from '../assets/logo_JAVA.png';
+import logo_DOCKER from '../assets/logo_DOCKER.png';
+import logo_SPRING from '../assets/logo_SPRING.png';
+import logo_OPENAI from '../assets/logo_OPENAI.jpeg';
+import logo_ORCL   from '../assets/logo_ORCL.png';
+import logo_ADBE   from '../assets/logo_ADBE.png';
+import logo_VERCEL from '../assets/logo_VERCEL.png';
+import logo_RENDER from '../assets/logo_RENDER.jpeg';
 
 function Projects({ data }) {
     const images = {
-        logo_ACN, logo_ADBE, logo_CRM, logo_META, logo_ORCL
-    }
+        logo_CRM,
+        logo_GLE,
+        logo_REACT,
+        logo_JAVA,
+        logo_DOCKER,
+        logo_SPRING,
+        logo_OPENAI,
+        logo_ORCL,
+        logo_ADBE, 
+        logo_VERCEL,
+        logo_RENDER,
+    };  
 
     return (
         <main>
@@ -41,7 +58,7 @@ function Projects({ data }) {
                 )}
             </div>
             <div id='workedWith' className='section single-project-section'>
-                <h2>Technologies and ecosystems I work with</h2>
+                <h2>Technologies and ecosystems we work with</h2>
                 {data.workWithNote && <p>{data.workWithNote}</p>}
                 <div className='worked-with-container'>
                     {data.workWith.map(cmp =>

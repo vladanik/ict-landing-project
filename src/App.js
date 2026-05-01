@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
@@ -11,7 +12,11 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Legal from "./components/Legal";
 import LoadingSpinner from './components/LoadingSpinner';
+
 import './App.css';
+
+import Cookies from "js-cookie";
+import CookieBanner from "./components/CookieBanner";
 
 function ScrollToHash() {
   const location = useLocation();
@@ -32,13 +37,31 @@ function ScrollToHash() {
 
 function AppContent({ data }) {
   const location = useLocation();
-  const hideContactForm = location.pathname === '/legal';
+  const showContactForm = ['/', '/about', '/services', '/contact'].includes(location.pathname);
+  const [showCookieBanner, setShowCookieBanner] = useState(false);
+
+  const checkCookieBanner = () => {
+      const consent = Cookies.get('cookieBannerSeen');
+      if (!consent) {
+          setShowCookieBanner(true);
+      }
+  }
+
+  const acceptCookies = () => {
+      Cookies.set('cookieBannerSeen', true, { expires: 365 });
+      setShowCookieBanner(false);
+  }
+
+  useEffect(() => {
+      checkCookieBanner();
+  }, []);
 
   return (
     <div className='App'>
       <ScrollToHash />
-      <Header />
+      <CookieBanner show={showCookieBanner} close={() => acceptCookies()} />
 
+      <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/about' element={<About data={data} />} />
@@ -48,7 +71,7 @@ function AppContent({ data }) {
         <Route path='/legal' element={<Legal />} />
       </Routes>
 
-      {!hideContactForm && <ContactForm data={data.contactCategories} />}
+      {showContactForm && <ContactForm data={data.contactForm} />}
       <Footer />
     </div>
   );
