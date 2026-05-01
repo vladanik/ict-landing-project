@@ -23,7 +23,7 @@ function ContactForm({ data }) {
         e.preventDefault();
         submitButton.disabled = true;
         emailjs.sendForm('service_p1k0wj6', 'template_zm7j5yt', e.target, 'Y5iCY22lD0Of2r2Hx')
-            .then((result) => {
+            .then(() => {
                 setShowModal(true);
                 setFormData({
                     name: '',
@@ -79,21 +79,21 @@ function ContactForm({ data }) {
         </div>
 
         {showModal && (
-        <div class="email-sent-modal" id="emailSentModal">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#00e613" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+        <div className="email-sent-modal" id="emailSentModal">
+            <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#00e613" className="bi bi-check-circle-fill" viewBox="0 0 16 16">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                         </svg>
                         <p><span>________________</span><span className='line-desktop-only'>____________________________</span></p>
                     </div>
-                    <div class="modal-body">
+                    <div className="modal-body">
                         <p>Email was sent succesfully!</p>
                         <p>Thank You! We will respond ASAP</p>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" onClick={closeModal}>Close</button>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-dark" onClick={closeModal}>Close</button>
                     </div>
                 </div>
             </div>
