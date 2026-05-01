@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/ICT_cmpl_black.png';
-// import logo from '../assets/logo-w-text.png';
 
 function Footer() {
     return (
