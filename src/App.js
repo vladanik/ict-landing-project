@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
+import PropTypes from 'prop-types';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -50,7 +51,7 @@ function AppContent({ data }) {
   return (
     <div className='App'>
       <ScrollToHash />
-      <CookieBanner show={showCookieBanner} close={() => acceptCookies()} />
+      <CookieBanner show={showCookieBanner} close={acceptCookies} />
 
       <Header />
       <Routes>
@@ -67,6 +68,18 @@ function AppContent({ data }) {
     </div>
   );
 }
+
+AppContent.propTypes = {
+  data: PropTypes.shape({
+    projects: PropTypes.array.isRequired,
+    services: PropTypes.array.isRequired,
+    contact: PropTypes.object.isRequired,
+    contactForm: PropTypes.shape({
+      callerTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
+      contactCategories: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 function App() {
   const [data, setData] = useState(null);

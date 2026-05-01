@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../Home.css';
 
 function HomePage () {
-    return (<>
+    return (
         <main>
             <section className='home-container site-container' aria-labelledby='home-slogan'>
                 <div className="slogan" id='home-slogan'>
@@ -24,7 +24,7 @@ function HomePage () {
                 <Link className='home-secondary-link' to='/about'>Who we are</Link>
             </section>
         </main>
-    </>);
+    );
 }
  
 export default HomePage;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import emailjs from 'emailjs-com';
 import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, EMAILJS_PUBLIC_ID } from '../utils/Constant';
 
@@ -28,8 +29,6 @@ function ContactForm({ data }) {
         setIsSubmitting(true);
         setStatusMessage('');
         setStatusType('');
-
-        console.log(import.meta.env);
 
         emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, e.target, EMAILJS_PUBLIC_ID)
             .then(() => {
@@ -105,5 +104,12 @@ function ContactForm({ data }) {
         </div>
     );
 }
+
+ContactForm.propTypes = {
+  data: PropTypes.shape({
+    callerTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
+    contactCategories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+};
 
 export default ContactForm;
