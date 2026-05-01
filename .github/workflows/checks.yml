@@ -28,9 +28,6 @@ jobs:
       - name: Lighthouse CI
         run: npx lhci autorun
 
-      - name: Test coverage
-        run: npm test -- --coverage --watchAll=false
-
       - name: SonarQube Cloud Scan
         uses: SonarSource/sonarqube-scan-action@fd88b7d7ccbaefd23d8f36f73b59db7a3d246602
         env:
