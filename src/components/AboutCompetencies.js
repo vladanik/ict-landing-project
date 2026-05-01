@@ -1,16 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function AboutCompetencies({ data }) {
     return (
         <div className='about-competencies'>
             {data.map(point => (
-                <div key={point.title} className='section about-competencies-section'>
-                    <h6>{point.title}</h6>
+                <article key={point.title} className='about-competencies-section'>
+                    <h3>{point.title}</h3>
                     <p>{point.paragraph}</p>
-                </div>
+                </article>
             ))}
         </div>
     );
 }
+
+AboutCompetencies.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      paragraph: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default AboutCompetencies;

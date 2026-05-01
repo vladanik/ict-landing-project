@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Accordion, AccordionActions, AccordionDetails, AccordionSummary, Button} from "@mui/material";
 import {ExpandMore} from "@mui/icons-material";
 import {formatText} from "../utils/Utils";
@@ -7,6 +8,8 @@ import {Document, AlignmentType, Packer, Paragraph, TextRun} from "docx";
 
 function LegalAccordionItem({ section, index }) {
     const legalData = section.split(LEGAL_HEADER_DIVIDER);
+    const title = legalData[0];
+    const content = legalData[1] || '';
 
     const download = () => {
         const doc = new Document({
@@ -21,13 +24,13 @@ function LegalAccordionItem({ section, index }) {
                             bold: true,
                         }),
                         new Paragraph({
-                            text: legalData[0],
+                            text: title,
                             heading: "Heading1",
                             alignment: AlignmentType.CENTER,
                             bold: true,
                             spacing: { after: 200 },
                         }),
-                        ...legalData[1].split("\\\\").map((line) =>
+                        ...content.split("\\\\").map((line) =>
                             new Paragraph({
                                 children: line.split(/(\*\*.*?\*\*)/).map((part) => {
                                     if (part.match(/\*\*(.*?)\*\*/)) {
@@ -63,16 +66,21 @@ function LegalAccordionItem({ section, index }) {
                 aria-controls={'panel' + index + '-content'}
                 id={'panel' + index + '-header'}
             >
-                {legalData[0]}
+                {title}
             </AccordionSummary>
             <AccordionActions>
                 <Button onClick={download}>Download</Button>
             </AccordionActions>
             <AccordionDetails>
-                <p dangerouslySetInnerHTML={formatText(legalData[1])}></p>
+                <p>{formatText(content)}</p>
             </AccordionDetails>
         </Accordion>
     );
 }
+
+LegalAccordionItem.propTypes = {
+  section: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+};
 
 export default LegalAccordionItem;

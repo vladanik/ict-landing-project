@@ -1,25 +1,11 @@
 .home-container {
-    text-align: center;
-    width: 100%;
-    margin: 15% auto 25% auto;
+    min-height: calc(100vh - 210px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.home-container h2 {
-    font-size: 52px;
-    font-family: 'Roboto Mono', monospace;
-    margin: 0;
-}
-
-.home-container p {
-    margin-top: 15px;
-}
-
-.home-container a {
-    font-family: 'Roboto Mono', monospace;
-    color: #fff;
+    align-items: center;
+    text-align: center;
+    padding: clamp(56px, 10vw, 118px) 0;
 }
 
 .slogan {
@@ -27,24 +13,82 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 4px;
 }
 
-.depicting-quality {
+.depicting-quality,
+.delivering-results {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.08em;
 }
 
-.ict-txt-diff {
-    color: #5fa2ff;
-    font-size: 58px !important;
+.home-container h2 {
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: clamp(2rem, 7vw, 5.6rem);
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: 0;
+    text-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
 }
 
-@media (max-width: 768px) {
+.home-container .ict-txt-diff {
+    color: var(--ict-blue);
+    font-size: clamp(2.25rem, 7.6vw, 6.1rem);
+}
+
+.home-value-prop {
+    max-width: 720px;
+    margin: 28px auto 0;
+    color: #e4efff;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    line-height: 1.6;
+}
+
+.home-actions {
+    justify-content: center;
+    margin-top: 28px;
+}
+
+.home-actions .btn {
+    min-width: 142px;
+    padding: 11px 18px;
+    font-weight: 700;
+}
+
+.home-secondary-link {
+    margin-top: 20px;
+    color: #bdd9ff;
+    font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    text-decoration: none;
+}
+
+.home-secondary-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+@media (max-width: 620px) {
     .home-container {
-        margin: 0;
+        min-height: auto;
+        padding-top: 44px;
+        padding-bottom: 64px;
     }
-    .slogan {
-        scale: 50%;
+
+    .depicting-quality,
+    .delivering-results {
+        max-width: 100%;
+    }
+
+    .home-actions {
+        width: 100%;
+    }
+
+    .home-actions .btn {
+        flex: 1 1 100%;
     }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import img1 from '../assets/offers1.png';
 import img2 from '../assets/offers2.png';
 import img3 from '../assets/offers3.png';
@@ -17,14 +18,24 @@ function AboutOffers({ data }) {
     return (
         <div className='about-offers'>
             {data.map(offerItem => (
-                <div key={offerItem.title} className='section about-offers-section'>
-                    <h5>{offerItem.title}</h5>
+                <article key={offerItem.title} className='about-offers-section'>
+                    <h3>{offerItem.title}</h3>
                     <img src={images[offerItem.img]} alt={offerItem.title} />
                     <p>{offerItem.paragraph}</p>
-                </div>
+                </article>
             ))}
         </div>
     );
 }
+
+AboutOffers.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      img: PropTypes.string.isRequired,
+      paragraph: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default AboutOffers;
