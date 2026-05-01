@@ -38,23 +38,14 @@ function ScrollToHash() {
 function AppContent({ data }) {
   const location = useLocation();
   const showContactForm = ['/', '/about', '/services', '/contact'].includes(location.pathname);
-  const [showCookieBanner, setShowCookieBanner] = useState(false);
-
-  const checkCookieBanner = () => {
-      const consent = Cookies.get('cookieBannerSeen');
-      if (!consent) {
-          setShowCookieBanner(true);
-      }
-  }
+  const [showCookieBanner, setShowCookieBanner] = useState(() => {
+    return !Cookies.get('cookieBannerSeen');
+  });
 
   const acceptCookies = () => {
-      Cookies.set('cookieBannerSeen', true, { expires: 365 });
+      Cookies.set('cookieBannerSeen', 'true', { expires: 365 });
       setShowCookieBanner(false);
   }
-
-  useEffect(() => {
-      checkCookieBanner();
-  }, []);
 
   return (
     <div className='App'>
