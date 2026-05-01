@@ -1,26 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import '../Home.css';
 import Cookies from "js-cookie";
 import CookieBanner from "./CookieBanner";
 
 function HomePage () {
-    const [showCookieBanner, setShowCookieBanner] = useState(false);
-
-    const checkCookieBanner = () => {
-        const consent = Cookies.get('cookieBannerSeen');
-        if (!consent) {
-            setShowCookieBanner(true);
-        }
-    }
+    const [showCookieBanner, setShowCookieBanner] = useState(() => {
+        return !Cookies.get('cookieBannerSeen');
+    });
 
     const acceptCookies = () => {
-        Cookies.set('cookieBannerSeen', true, { expires: 365 });
+        Cookies.set('cookieBannerSeen', 'true', { expires: 365 });
         setShowCookieBanner(false);
-    }
-
-    useEffect(() => {
-        checkCookieBanner();
-    }, []);
+    };
 
     return (<>
         <main>
