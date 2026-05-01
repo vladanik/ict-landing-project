@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import PropTypes from 'prop-types';
 
 import Header from './components/Header';
@@ -110,6 +111,7 @@ function App() {
     <Router>
       <AppContent data={data} />
       <Analytics />
+      <SpeedInsights />
     </Router>
   );
 }
