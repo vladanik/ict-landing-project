@@ -12,6 +12,7 @@ import ContactForm from './components/ContactForm';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Legal from "./components/Legal";
+import Blog from "./components/Blog";
 import LoadingSpinner from './components/LoadingSpinner';
 
 import './App.css';
@@ -61,6 +62,7 @@ function AppContent({ data }) {
         <Route path='/services' element={<Services data={data.services} />} />
         <Route path='/contact' element={<Contact data={data.contact} />} />
         <Route path='/legal' element={<Legal />} />
+        <Route path='/blog' element={<Blog />} />
       </Routes>
 
       {showContactForm && <ContactForm data={data.contactForm} />}
