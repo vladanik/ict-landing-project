@@ -71,7 +71,12 @@ function AppContent({ data }) {
 
 AppContent.propTypes = {
   data: PropTypes.shape({
-    projects: PropTypes.array.isRequired,
+    about: PropTypes.object.isRequired,
+    projects: PropTypes.shape({
+      projects: PropTypes.array.isRequired,
+      workWith: PropTypes.array.isRequired,
+      workWithNote: PropTypes.string,
+    }).isRequired,
     services: PropTypes.array.isRequired,
     contact: PropTypes.object.isRequired,
     contactForm: PropTypes.shape({

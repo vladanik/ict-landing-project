@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function AboutCompetencies({ data }) {
     return (
@@ -12,5 +13,14 @@ function AboutCompetencies({ data }) {
         </div>
     );
 }
+
+AboutCompetencies.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      paragraph: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default AboutCompetencies;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {formatText} from "../utils/Utils";
 import {NOTE_SERVICES_DEMO, NOTE_SERVICES_PRICES} from "../utils/Constant";
@@ -28,7 +29,7 @@ function Services({ data }) {
             <h1 className='page-header'>Services</h1>
             <div id='services' className='section'>
                 <div className='note-card'>
-                    <p dangerouslySetInnerHTML={formatText(NOTE_SERVICES_DEMO)}></p>
+                    <p>{formatText(NOTE_SERVICES_DEMO)}</p>
                 </div>
                 <table className='services-table'>
                     <thead>
@@ -68,11 +69,40 @@ function Services({ data }) {
                     ))}
                 </div>
                 <div className='note-card'>
-                    <p dangerouslySetInnerHTML={formatText(NOTE_SERVICES_PRICES)}></p>
+                    <p>{formatText(NOTE_SERVICES_PRICES)}</p>
                 </div>
             </div>
         </main>
     );
 }
+
+ServicePricing.propTypes = {
+  pricing: PropTypes.shape({
+    useFrom: PropTypes.bool,
+    USD: PropTypes.shape({
+      from: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      to: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    }),
+    EUR: PropTypes.shape({
+      from: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      to: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    }),
+    PLN: PropTypes.shape({
+      from: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      to: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    }),
+  }),
+};
+
+Services.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      serviceId: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      pricing: ServicePricing.propTypes.pricing,
+    })
+  ).isRequired,
+};
 
 export default Services;

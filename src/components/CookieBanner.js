@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {COOKIE_BANNER_CLOSE, COOKIE_BANNER_MESSAGE} from "../utils/Constant";
 
@@ -14,5 +15,10 @@ function CookieBanner({ show, close }) {
         </div>
     );
 }
+
+CookieBanner.propTypes = {
+    show: PropTypes.bool.isRequired,
+    close: PropTypes.func.isRequired
+};
 
 export default CookieBanner;

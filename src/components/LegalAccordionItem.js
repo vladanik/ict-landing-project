@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Accordion, AccordionActions, AccordionDetails, AccordionSummary, Button} from "@mui/material";
 import {ExpandMore} from "@mui/icons-material";
 import {formatText} from "../utils/Utils";
@@ -71,10 +72,15 @@ function LegalAccordionItem({ section, index }) {
                 <Button onClick={download}>Download</Button>
             </AccordionActions>
             <AccordionDetails>
-                <p dangerouslySetInnerHTML={formatText(content)}></p>
+                <p>{formatText(content)}</p>
             </AccordionDetails>
         </Accordion>
     );
 }
+
+LegalAccordionItem.propTypes = {
+  section: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+};
 
 export default LegalAccordionItem;

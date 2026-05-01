@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import img1 from '../assets/offers1.png';
 import img2 from '../assets/offers2.png';
 import img3 from '../assets/offers3.png';
@@ -26,5 +27,15 @@ function AboutOffers({ data }) {
         </div>
     );
 }
+
+AboutOffers.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      img: PropTypes.string.isRequired,
+      paragraph: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default AboutOffers;

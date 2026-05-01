@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FaEnvelope, FaGithub, FaLinkedin, FaTelegramPlane } from 'react-icons/fa';
 
 function Contact({ data }) {
@@ -39,5 +40,26 @@ function Contact({ data }) {
         </main>
     );
 }
+
+Contact.propTypes = {
+  data: PropTypes.shape({
+    github: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    }).isRequired,
+    linkedin: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    }).isRequired,
+    telegram: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    }).isRequired,
+    email: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default Contact;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import logo_CRM    from '../assets/logo_CRM.png';
@@ -69,5 +70,28 @@ function Projects({ data }) {
         </main>
     );
 }
+
+Projects.propTypes = {
+  data: PropTypes.shape({
+    projects: PropTypes.arrayOf(
+      PropTypes.shape({
+        projectId: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        techStack: PropTypes.arrayOf(PropTypes.string),
+        internalPath: PropTypes.string,
+        demoLink: PropTypes.string,
+        githubLink: PropTypes.string,
+      })
+    ).isRequired,
+    workWithNote: PropTypes.string,
+    workWith: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        img: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
+};
 
 export default Projects;
