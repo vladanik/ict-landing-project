@@ -103,6 +103,11 @@ The website includes:
 - Introduced .env.local and Vercel env variables
 - Prepared structure for backend migration (future)
 
+### v2.1
+
+- Data was moved from static file to the database
+- Web service initialized (private)
+
 ### v2.0
 - License created
 - Company logo added
