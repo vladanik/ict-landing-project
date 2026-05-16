@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 
 import { getPublishedArticleBySlug } from '../api/blogApi';
 import { formatDate } from '../utils/blogUtils';
+import ArticleContentRenderer from './ArticleContentRenderer';
 import LoadingSpinner from './LoadingSpinner';
 
 function BlogArticleDetails() {
@@ -70,7 +71,7 @@ function BlogArticleDetails() {
             </div>
             <h2>{article.title}</h2>
             <p className='blog-article-description'>{article.shortDescription}</p>
-            <div className='markdown-content'>{article.content}</div>
+            <ArticleContentRenderer content={article.content} />
           </>
         )}
       </article>

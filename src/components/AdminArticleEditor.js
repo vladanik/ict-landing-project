@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import ReactQuill from 'react-quill';
 import PropTypes from 'prop-types';
+import 'react-quill/dist/quill.snow.css';
 
 import {
   createArticle,
@@ -10,7 +12,13 @@ import {
   unpublishArticle,
   updateArticle,
 } from '../api/blogApi';
-import { formatDate, generateSlug, validateArticle } from '../utils/blogUtils';
+import {
+  ARTICLE_PREVIEW_STORAGE_KEY,
+  formatDate,
+  generateSlug,
+  normalizeContentForEditor,
+  validateArticle,
+} from '../utils/blogUtils';
 import LoadingSpinner from './LoadingSpinner';
 
 const emptyArticle = {
@@ -21,6 +29,30 @@ const emptyArticle = {
   authorName: '',
   published: false,
 };
+
+const editorModules = {
+  toolbar: [
+    [{ header: [1, 2, 3, false] }],
+    ['bold', 'italic', 'underline', 'strike'],
+    [{ list: 'ordered' }, { list: 'bullet' }],
+    ['blockquote', 'code-block'],
+    ['link'],
+    ['clean'],
+  ],
+};
+
+const editorFormats = [
+  'header',
+  'bold',
+  'italic',
+  'underline',
+  'strike',
+  'list',
+  'bullet',
+  'blockquote',
+  'code-block',
+  'link',
+];
 
 function AdminArticleEditor({ onLogout }) {
   const { id } = useParams();
@@ -46,7 +78,7 @@ function AdminArticleEditor({ onLogout }) {
       title: data.title || '',
       slug: data.slug || '',
       shortDescription: data.shortDescription || '',
-      content: data.content || '',
+      content: normalizeContentForEditor(data.content || ''),
       authorName: data.authorName || '',
       published: Boolean(data.published),
     });
@@ -92,6 +124,17 @@ function AdminArticleEditor({ onLogout }) {
     }));
   };
 
+  const handleContentChange = (content) => {
+    setFormData((previousFormData) => ({
+      ...previousFormData,
+      content,
+    }));
+    setValidationErrors((previousErrors) => ({
+      ...previousErrors,
+      content: '',
+    }));
+  };
+
   const buildPayload = () => ({
     title: formData.title.trim(),
     slug: formData.slug.trim(),
@@ -118,7 +161,13 @@ function AdminArticleEditor({ onLogout }) {
     try {
       if (isEditMode) {
         const updatedArticle = await updateArticle(id, payload);
-        populateArticle(updatedArticle?.id ? updatedArticle : { ...article, ...payload, id });
+        populateArticle({
+          ...article,
+          ...payload,
+          ...(updatedArticle || {}),
+          id: updatedArticle?.id || article?.id || id,
+          content: updatedArticle?.content || payload.content,
+        });
         setMessage({ type: 'success', text: 'Article saved successfully.' });
       } else {
         const createdArticle = await createArticle(payload);
@@ -151,11 +200,15 @@ function AdminArticleEditor({ onLogout }) {
       const updatedArticle = article.published
         ? await unpublishArticle(article.id)
         : await publishArticle(article.id);
-      const nextArticle = updatedArticle?.id
-        ? updatedArticle
-        : { ...article, published: !article.published };
+      const nextPublished = updatedArticle?.published ?? !article.published;
+      const nextArticle = {
+        ...article,
+        ...(updatedArticle || {}),
+        published: nextPublished,
+        content: updatedArticle?.content || formData.content,
+      };
 
-      populateArticle({ ...article, published: !article.published });
+      populateArticle(nextArticle);
       setMessage({
         type: 'success',
         text: nextArticle.published ? 'Article published successfully.' : 'Article unpublished successfully.',
@@ -192,6 +245,36 @@ function AdminArticleEditor({ onLogout }) {
       slug: generateSlug(previousFormData.title),
     }));
     setValidationErrors((previousErrors) => ({ ...previousErrors, slug: '' }));
+  };
+
+  const handlePreview = () => {
+    const returnPath = isEditMode ? `/adminpanel/articles/${id}` : '/adminpanel/articles/new';
+    const previewArticle = {
+      id: article?.id || id || null,
+      title: formData.title,
+      slug: formData.slug,
+      shortDescription: formData.shortDescription,
+      content: formData.content,
+      authorName: formData.authorName,
+      createdDate: article?.createdDate || null,
+      lastModifiedDate: article?.lastModifiedDate || null,
+      publishedDate: article?.publishedDate || null,
+      published: formData.published,
+    };
+
+    try {
+      sessionStorage.setItem(
+        ARTICLE_PREVIEW_STORAGE_KEY,
+        JSON.stringify({
+          returnPath,
+          article: previewArticle,
+        })
+      );
+      navigate('/adminpanel/articles/preview');
+    } catch (error) {
+      console.error('Unable to prepare article preview:', error);
+      setMessage({ type: 'error', text: 'Unable to open preview in this browser session.' });
+    }
   };
 
   return (
@@ -267,12 +350,15 @@ function AdminArticleEditor({ onLogout }) {
 
                 <div className='admin-form-field'>
                   <label htmlFor='article-content'>Content</label>
-                  <textarea
+                  <ReactQuill
                     id='article-content'
-                    name='content'
+                    className='admin-rich-editor'
+                    theme='snow'
                     value={formData.content}
-                    onChange={handleChange}
-                    rows='16'
+                    onChange={handleContentChange}
+                    modules={editorModules}
+                    formats={editorFormats}
+                    readOnly={isBusy}
                   />
                   {validationErrors.content && <span className='form-error'>{validationErrors.content}</span>}
                 </div>
@@ -303,6 +389,10 @@ function AdminArticleEditor({ onLogout }) {
                 <div className='admin-editor-actions'>
                   <button type='submit' className='btn btn-primary' disabled={isBusy}>
                     {isSaving ? 'Saving...' : isEditMode ? 'Save changes' : 'Save article'}
+                  </button>
+
+                  <button type='button' className='btn btn-outline-light' onClick={handlePreview} disabled={isBusy}>
+                    Preview Article
                   </button>
 
                   {isEditMode && article && (

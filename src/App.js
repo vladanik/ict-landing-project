@@ -16,6 +16,7 @@ import Blog from "./components/Blog";
 import BlogArticleDetails from './components/BlogArticleDetails';
 import AdminPanel from './components/AdminPanel';
 import AdminArticleEditor from './components/AdminArticleEditor';
+import AdminArticlePreview from './components/AdminArticlePreview';
 import AdminAccessGate from './components/AdminAccessGate';
 import LoadingSpinner from './components/LoadingSpinner';
 
@@ -73,6 +74,14 @@ function AppContent({ data }) {
           element={(
             <AdminAccessGate>
               <AdminPanel />
+            </AdminAccessGate>
+          )}
+        />
+        <Route
+          path='/adminpanel/articles/preview'
+          element={(
+            <AdminAccessGate>
+              <AdminArticlePreview />
             </AdminAccessGate>
           )}
         />
