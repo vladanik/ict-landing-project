@@ -57,10 +57,10 @@ const stripHtml = (content) => {
     return content || '';
   }
 
-  const template = document.createElement('template');
-  template.innerHTML = content;
-  template.content.querySelectorAll('script, style').forEach((element) => element.remove());
-  return template.content.textContent || '';
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(content, 'text/html');
+  doc.querySelectorAll('script, style').forEach((element) => element.remove());
+  return doc.body?.textContent || '';
 };
 
 const isWhitespace = (character) => character === ' ' || character === '\t';
