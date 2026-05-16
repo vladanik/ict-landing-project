@@ -2,8 +2,9 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 
 import { getPublishedArticles } from '../api/blogApi';
-import { formatDate } from '../utils/blogUtils';
+import { formatDate, getArticleTags, getReadingTime } from '../utils/blogUtils';
 import LoadingSpinner from './LoadingSpinner';
+import SEO, { buildCanonicalUrl, SITE_URL } from './SEO';
 
 const PAGE_SIZE = 10;
 
@@ -21,6 +22,7 @@ function Blog() {
     const pageParam = Number.parseInt(searchParams.get('page') || '0', 10);
     return Number.isNaN(pageParam) || pageParam < 0 ? 0 : pageParam;
   }, [searchParams]);
+  const activeTag = useMemo(() => (searchParams.get('tag') || '').trim(), [searchParams]);
 
   const [pageData, setPageData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +36,7 @@ function Blog() {
       setErrorMessage('');
 
       try {
-        const data = await getPublishedArticles(page, PAGE_SIZE);
+        const data = await getPublishedArticles(page, PAGE_SIZE, activeTag);
 
         if (isCurrentRequest) {
           setPageData(data);
@@ -56,7 +58,7 @@ function Blog() {
     return () => {
       isCurrentRequest = false;
     };
-  }, [page]);
+  }, [activeTag, page]);
 
   const articles = getPageArticles(pageData);
   const currentPage = pageData?.number ?? page;
@@ -65,13 +67,58 @@ function Blog() {
   const isLastPage = pageData?.last ?? (totalPages === 0 || currentPage >= totalPages - 1);
 
   const changePage = (nextPage) => {
-    setSearchParams({ page: String(Math.max(nextPage, 0)) });
+    const nextSearchParams = { page: String(Math.max(nextPage, 0)) };
+
+    if (activeTag) {
+      nextSearchParams.tag = activeTag;
+    }
+
+    setSearchParams(nextSearchParams);
+  };
+
+  const filterByTag = (tag) => {
+    setSearchParams({ tag, page: '0' });
+  };
+
+  const clearTagFilter = () => {
+    setSearchParams({ page: '0' });
   };
 
   return (
     <main>
+      <SEO
+        title='Blog | Salesforce & Full-Stack Development Articles'
+        description='Technical articles about Salesforce development, frontend applications, backend systems, integrations, maintainability and software delivery.'
+        canonicalPath='/blog'
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Blog',
+          name: 'ICT Services Blog',
+          description: 'Practical articles about Salesforce development, frontend applications, backend systems, integrations, maintainability and software delivery.',
+          url: `${SITE_URL}/blog`,
+          blogPost: articles.map((article) => ({
+            '@type': 'BlogPosting',
+            headline: article.title,
+            description: article.shortDescription,
+            url: buildCanonicalUrl(`/blog/${article.slug}`),
+          })),
+        }}
+      />
       <h1 className='page-header'>Blog</h1>
       <section id='blog' className='section blog-list'>
+        <p className='blog-intro'>
+          Practical articles about Salesforce development, frontend applications, backend systems, integrations,
+          maintainability and software delivery.
+        </p>
+        {activeTag && (
+          <output className='active-tag-filter'>
+            <span>Filtered by {activeTag}</span>
+            <button type='button' className='btn btn-sm btn-outline-light' onClick={clearTagFilter}>
+              Clear filter
+            </button>
+          </output>
+        )}
+
         {isLoading && <LoadingSpinner />}
 
         {!isLoading && errorMessage && (
@@ -95,10 +142,28 @@ function Blog() {
 
                 return (
                   <article className='blog-card' key={article.id || article.slug}>
+                    {article.imageUrl && (
+                      <Link className='blog-card-image-link' to={`/blog/${article.slug}`} aria-label={`Read ${article.title}`}>
+                        <img
+                          className='blog-card-image'
+                          src={article.imageUrl}
+                          alt={`${article.title} article`}
+                          loading='lazy'
+                        />
+                      </Link>
+                    )}
                     <div className='blog-meta'>
-                      <span>{article.authorName}</span>
+                      <span>{article.authorName || 'Wladyslaw Danik'}</span>
                       {displayDate && <span>{displayDate}</span>}
+                      <span>{getReadingTime(article)}</span>
                       {shouldShowModifiedDate && <span>Updated {modifiedDate}</span>}
+                    </div>
+                    <div className='blog-tags' aria-label={`${article.title} tags`}>
+                      {getArticleTags(article).map((tag) => (
+                        <button type='button' key={tag} onClick={() => filterByTag(tag)}>
+                          {tag}
+                        </button>
+                      ))}
                     </div>
                     <h2 className='blog-card-title'>
                       <Link className='blog-card-title-link' to={`/blog/${article.slug}`}>

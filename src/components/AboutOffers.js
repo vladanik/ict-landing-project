@@ -20,7 +20,7 @@ function AboutOffers({ data }) {
             {data.map(offerItem => (
                 <article key={offerItem.title} className='about-offers-section'>
                     <h3>{offerItem.title}</h3>
-                    <img src={images[offerItem.img]} alt={offerItem.title} />
+                    <img src={images[offerItem.img]} alt={`${offerItem.title} illustration`} loading='lazy' />
                     <p>{offerItem.paragraph}</p>
                 </article>
             ))}

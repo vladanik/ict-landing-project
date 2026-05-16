@@ -23,7 +23,7 @@
         {
           "title": "Web and Frontend Development",
           "img": "offers3",
-          "paragraph": "Designing responsive React interfaces that are clear, accessible and easy to maintain."
+          "paragraph": "Designing responsive interfaces that are clear, accessible and easy to maintain."
         },
         {
           "title": "Database and API Work",
@@ -47,7 +47,7 @@
         },
         {
           "title": "Frontend Engineering",
-          "paragraph": "React, JavaScript, responsive layouts, accessibility and reusable UI components."
+          "paragraph": "JavaScript frameworks, responsive layouts, accessibility and reusable UI components."
         },
         {
           "title": "Backend and Data",
@@ -122,7 +122,7 @@
         "techStack": ["Java", "Swing"]
       }
     ],
-    "workWithNote": "The logos below represent platforms, tools, and ecosystems we have experience working with. They do not imply direct partnerships or client relationships.",
+    "workWithNote": "The logos below represent platforms, tools, and ecosystems used in hands-on development work. They do not imply direct partnerships or client relationships.",
     "workWith": [
       { "name": "Salesforce",  "img": "logo_CRM" },
       { "name": "Google",      "img": "logo_GLE" },
@@ -162,7 +162,7 @@
     },
     {
       "name": "Web and Frontend Development",
-      "description": "Responsive React interfaces, landing pages and frontend features designed for clarity, accessibility and easy future changes.",
+      "description": "Responsive interfaces, landing pages and frontend features designed for clarity, accessibility and easy future changes.",
       "pricing": {
         "USD": { "from": 400, "to": 3000 },
         "PLN": { "from": 1600, "to": 12000 },
@@ -222,13 +222,13 @@
       "Other"
     ],
     "contactCategories": [
-      "Service Request",
-      "Cooperation Proposal",
-      "Improvement Suggestion",
-      "General Message",
-      "Access Request",
-      "Feedback",
-      "Bug Report"
+      "Salesforce Development",
+      "Salesforce B2B Commerce Support",
+      "Frontend Development",
+      "Backend Development",
+      "API and System Integrations",
+      "Maintenance and Technical Support",
+      "General Message"
     ]
   }
 }

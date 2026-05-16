@@ -17,6 +17,8 @@ import {
   formatDate,
   generateSlug,
   normalizeContentForEditor,
+  parseTagsInput,
+  tagsToInputValue,
   validateArticle,
 } from '../utils/blogUtils';
 import LoadingSpinner from './LoadingSpinner';
@@ -27,6 +29,12 @@ const emptyArticle = {
   shortDescription: '',
   content: '',
   authorName: '',
+  tags: '',
+  readingTimeMinutes: '',
+  metaTitle: '',
+  metaDescription: '',
+  imageUrl: '',
+  featured: false,
   published: false,
 };
 
@@ -80,6 +88,12 @@ function AdminArticleEditor({ onLogout }) {
       shortDescription: data.shortDescription || '',
       content: normalizeContentForEditor(data.content || ''),
       authorName: data.authorName || '',
+      tags: tagsToInputValue(data.tags),
+      readingTimeMinutes: data.readingTimeMinutes || '',
+      metaTitle: data.metaTitle || '',
+      metaDescription: data.metaDescription || '',
+      imageUrl: data.imageUrl || '',
+      featured: Boolean(data.featured),
       published: Boolean(data.published),
     });
     setValidationErrors({});
@@ -141,6 +155,12 @@ function AdminArticleEditor({ onLogout }) {
     shortDescription: formData.shortDescription.trim(),
     content: formData.content.trim(),
     authorName: formData.authorName.trim(),
+    tags: parseTagsInput(formData.tags),
+    readingTimeMinutes: formData.readingTimeMinutes === '' ? null : Number(formData.readingTimeMinutes),
+    metaTitle: formData.metaTitle.trim() || null,
+    metaDescription: formData.metaDescription.trim() || null,
+    imageUrl: formData.imageUrl.trim() || null,
+    featured: formData.featured,
     published: formData.published,
   });
 
@@ -256,6 +276,12 @@ function AdminArticleEditor({ onLogout }) {
       shortDescription: formData.shortDescription,
       content: formData.content,
       authorName: formData.authorName,
+      tags: parseTagsInput(formData.tags),
+      readingTimeMinutes: formData.readingTimeMinutes === '' ? null : Number(formData.readingTimeMinutes),
+      metaTitle: formData.metaTitle,
+      metaDescription: formData.metaDescription,
+      imageUrl: formData.imageUrl,
+      featured: formData.featured,
       createdDate: article?.createdDate || null,
       lastModifiedDate: article?.lastModifiedDate || null,
       publishedDate: article?.publishedDate || null,
@@ -307,9 +333,9 @@ function AdminArticleEditor({ onLogout }) {
         </div>
 
         {message.text && (
-          <div className={message.type === 'success' ? 'success-message' : 'error-message'} role='status'>
+          <output className={message.type === 'success' ? 'success-message' : 'error-message'}>
             {message.text}
-          </div>
+          </output>
         )}
 
         {isLoading && <LoadingSpinner />}
@@ -349,6 +375,75 @@ function AdminArticleEditor({ onLogout }) {
                 </div>
 
                 <div className='admin-form-field'>
+                  <label htmlFor='article-tags'>Tags</label>
+                  <input
+                    id='article-tags'
+                    name='tags'
+                    value={formData.tags}
+                    onChange={handleChange}
+                    placeholder='Salesforce, React, Java'
+                  />
+                </div>
+
+                <div className='admin-form-field'>
+                  <label htmlFor='article-reading-time'>Reading time in minutes</label>
+                  <input
+                    id='article-reading-time'
+                    name='readingTimeMinutes'
+                    type='number'
+                    min='1'
+                    step='1'
+                    value={formData.readingTimeMinutes}
+                    onChange={handleChange}
+                  />
+                  <span className='admin-field-help'>Leave empty to calculate automatically from content.</span>
+                  {validationErrors.readingTimeMinutes && (
+                    <span className='form-error'>{validationErrors.readingTimeMinutes}</span>
+                  )}
+                </div>
+
+                <div className='admin-form-field'>
+                  <label htmlFor='article-meta-title'>Meta title</label>
+                  <input
+                    id='article-meta-title'
+                    name='metaTitle'
+                    value={formData.metaTitle}
+                    onChange={handleChange}
+                    maxLength='200'
+                  />
+                  <span className='admin-field-help'>Leave empty to use article title.</span>
+                  {validationErrors.metaTitle && <span className='form-error'>{validationErrors.metaTitle}</span>}
+                </div>
+
+                <div className='admin-form-field'>
+                  <label htmlFor='article-meta-description'>Meta description</label>
+                  <textarea
+                    id='article-meta-description'
+                    name='metaDescription'
+                    value={formData.metaDescription}
+                    onChange={handleChange}
+                    maxLength='300'
+                    rows='3'
+                  />
+                  <span className='admin-field-help'>Leave empty to use short description.</span>
+                  {validationErrors.metaDescription && (
+                    <span className='form-error'>{validationErrors.metaDescription}</span>
+                  )}
+                </div>
+
+                <div className='admin-form-field'>
+                  <label htmlFor='article-image-url'>Image URL</label>
+                  <input
+                    id='article-image-url'
+                    name='imageUrl'
+                    type='url'
+                    value={formData.imageUrl}
+                    onChange={handleChange}
+                  />
+                  <span className='admin-field-help'>Used for social sharing and BlogPosting schema.</span>
+                </div>
+
+                <div className='admin-form-field'>
                   <label htmlFor='article-content'>Content</label>
                   <ReactQuill
                     id='article-content'
@@ -384,6 +479,17 @@ function AdminArticleEditor({ onLogout }) {
                     onChange={handleChange}
                   />
                   Published
+                </label>
+
+                <label className='admin-checkbox' htmlFor='article-featured'>
+                  <input
+                    id='article-featured'
+                    name='featured'
+                    type='checkbox'
+                    checked={formData.featured}
+                    onChange={handleChange}
+                  />
+                  Featured
                 </label>
 
                 <div className='admin-editor-actions'>

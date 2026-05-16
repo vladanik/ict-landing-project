@@ -76,12 +76,10 @@ export const isAdminSessionValid = () => {
   const session = getAdminSession();
 
   if (
-    !session ||
-    session.authenticated !== true ||
-    typeof session.expiresAt !== 'number' ||
-    session.expiresAt <= Date.now() ||
-    typeof session.sessionId !== 'string' ||
-    !session.sessionId
+    session?.authenticated !== true ||
+    typeof session?.expiresAt !== 'number' ||
+    session?.expiresAt <= Date.now() ||
+    typeof session?.sessionId !== 'string'
   ) {
     clearAdminSession();
     return false;

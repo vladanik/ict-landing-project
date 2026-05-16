@@ -3,7 +3,7 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { getAdminArticles } from '../api/blogApi';
-import { formatDate } from '../utils/blogUtils';
+import { formatDate, getArticleTags, getReadingTime } from '../utils/blogUtils';
 import LoadingSpinner from './LoadingSpinner';
 
 const ADMIN_PAGE_SIZE = 50;
@@ -86,9 +86,9 @@ function AdminPanel({ onLogout }) {
         </div>
 
         {message.text && (
-          <div className={message.type === 'success' ? 'success-message' : 'error-message'} role='status'>
+          <output className={message.type === 'success' ? 'success-message' : 'error-message'}>
             {message.text}
-          </div>
+          </output>
         )}
 
         {isListLoading && <LoadingSpinner />}
@@ -119,8 +119,12 @@ function AdminPanel({ onLogout }) {
                   {article.shortDescription && (
                     <p className='blog-card-description'>{article.shortDescription}</p>
                   )}
+                  <div className='blog-tags' aria-label={`${article.title} tags`}>
+                    {getArticleTags(article).map((tag) => <span key={tag}>{tag}</span>)}
+                  </div>
                   <div className='blog-meta'>
                     {article.authorName && <span>{article.authorName}</span>}
+                    <span>{getReadingTime(article, true)}</span>
                     {formatDate(article.createdDate) && <span>Created {formatDate(article.createdDate)}</span>}
                     {formatDate(article.lastModifiedDate) && (
                       <span>Updated {formatDate(article.lastModifiedDate)}</span>
@@ -128,6 +132,11 @@ function AdminPanel({ onLogout }) {
                     {formatDate(article.publishedDate) && (
                       <span>Published {formatDate(article.publishedDate)}</span>
                     )}
+                  </div>
+                  <div className='admin-quality-badges' aria-label={`${article.title} content quality markers`}>
+                    {article.featured && <span>Featured</span>}
+                    {article.metaTitle && <span>SEO title set</span>}
+                    {article.metaDescription && <span>SEO description set</span>}
                   </div>
                 </article>
               ))}
