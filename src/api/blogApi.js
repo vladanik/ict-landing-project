@@ -57,8 +57,18 @@ const request = async (path, options = {}) => {
   }
 };
 
-export const getPublishedArticles = (page = 0, size = 10) =>
-  request(`/api/blog/articles?page=${page}&size=${size}`);
+export const getPublishedArticles = (page = 0, size = 10, tag = '') => {
+  const searchParams = new URLSearchParams({
+    page: String(page),
+    size: String(size),
+  });
+
+  if (tag) {
+    searchParams.set('tag', tag);
+  }
+
+  return request(`/api/blog/articles?${searchParams.toString()}`);
+};
 
 export const getPublishedArticleBySlug = (slug) =>
   request(`/api/blog/articles/${encodeURIComponent(slug)}`);

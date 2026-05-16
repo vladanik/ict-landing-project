@@ -2,6 +2,17 @@ const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 export const ARTICLE_PREVIEW_STORAGE_KEY = 'ictArticlePreviewDraft';
 
+const suggestedCategories = [
+  'Salesforce',
+  'Development',
+  'Architecture',
+  'Integrations',
+  'Technical Debt',
+  'Business Applications',
+  'Web Development',
+  'Management',
+];
+
 export const formatDate = (dateString) => {
   if (!dateString) {
     return '';
@@ -215,6 +226,55 @@ export const maybeConvertMarkdownToHtml = (content) => {
 
 export const normalizeContentForEditor = (content) => maybeConvertMarkdownToHtml(content);
 
+export const normalizeTags = (tags) => {
+  if (Array.isArray(tags)) {
+    return tags.map((tag) => String(tag).trim()).filter(Boolean);
+  }
+
+  if (typeof tags === 'string') {
+    return tags.split(',').map((tag) => tag.trim()).filter(Boolean);
+  }
+
+  return [];
+};
+
+export const tagsToInputValue = (tags) => normalizeTags(tags).join(', ');
+
+export const parseTagsInput = (value) => normalizeTags(value);
+
+export const getArticleTags = (article) => {
+  const backendTags = normalizeTags(article?.tags);
+
+  if (backendTags.length > 0) {
+    return backendTags;
+  }
+
+  const searchableText = `${article?.title || ''} ${article?.shortDescription || ''}`.toLowerCase();
+  const inferredTags = suggestedCategories.filter((category) => {
+    const keyword = category.toLowerCase();
+    return searchableText.includes(keyword) || (keyword === 'integrations' && searchableText.includes('api'));
+  });
+
+  return inferredTags.length > 0 ? inferredTags : ['Business Applications'];
+};
+
+export const getReadingTime = (article, includeSummary = false) => {
+  const backendReadingTime = Number(article?.readingTimeMinutes);
+
+  if (Number.isFinite(backendReadingTime) && backendReadingTime > 0) {
+    return `${backendReadingTime} min read`;
+  }
+
+  const contentParts = [article?.content || ''];
+  if (includeSummary) {
+    contentParts.unshift(article?.shortDescription || '');
+  }
+
+  const text = contentParts.join(' ').replace(/<[^>]+>/g, ' ');
+  const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+  return `${Math.max(1, Math.ceil(wordCount / 220))} min read`;
+};
+
 export const validateArticle = (article) => {
   const errors = {};
   const title = (article.title || '').trim();
@@ -222,6 +282,9 @@ export const validateArticle = (article) => {
   const shortDescription = (article.shortDescription || '').trim();
   const content = article.content || '';
   const authorName = (article.authorName || '').trim();
+  const metaTitle = (article.metaTitle || '').trim();
+  const metaDescription = (article.metaDescription || '').trim();
+  const readingTimeMinutes = article.readingTimeMinutes;
 
   if (!title) {
     errors.title = 'Title is required.';
@@ -251,6 +314,23 @@ export const validateArticle = (article) => {
     errors.authorName = 'Author name is required.';
   } else if (authorName.length > 100) {
     errors.authorName = 'Author name must be 100 characters or fewer.';
+  }
+
+  if (metaTitle.length > 200) {
+    errors.metaTitle = 'Meta title must be 200 characters or fewer.';
+  }
+
+  if (metaDescription.length > 300) {
+    errors.metaDescription = 'Meta description must be 300 characters or fewer.';
+  }
+
+  if (
+    readingTimeMinutes !== null
+    && readingTimeMinutes !== undefined
+    && readingTimeMinutes !== ''
+    && (!Number.isFinite(Number(readingTimeMinutes)) || Number(readingTimeMinutes) <= 0)
+  ) {
+    errors.readingTimeMinutes = 'Reading time must be a positive number.';
   }
 
   return errors;

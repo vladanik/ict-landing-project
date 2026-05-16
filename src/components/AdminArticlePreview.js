@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ARTICLE_PREVIEW_STORAGE_KEY, formatDate } from '../utils/blogUtils';
+import { ARTICLE_PREVIEW_STORAGE_KEY, formatDate, getArticleTags, getReadingTime } from '../utils/blogUtils';
 import ArticleContentRenderer from './ArticleContentRenderer';
 
 const readPreviewData = () => {
@@ -50,10 +50,30 @@ function AdminArticlePreview() {
                 <span>Updated {formatDate(article.lastModifiedDate)}</span>
               )}
               <span>{article.published ? 'Published' : 'Draft'}</span>
+              {article.featured && <span>Featured</span>}
+              <span>{getReadingTime(article, true)}</span>
             </div>
+            <div className='blog-tags' aria-label={`${article.title || 'Article'} tags`}>
+              {getArticleTags(article).map((tag) => <span key={tag}>{tag}</span>)}
+            </div>
+            {article.imageUrl && (
+              <img
+                className='blog-article-image'
+                src={article.imageUrl}
+                alt={`${article.title || 'Article'} article image`}
+                loading='lazy'
+              />
+            )}
             <h2>{article.title?.trim() || 'Untitled article'}</h2>
             {article.shortDescription?.trim() && (
               <p className='blog-article-description'>{article.shortDescription}</p>
+            )}
+            {(article.metaTitle?.trim() || article.metaDescription?.trim()) && (
+              <aside className='admin-seo-preview' aria-label='SEO preview'>
+                <h3>SEO preview</h3>
+                <p><strong>Meta title:</strong> {article.metaTitle?.trim() || 'Using article title'}</p>
+                <p><strong>Meta description:</strong> {article.metaDescription?.trim() || 'Using short description'}</p>
+              </aside>
             )}
             <ArticleContentRenderer content={article.content} />
           </>

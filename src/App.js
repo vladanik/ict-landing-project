@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import PropTypes from 'prop-types';
@@ -62,9 +62,10 @@ function AppContent({ data }) {
 
       <Header />
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/' element={<HomePage contact={data.contact} />} />
         <Route path='/about' element={<About data={data} />} />
-        <Route path='/projects' element={<Projects data={data.projects} />} />
+        <Route path='/case-studies' element={<Projects data={data.projects} />} />
+        <Route path='/projects' element={<Navigate to='/case-studies' replace />} />
         <Route path='/services' element={<Services data={data.services} />} />
         <Route path='/contact' element={<Contact data={data.contact} />} />
         <Route path='/legal' element={<Legal />} />
@@ -105,7 +106,7 @@ function AppContent({ data }) {
       </Routes>
 
       {showContactForm && <ContactForm data={data.contactForm} />}
-      <Footer />
+      <Footer contact={data.contact} />
     </div>
   );
 }

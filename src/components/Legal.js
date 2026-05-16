@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import LoadingSpinner from "./LoadingSpinner";
 import {LEGAL_DIVIDER} from "../utils/Constant";
 import LegalAccordionItem from "./LegalAccordionItem";
+import SEO from './SEO';
 
 function Legal() {
     const [legalData, setLegalData] = useState([]);
@@ -19,6 +20,11 @@ function Legal() {
 
     return (
         <main>
+            <SEO
+                title='Legal Notices | ICT Services'
+                description='Legal notices for ICT Services.'
+                canonicalPath='/legal'
+            />
             <h1 className='page-header'>Legal Notices</h1>
             <div id='legal' className='section'>
                 {legalData.map((section, index) => (
