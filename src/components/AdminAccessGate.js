@@ -1,31 +1,49 @@
 import React, { cloneElement, isValidElement, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const ACCESS_KEY = 'ictAdminPanelAccessGranted';
+import {
+  clearAdminSession,
+  createAdminSession,
+  isAdminPasswordConfigured,
+  isAdminSessionValid,
+  validateAdminPassword,
+} from '../utils/adminAuth';
 
 function AdminLogin({ onLogin }) {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const configuredPassword = process.env.REACT_APP_ADMIN_PANEL_PASSWORD || '';
-  const isPasswordConfigured = Boolean(configuredPassword);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const isPasswordConfigured = isAdminPasswordConfigured();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setErrorMessage('');
 
     if (!isPasswordConfigured) {
-      setErrorMessage('Admin panel password is not configured.');
+      setErrorMessage('Admin panel password hash is not configured.');
       return;
     }
 
-    // This is only a lightweight frontend gate. Real production security must be enforced on backend.
-    if (password === configuredPassword) {
-      sessionStorage.setItem(ACCESS_KEY, 'true');
-      onLogin();
-      return;
-    }
+    setIsSubmitting(true);
 
-    setErrorMessage('Incorrect password.');
+    try {
+      const isValidPassword = await validateAdminPassword(password);
+
+      if (isValidPassword) {
+        createAdminSession();
+        setPassword('');
+        setErrorMessage('');
+        onLogin();
+        return;
+      }
+
+      setErrorMessage('Invalid password.');
+    } catch (error) {
+      console.error('Unable to validate admin password:', error);
+      setErrorMessage('Unable to validate password in this browser session.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -37,7 +55,7 @@ function AdminLogin({ onLogin }) {
           <label htmlFor='admin-password'>Password</label>
           {!isPasswordConfigured && (
             <div className='error-message' role='alert'>
-              Admin panel password is not configured. Set REACT_APP_ADMIN_PANEL_PASSWORD.
+              Admin panel password hash is not configured. Set REACT_APP_ADMIN_PANEL_PASSWORD_HASH.
             </div>
           )}
           <input
@@ -46,15 +64,15 @@ function AdminLogin({ onLogin }) {
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             autoComplete='current-password'
-            disabled={!isPasswordConfigured}
+            disabled={!isPasswordConfigured || isSubmitting}
           />
           {errorMessage && (
             <div className='form-error' role='alert'>
               {errorMessage}
             </div>
           )}
-          <button type='submit' className='btn btn-primary' disabled={!isPasswordConfigured}>
-            Unlock
+          <button type='submit' className='btn btn-primary' disabled={!isPasswordConfigured || isSubmitting}>
+            {isSubmitting ? 'Checking...' : 'Unlock'}
           </button>
         </form>
       </section>
@@ -67,12 +85,10 @@ AdminLogin.propTypes = {
 };
 
 function AdminAccessGate({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    () => sessionStorage.getItem(ACCESS_KEY) === 'true'
-  );
+  const [isAuthenticated, setIsAuthenticated] = useState(() => isAdminSessionValid());
 
   const handleLogout = () => {
-    sessionStorage.removeItem(ACCESS_KEY);
+    clearAdminSession();
     setIsAuthenticated(false);
   };
 

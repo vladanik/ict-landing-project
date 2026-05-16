@@ -29,7 +29,16 @@ REACT_APP_EMAILJS_SERVICE_ID=your_service_id
 REACT_APP_EMAILJS_TEMPLATE_ADMIN=your_admin_template_id
 REACT_APP_EMAILJS_TEMPLATE_AUTOREPLY=your_autoreply_template_id
 REACT_APP_EMAILJS_PUBLIC_ID=your_public_key
+REACT_APP_ADMIN_PANEL_PASSWORD_HASH=your_sha256_admin_password_hash
 ```
+
+Generate the admin password hash with:
+
+```bash
+node scripts/generate-admin-password-hash.js my-password
+```
+
+Store only the SHA-256 hash in `REACT_APP_ADMIN_PANEL_PASSWORD_HASH`.
 
 ### 3. Run project
 
