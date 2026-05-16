@@ -14,7 +14,7 @@ function Legal() {
     }, []);
 
     if (!legalData) {
-        return <LoadingSpinner />;
+        return <LoadingSpinner fullPage />;
     }
 
     return (
