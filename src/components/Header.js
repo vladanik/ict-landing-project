@@ -5,6 +5,7 @@ import logoWhite from '../assets/ICT_cmpl_white.png';
 
 function Header() {
     const navItems = [
+        { to: '/blog', label: 'Blog' },
         { to: '/about', label: 'About' },
         { to: '/projects', label: 'Projects' },
         { to: '/services', label: 'Services' },
