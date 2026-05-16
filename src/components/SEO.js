@@ -83,11 +83,16 @@ function SEO({
 
     document.head.querySelectorAll('script[data-ict-json-ld="true"]').forEach((element) => element.remove());
 
-    const schemas = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+    const schemas = (() => {
+      if (Array.isArray(jsonLd)) {
+        return jsonLd;
+      }
+      return jsonLd ? [jsonLd] : [];
+    })();
     schemas.forEach((schema) => {
       const script = document.createElement('script');
       script.type = 'application/ld+json';
-      script.setAttribute('data-ict-json-ld', 'true');
+      script.dataset.ictJsonLd = 'true';
       script.textContent = JSON.stringify(schema);
       document.head.appendChild(script);
     });

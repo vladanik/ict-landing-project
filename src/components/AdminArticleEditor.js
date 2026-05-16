@@ -333,9 +333,9 @@ function AdminArticleEditor({ onLogout }) {
         </div>
 
         {message.text && (
-          <div className={message.type === 'success' ? 'success-message' : 'error-message'} role='status'>
+          <output className={message.type === 'success' ? 'success-message' : 'error-message'}>
             {message.text}
-          </div>
+          </output>
         )}
 
         {isLoading && <LoadingSpinner />}

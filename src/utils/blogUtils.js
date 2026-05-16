@@ -270,7 +270,7 @@ export const getReadingTime = (article, includeSummary = false) => {
     contentParts.unshift(article?.shortDescription || '');
   }
 
-  const text = contentParts.join(' ').replace(/<[^>]+>/g, ' ');
+  const text = stripHtml(contentParts.join(' '));
   const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
   return `${Math.max(1, Math.ceil(wordCount / 220))} min read`;
 };

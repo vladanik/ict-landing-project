@@ -60,7 +60,7 @@ function AdminArticlePreview() {
               <img
                 className='blog-article-image'
                 src={article.imageUrl}
-                alt={`${article.title || 'Article'} article image`}
+                alt={`${article.title || 'Article'} article`}
                 loading='lazy'
               />
             )}
