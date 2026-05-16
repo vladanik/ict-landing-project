@@ -13,6 +13,10 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Legal from "./components/Legal";
 import Blog from "./components/Blog";
+import BlogArticleDetails from './components/BlogArticleDetails';
+import AdminPanel from './components/AdminPanel';
+import AdminArticleEditor from './components/AdminArticleEditor';
+import AdminAccessGate from './components/AdminAccessGate';
 import LoadingSpinner from './components/LoadingSpinner';
 
 import './App.css';
@@ -63,6 +67,31 @@ function AppContent({ data }) {
         <Route path='/contact' element={<Contact data={data.contact} />} />
         <Route path='/legal' element={<Legal />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/blog/:slug' element={<BlogArticleDetails />} />
+        <Route
+          path='/adminpanel'
+          element={(
+            <AdminAccessGate>
+              <AdminPanel />
+            </AdminAccessGate>
+          )}
+        />
+        <Route
+          path='/adminpanel/articles/new'
+          element={(
+            <AdminAccessGate>
+              <AdminArticleEditor />
+            </AdminAccessGate>
+          )}
+        />
+        <Route
+          path='/adminpanel/articles/:id'
+          element={(
+            <AdminAccessGate>
+              <AdminArticleEditor />
+            </AdminAccessGate>
+          )}
+        />
       </Routes>
 
       {showContactForm && <ContactForm data={data.contactForm} />}
@@ -105,7 +134,7 @@ function App() {
   }, []);
 
   if (!data) {
-    return <LoadingSpinner />;
+    return <LoadingSpinner fullPage />;
   }
 
   return (
