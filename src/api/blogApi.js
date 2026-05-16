@@ -1,4 +1,14 @@
-const API_BASE_URL = (process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080').replace(/\/+$/, '');
+const removeTrailingSlashes = (value) => {
+  let endIndex = value.length;
+
+  while (endIndex > 0 && value[endIndex - 1] === '/') {
+    endIndex -= 1;
+  }
+
+  return value.slice(0, endIndex);
+};
+
+const API_BASE_URL = removeTrailingSlashes(process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080');
 
 const parseErrorMessage = async (response) => {
   const fallbackMessage = `Request failed with status ${response.status}`;

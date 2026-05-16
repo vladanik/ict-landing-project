@@ -73,7 +73,7 @@ function AppContent({ data }) {
           path='/adminpanel'
           element={(
             <AdminAccessGate>
-              <AdminPanel />
+              {({ onLogout }) => <AdminPanel onLogout={onLogout} />}
             </AdminAccessGate>
           )}
         />
@@ -89,7 +89,7 @@ function AppContent({ data }) {
           path='/adminpanel/articles/new'
           element={(
             <AdminAccessGate>
-              <AdminArticleEditor />
+              {({ onLogout }) => <AdminArticleEditor onLogout={onLogout} />}
             </AdminAccessGate>
           )}
         />
@@ -97,7 +97,7 @@ function AppContent({ data }) {
           path='/adminpanel/articles/:id'
           element={(
             <AdminAccessGate>
-              <AdminArticleEditor />
+              {({ onLogout }) => <AdminArticleEditor onLogout={onLogout} />}
             </AdminAccessGate>
           )}
         />

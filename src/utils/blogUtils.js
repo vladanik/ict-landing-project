@@ -1,5 +1,4 @@
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const HTML_TAG_PATTERN = /<\/?[a-z][\s\S]*>/i;
 
 export const ARTICLE_PREVIEW_STORAGE_KEY = 'ictArticlePreviewDraft';
 
@@ -32,7 +31,18 @@ export const generateSlug = (title) =>
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
 
-export const isHtmlContent = (content) => HTML_TAG_PATTERN.test(content || '');
+const hasElementNode = (fragment) =>
+  Array.from(fragment.childNodes).some((node) => node.nodeType === Node.ELEMENT_NODE);
+
+export const isHtmlContent = (content) => {
+  if (!content || typeof document === 'undefined') {
+    return false;
+  }
+
+  const template = document.createElement('template');
+  template.innerHTML = content;
+  return hasElementNode(template.content);
+};
 
 const escapeHtml = (value) =>
   (value || '')
@@ -42,17 +52,65 @@ const escapeHtml = (value) =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 
-const stripHtml = (content) =>
-  (content || '')
-    .replace(/<style[\s\S]*?<\/style>/gi, '')
-    .replace(/<script[\s\S]*?<\/script>/gi, '')
-    .replace(/<[^>]*>/g, '')
-    .replace(/&nbsp;/gi, ' ')
-    .replace(/&amp;/gi, '&')
-    .replace(/&lt;/gi, '<')
-    .replace(/&gt;/gi, '>')
-    .replace(/&quot;/gi, '"')
-    .replace(/&#039;/gi, "'");
+const stripHtml = (content) => {
+  if (!content || typeof document === 'undefined') {
+    return content || '';
+  }
+
+  const template = document.createElement('template');
+  template.innerHTML = content;
+  template.content.querySelectorAll('script, style').forEach((element) => element.remove());
+  return template.content.textContent || '';
+};
+
+const isWhitespace = (character) => character === ' ' || character === '\t';
+
+const getHeadingData = (line) => {
+  let level = 0;
+
+  while (level < line.length && line[level] === '#') {
+    level += 1;
+  }
+
+  if (level < 1 || level > 3 || !isWhitespace(line[level])) {
+    return null;
+  }
+
+  const text = line.slice(level).trim();
+  return text ? { level, text } : null;
+};
+
+const getUnorderedListText = (line) => {
+  const marker = line[0];
+
+  if ((marker !== '-' && marker !== '*') || !isWhitespace(line[1])) {
+    return '';
+  }
+
+  return line.slice(1).trim();
+};
+
+const getOrderedListText = (line) => {
+  let index = 0;
+
+  while (index < line.length && line[index] >= '0' && line[index] <= '9') {
+    index += 1;
+  }
+
+  if (index === 0 || line[index] !== '.' || !isWhitespace(line[index + 1])) {
+    return '';
+  }
+
+  return line.slice(index + 1).trim();
+};
+
+const getBlockquoteText = (line) => {
+  if (line[0] !== '>' || !isWhitespace(line[1])) {
+    return '';
+  }
+
+  return line.slice(1).trim();
+};
 
 export const isRichTextEmpty = (content) => {
   const normalizedContent = (content || '').trim();
@@ -101,16 +159,16 @@ export const maybeConvertMarkdownToHtml = (content) => {
       return;
     }
 
-    const headingMatch = trimmedLine.match(/^(#{1,3})\s+(.+)$/);
-    if (headingMatch) {
+    const headingData = getHeadingData(trimmedLine);
+    if (headingData) {
       closeParagraph();
       closeList();
-      htmlParts.push(`<h${headingMatch[1].length}>${escapeHtml(headingMatch[2])}</h${headingMatch[1].length}>`);
+      htmlParts.push(`<h${headingData.level}>${escapeHtml(headingData.text)}</h${headingData.level}>`);
       return;
     }
 
-    const unorderedListMatch = trimmedLine.match(/^[-*]\s+(.+)$/);
-    if (unorderedListMatch) {
+    const unorderedListText = getUnorderedListText(trimmedLine);
+    if (unorderedListText) {
       closeParagraph();
 
       if (listType !== 'ul') {
@@ -119,12 +177,12 @@ export const maybeConvertMarkdownToHtml = (content) => {
         listType = 'ul';
       }
 
-      htmlParts.push(`<li>${escapeHtml(unorderedListMatch[1])}</li>`);
+      htmlParts.push(`<li>${escapeHtml(unorderedListText)}</li>`);
       return;
     }
 
-    const orderedListMatch = trimmedLine.match(/^\d+\.\s+(.+)$/);
-    if (orderedListMatch) {
+    const orderedListText = getOrderedListText(trimmedLine);
+    if (orderedListText) {
       closeParagraph();
 
       if (listType !== 'ol') {
@@ -133,15 +191,15 @@ export const maybeConvertMarkdownToHtml = (content) => {
         listType = 'ol';
       }
 
-      htmlParts.push(`<li>${escapeHtml(orderedListMatch[1])}</li>`);
+      htmlParts.push(`<li>${escapeHtml(orderedListText)}</li>`);
       return;
     }
 
-    const blockquoteMatch = trimmedLine.match(/^>\s+(.+)$/);
-    if (blockquoteMatch) {
+    const blockquoteText = getBlockquoteText(trimmedLine);
+    if (blockquoteText) {
       closeParagraph();
       closeList();
-      htmlParts.push(`<blockquote>${escapeHtml(blockquoteMatch[1])}</blockquote>`);
+      htmlParts.push(`<blockquote>${escapeHtml(blockquoteText)}</blockquote>`);
       return;
     }
 
