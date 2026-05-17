@@ -5,8 +5,9 @@ import logoWhite from '../assets/ICT_cmpl_white.png';
 
 function Header() {
     const navItems = [
+        { to: '/blog', label: 'Blog' },
         { to: '/about', label: 'About' },
-        { to: '/projects', label: 'Projects' },
+        { to: '/case-studies', label: 'Case Studies' },
         { to: '/services', label: 'Services' },
         { to: '/contact', label: 'Contact' },
     ];
@@ -15,7 +16,7 @@ function Header() {
         <nav className="navbar navbar-expand-lg navbar-dark" id='header'>
             <div className="container site-container header-container">
                 <Link className="navbar-brand" to="/" aria-label="ICT Wladyslaw Danik home">
-                    <img src={logoWhite} alt="ICT Wladyslaw Danik logo" />
+                    <img src={logoWhite} alt="ICT Services cloud logo" />
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

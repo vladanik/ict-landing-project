@@ -9,6 +9,9 @@ function ContactForm({ data }) {
         name: '',
         email: '',
         phone: '',
+        projectType: '',
+        timeline: '',
+        contractType: '',
         message: '',
         category: ''
     });
@@ -39,6 +42,9 @@ function ContactForm({ data }) {
                     name: '',
                     email: '',
                     phone: '',
+                    projectType: '',
+                    timeline: '',
+                    contractType: '',
                     message: '',
                     category: ''
                 });
@@ -59,7 +65,7 @@ function ContactForm({ data }) {
     return (
         <div className='contact-form-container'>
             <section id='contactForm' className='section'>
-                <h2>Contact Us</h2>
+                <h2>Send Project Request</h2>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor='caller'>Who are you?</label>
                     <select id='caller' name='caller' value={formData.caller} onChange={handleChange} required>
@@ -77,6 +83,34 @@ function ContactForm({ data }) {
 
                     <label htmlFor='phone'>Phone <span>(optional)</span></label>
                     <input id='phone' type='tel' name='phone' value={formData.phone} onChange={handleChange} placeholder='Phone number' autoComplete='tel' />
+
+                    <label htmlFor='projectType'>Project type</label>
+                    <select id='projectType' name='projectType' value={formData.projectType} onChange={handleChange} required>
+                        <option value='' key='emptyProjectType'>Select project type...</option>
+                        <option value='Salesforce development'>Salesforce development</option>
+                        <option value='Salesforce B2B Commerce support'>Salesforce B2B Commerce support</option>
+                        <option value='Frontend development'>Frontend development</option>
+                        <option value='Backend development'>Backend development</option>
+                        <option value='API and system integrations'>API and system integrations</option>
+                        <option value='Maintenance and technical support'>Maintenance and technical support</option>
+                    </select>
+
+                    <label htmlFor='timeline'>Timeline</label>
+                    <select id='timeline' name='timeline' value={formData.timeline} onChange={handleChange} required>
+                        <option value='' key='emptyTimeline'>Select timeline...</option>
+                        <option value='As soon as possible'>As soon as possible</option>
+                        <option value='Within 1 month'>Within 1 month</option>
+                        <option value='1-3 months'>1-3 months</option>
+                        <option value='Flexible / planning stage'>Flexible / planning stage</option>
+                    </select>
+
+                    <label htmlFor='contractType'>Contract type</label>
+                    <select id='contractType' name='contractType' value={formData.contractType} onChange={handleChange} required>
+                        <option value='' key='emptyContractType'>Select contract type...</option>
+                        <option value='Project-based'>Project-based</option>
+                        <option value='Part-time'>Part-time</option>
+                        <option value='Maintenance / support'>Maintenance / support</option>
+                    </select>
 
                     <label htmlFor='message'>Message</label>
                     <textarea id='message' name='message' value={formData.message} onChange={handleChange} required minLength='10' placeholder='Tell me what you would like to build or improve.' />
@@ -97,7 +131,7 @@ function ContactForm({ data }) {
                     )}
 
                     <button type='submit' className='btn btn-success' disabled={isSubmitting}>
-                        {isSubmitting ? 'Sending...' : 'Submit'}
+                        {isSubmitting ? 'Sending...' : 'Send Project Request'}
                     </button>
                 </form>
             </section>

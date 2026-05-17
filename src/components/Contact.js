@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FaEnvelope, FaGithub, FaLinkedin, FaTelegramPlane } from 'react-icons/fa';
+import SEO from './SEO';
 
 function Contact({ data }) {
     const methods = [
@@ -12,8 +13,18 @@ function Contact({ data }) {
 
     return (
         <main>
-            <h1 className='page-header'>Contact</h1>
+            <SEO
+                title='Contact ICT Services | Discuss Your Software Project'
+                description='Contact ICT Services to discuss Salesforce development, frontend applications, backend systems, integrations or long-term technical support.'
+                canonicalPath='/contact'
+            />
+            <h1 className='page-header'>Discuss Your Software Project</h1>
             <section id='contact' className='section'>
+                <p>
+                    Share what you are building or maintaining. ICT Services can help with Salesforce development,
+                    frontend applications, backend systems, integrations, production support and long-term
+                    maintainability.
+                </p>
                 <div className='contact-list'>
                     {methods.map(method => {
                         const item = data[method.key];

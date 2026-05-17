@@ -40,7 +40,7 @@ function AboutSection({ data }) {
             <h2>{sectionData.title}</h2>
             {sectionData.img &&
                 <div className='section-image'>
-                    <img src={images[sectionData.img]} alt={sectionData.title} />
+                    <img src={images[sectionData.img]} alt={`${sectionData.title} illustration`} loading='lazy' />
                 </div>
             }
             <p className='mb-1'>{formatText(sectionData.paragraph)}</p>
