@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ict-udanik.vercel.app/</loc>
+    <loc>https://ict-services.dev/</loc>
   </url>
   <url>
-    <loc>https://ict-udanik.vercel.app/services</loc>
+    <loc>https://ict-services.dev/services</loc>
   </url>
   <url>
-    <loc>https://ict-udanik.vercel.app/about</loc>
+    <loc>https://ict-services.dev/about</loc>
   </url>
   <url>
-    <loc>https://ict-udanik.vercel.app/case-studies</loc>
+    <loc>https://ict-services.dev/case-studies</loc>
   </url>
   <url>
-    <loc>https://ict-udanik.vercel.app/blog</loc>
+    <loc>https://ict-services.dev/blog</loc>
   </url>
   <url>
-    <loc>https://ict-udanik.vercel.app/contact</loc>
+    <loc>https://ict-services.dev/contact</loc>
   </url>
   <url>
-    <loc>https://ict-udanik.vercel.app/legal</loc>
+    <loc>https://ict-services.dev/legal</loc>
   </url>
 </urlset>

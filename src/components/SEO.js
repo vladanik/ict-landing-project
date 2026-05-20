@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-export const SITE_URL = 'https://ict-udanik.vercel.app';
+export const SITE_URL = 'https://ict-services.dev';
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo512.png`;
 
 const ensureMeta = (selector, createAttributes) => {
