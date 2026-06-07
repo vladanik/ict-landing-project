@@ -175,7 +175,6 @@ function ContactForm() {
     const validateForm = () => {
         const nextErrors = {};
         const trimmedEmail = formData.email.trim();
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!formData.name.trim()) {
             nextErrors.name = 'Name is required.';
@@ -183,7 +182,7 @@ function ContactForm() {
 
         if (!trimmedEmail) {
             nextErrors.email = 'Email is required.';
-        } else if (!emailPattern.test(trimmedEmail)) {
+        } else if (!isValidEmail(trimmedEmail)) {
             nextErrors.email = 'Enter a valid email address.';
         }
 
@@ -205,6 +204,27 @@ function ContactForm() {
 
         setErrors(nextErrors);
         return Object.keys(nextErrors).length === 0;
+    };
+
+    const isValidEmail = (email) => {
+        const value = String(email || '').trim();
+
+        if (value.length > 254) {
+            return false;
+        }
+
+        const atIndex = value.indexOf('@');
+        const lastAtIndex = value.lastIndexOf('@');
+
+        if (
+            atIndex <= 0 ||
+            atIndex !== lastAtIndex ||
+            atIndex === value.length - 1
+        ) {
+            return false;
+        }
+
+        return true;
     };
 
     const handleSubmit = (e) => {
