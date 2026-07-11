@@ -1,0 +1,101 @@
+1. Regulamin świadczenia usług !!!
+Ostatnia aktualizacja: 05.2026 \\ \\
+**1. Wprowadzenie** \\
+Witamy na stronie ICT Wladyslaw Danik („my”, „nas” lub „nasze”), zarejestrowanej w Polsce. Korzystając ze strony https://ict-services.dev („Strona”), akceptujesz niniejszy Regulamin oraz Politykę prywatności. Jeśli się nie zgadzasz, nie korzystaj ze Strony. \\
+**2. Uprawnienia** \\
+Korzystając ze Strony, potwierdzasz, że jesteś osobą pełnoletnią w swojej jurysdykcji i możesz zawierać wiążące umowy. Jeśli działasz w imieniu organizacji, potwierdzasz, że możesz ją związać niniejszym Regulaminem. \\
+**3. Korzystanie ze Strony** \\
+Zobowiązujesz się korzystać ze Strony zgodnie z prawem polskim i unijnym. Nie wolno używać Strony do działań bezprawnych, oszustw, przesyłania szkodliwego kodu ani naruszania praw osób trzecich. \\
+**4. Prawa własności intelektualnej** \\
+Treści Strony, w tym teksty, grafiki, logo, obrazy, kod i inne materiały, należą do ICT Wladyslaw Danik lub licencjodawców i są chronione prawem polskim, unijnym i międzynarodowym. \\
+**5. Kod open source** \\
+Kod źródłowy strony może być dostępny pod adresem https://github.com/vladanik/ict-landing-project na licencji MIT. Korzystanie z kodu podlega tej licencji. \\
+**6. Linki i usługi stron trzecich** \\
+Strona może zawierać linki do zewnętrznych stron lub usług. Nie odpowiadamy za ich treści, praktyki prywatności ani regulaminy. \\
+**7. Wyłączenie gwarancji** \\
+W zakresie dozwolonym przez prawo polskie i unijne Strona jest udostępniana „tak jak jest” i „w miarę dostępności”, bez gwarancji. \\
+**8. Ograniczenie odpowiedzialności** \\
+Z wyjątkiem przypadków wymaganych przez prawo, ICT, podmioty powiązane i pracownicy nie odpowiadają za szkody pośrednie, uboczne, szczególne ani następcze wynikające z korzystania ze Strony. \\
+**9. Zwolnienie z odpowiedzialności** \\
+Zobowiązujesz się zabezpieczyć ICT Wladyslaw Danik, podmioty powiązane i pracowników przed roszczeniami, szkodami, stratami lub kosztami wynikającymi z korzystania ze Strony lub naruszenia Regulaminu. \\
+**10. Prawo właściwe i jurysdykcja** \\
+Regulamin podlega prawu polskiemu. Spory rozstrzygają właściwe sądy w Polsce. \\
+**11. Zmiany Regulaminu** \\
+Możemy zmieniać Regulamin. Zmiany będą publikowane na Stronie z aktualną datą obowiązywania. \\
+**12. Kontakt** \\
+Pytania dotyczące Regulaminu kieruj na ictxservices@gmail.com. \\
+________________________________________
+2. Polityka prywatności !!!
+Ostatnia aktualizacja: 05.2026 \\ \\
+**1. Wprowadzenie** \\
+ICT Wladyslaw Danik szanuje prywatność i chroni dane osobowe. Polityka wyjaśnia, jak zbieramy, wykorzystujemy i zabezpieczamy informacje podczas korzystania ze Strony oraz jakie prawa przysługują Ci na podstawie RODO i prawa polskiego. \\
+**2. Administrator danych** \\
+Administratorem danych osobowych jest ICT Wladyslaw Danik, zarejestrowany w Polsce. \\
+**3. Dane, które zbieramy** \\
+• **Dane kontaktowe:** imię i nazwisko, email oraz informacje przekazane w formularzach lub korespondencji. \\
+• **Dane techniczne:** adres IP, typ przeglądarki, urządzenie, system operacyjny, cookies i podobne technologie. \\
+• **Dane użytkowania:** odwiedzone strony, czas wizyty i ścieżki nawigacji. \\
+**4. Jak wykorzystujemy dane** \\
+Przetwarzamy dane, aby obsługiwać Stronę, odpowiadać na zapytania, ulepszać usługi, analizować użycie i wykonywać obowiązki prawne. \\
+**5. Podstawy prawne** \\
+Korzystamy z podstaw: zgoda, niezbędność umowna, obowiązek prawny i prawnie uzasadniony interes, np. bezpieczeństwo, zapobieganie nadużyciom i ulepszanie usług. \\
+**6. Udostępnianie danych** \\
+Dane mogą być udostępniane dostawcom usług lub organom prawnym/regulacyjnym, gdy wymaga tego prawo albo ochrona naszych praw. \\
+**7. Transfery międzynarodowe** \\
+Jeśli dane są przekazywane poza EOG, stosujemy odpowiednie zabezpieczenia. \\
+**8. Przechowywanie danych** \\
+Dane przechowujemy tylko tak długo, jak jest to potrzebne do celu zebrania lub wykonania obowiązków prawnych. \\
+**9. Twoje prawa** \\
+Masz prawo dostępu, sprostowania, usunięcia, ograniczenia, sprzeciwu, wycofania zgody i skargi do Prezesa UODO. Kontakt: ictxservices@gmail.com. \\
+**10. Bezpieczeństwo** \\
+Stosujemy środki techniczne i organizacyjne, ale żadna transmisja internetowa nie jest całkowicie bezpieczna. \\
+**11. Prywatność dzieci** \\
+Strona nie jest skierowana do dzieci poniżej 16 lat i świadomie nie zbieramy ich danych. \\
+**12. Zmiany Polityki** \\
+Możemy aktualizować Politykę prywatności. Zmiany będą publikowane na tej stronie. \\
+**13. Kontakt** \\
+Pytania dotyczące prywatności kieruj na ictxservices@gmail.com. \\
+________________________________________
+3. Polityka plików cookie !!!
+Ostatnia aktualizacja: 05.2026 \\ \\
+**1. Wprowadzenie** \\
+Polityka wyjaśnia, czym są cookies, jak ich używamy i jak można nimi zarządzać zgodnie z prawem polskim i unijnym. \\
+**2. Czym są cookies?** \\
+Cookies to małe pliki tekstowe zapisywane na urządzeniu w celu przechowywania informacji o aktywności przeglądania. \\
+**3. Rodzaje cookies** \\
+• **Niezbędne:** potrzebne do działania Strony. \\
+• **Analityczne/wydajnościowe:** pomagają zrozumieć korzystanie ze Strony i ją ulepszać. \\
+• **Funkcjonalne:** zapamiętują preferencje i ustawienia. \\
+• **Targetujące/reklamowe (jeśli dotyczy):** dostarczają treści lub reklamy dopasowane do zainteresowań. \\
+**4. Zarządzanie cookies** \\
+Możesz kontrolować lub usuwać cookies w ustawieniach przeglądarki. Wyłączenie części cookies może wpłynąć na działanie Strony. \\
+**5. Cookies stron trzecich** \\
+Zaufane usługi zewnętrzne mogą ustawiać własne cookies. Zapoznaj się z ich politykami. \\
+**6. Zmiany Polityki** \\
+Możemy aktualizować Politykę cookie w związku ze zmianami technologii, prawa lub działalności. \\
+**7. Kontakt** \\
+Pytania dotyczące cookies kieruj na ictxservices@gmail.com. \\
+________________________________________
+4. Informacje o licencji open source !!!
+**Licencja MIT** \\
+Copyright (c) 2026 ICT Wladyslaw Danik \\ \\
+Niniejszym udziela się bezpłatnie każdej osobie otrzymującej kopię tego oprogramowania i powiązanej dokumentacji prawa do korzystania z Oprogramowania bez ograniczeń, w tym do używania, kopiowania, modyfikowania, łączenia, publikowania, dystrybucji, sublicencjonowania i sprzedaży kopii, zgodnie z warunkami licencji MIT. \\
+OPROGRAMOWANIE JEST DOSTARCZANE „TAK JAK JEST”, BEZ JAKIEJKOLWIEK GWARANCJI. \\
+________________________________________
+5. Zastrzeżenie !!!
+**Zastrzeżenie ogólne** \\
+Informacje i materiały na Stronie mają charakter informacyjny. Staramy się o dokładność, ale nie gwarantujemy aktualności, kompletności ani braku błędów. \\
+**Zastrzeżenie dotyczące kodu open source** \\
+Kod open source jest dostarczany „tak jak jest”, bez gwarancji. \\
+________________________________________
+6. Deklaracja dostępności !!!
+Ostatnia aktualizacja: 05.2026 \\ \\
+ICT Wladyslaw Danik dąży do zapewnienia dostępności Strony dla osób z niepełnosprawnościami zgodnie z właściwymi regulacjami UE i Polski. Stale ulepszamy dostępność i przyjmujemy uwagi. \\
+Jeśli napotkasz bariery dostępności lub masz sugestie, skontaktuj się: ictxservices@gmail.com. \\
+________________________________________
+7. Dane firmy i kontakt !!!
+**Nazwa firmy:** ICT Wladyslaw Danik \\
+**Siedziba:** N/A \\
+**NIP:** PL5423478680 \\
+**REGON:** 527223048 \\
+**Email:** ictxservices@gmail.com \\

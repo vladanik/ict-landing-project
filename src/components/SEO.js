@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
+import { getAlternateOgLocales, getLanguageConfig } from '../i18n/languages';
 
 export const SITE_URL = 'https://ict-services.dev';
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo512.png`;
@@ -36,7 +38,8 @@ const normalizeCanonicalPath = (path) => {
   return path.startsWith('/') ? path : `/${path}`;
 };
 
-export const buildCanonicalUrl = (path) => `${SITE_URL}${normalizeCanonicalPath(path) === '/' ? '' : normalizeCanonicalPath(path)}`;
+export const buildCanonicalUrl = (path) =>
+  `${SITE_URL}${normalizeCanonicalPath(path) === '/' ? '' : normalizeCanonicalPath(path)}`;
 
 export const getPublicSocialLinks = (contact = {}) =>
   ['linkedin', 'github']
@@ -55,12 +58,17 @@ function SEO({
   twitterCard,
   jsonLd,
 }) {
+  const { i18n } = useTranslation();
+  const language = getLanguageConfig(i18n.resolvedLanguage || i18n.language);
+
   useEffect(() => {
-    const resolvedCanonicalUrl = canonicalUrl || buildCanonicalUrl(canonicalPath || window.location.pathname);
+    const resolvedCanonicalUrl =
+      canonicalUrl || buildCanonicalUrl(canonicalPath || window.location.pathname);
     const resolvedOgTitle = ogTitle || title;
     const resolvedOgDescription = ogDescription || description;
     const resolvedOgImage = ogImage || DEFAULT_OG_IMAGE;
 
+    document.documentElement.lang = language.htmlLang;
     document.title = title;
     setMetaByName('description', description);
     setMetaByProperty('og:title', resolvedOgTitle);
@@ -68,6 +76,7 @@ function SEO({
     setMetaByProperty('og:type', ogType);
     setMetaByProperty('og:url', resolvedCanonicalUrl);
     setMetaByProperty('og:image', resolvedOgImage);
+    setMetaByProperty('og:locale', language.ogLocale);
     setMetaByName('twitter:card', twitterCard);
     setMetaByName('twitter:title', resolvedOgTitle);
     setMetaByName('twitter:description', resolvedOgDescription);
@@ -81,7 +90,19 @@ function SEO({
     }
     canonicalElement.setAttribute('href', resolvedCanonicalUrl);
 
-    document.head.querySelectorAll('script[data-ict-json-ld="true"]').forEach((element) => element.remove());
+    document.head
+      .querySelectorAll('meta[property="og:locale:alternate"]')
+      .forEach((element) => element.remove());
+    getAlternateOgLocales(language.code).forEach((locale) => {
+      const element = document.createElement('meta');
+      element.setAttribute('property', 'og:locale:alternate');
+      element.setAttribute('content', locale);
+      document.head.appendChild(element);
+    });
+
+    document.head
+      .querySelectorAll('script[data-ict-json-ld="true"]')
+      .forEach((element) => element.remove());
 
     const schemas = (() => {
       if (Array.isArray(jsonLd)) {
@@ -107,6 +128,9 @@ function SEO({
     ogImage,
     twitterCard,
     jsonLd,
+    language.code,
+    language.htmlLang,
+    language.ogLocale,
   ]);
 
   return null;

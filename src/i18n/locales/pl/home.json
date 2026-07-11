@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "title": "Salesforce i Full-Stack Development dla aplikacji biznesowych",
+    "subheadline": "Apex, Lightning Web Components, aplikacje frontendowe, systemy backendowe i integracje API dla praktycznego, utrzymywalnego oprogramowania biznesowego.",
+    "valueProp": "ICT Services zapewnia development Salesforce i Full-Stack, integracje API oraz utrzymywalne oprogramowanie biznesowe skoncentrowane na realnych procesach operacyjnych.",
+    "primaryCta": "Zobacz usługi",
+    "secondaryCta": "Omów projekt",
+    "aboutLink": "O ICT Services"
+  },
+  "who": {
+    "title": "Z kim pracujemy",
+    "items": [
+      "Partnerzy Salesforce i zespoły B2B Commerce",
+      "Małe firmy modernizujące systemy wewnętrzne",
+      "Firmy potrzebujące długoterminowego utrzymania i wsparcia",
+      "Zespoły budujące dashboardy, portale i narzędzia wewnętrzne"
+    ]
+  },
+  "technologies": {
+    "title": "Technologie",
+    "groups": {
+      "salesforce": {
+        "name": "Salesforce",
+        "items": ["Apex", "Lightning", "LWC", "Visualforce", "Flows", "SOQL", "integracje REST"]
+      },
+      "frontend": {
+        "name": "Frontend",
+        "items": [
+          "React",
+          "React Native",
+          "Next.js",
+          "JavaScript",
+          "TypeScript",
+          "responsywny UI",
+          "dostępność"
+        ]
+      },
+      "backend": {
+        "name": "Backend",
+        "items": ["Python", "Java", "Spring Boot", "SQL", "PostgreSQL", "REST API"]
+      },
+      "delivery": {
+        "name": "Dostarczanie",
+        "items": ["Git", "code review", "utrzymywalność", "dokumentacja"]
+      }
+    }
+  }
+}

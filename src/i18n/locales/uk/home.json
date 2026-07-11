@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "title": "Salesforce і Full-Stack розробка для бізнес-застосунків",
+    "subheadline": "Apex, Lightning Web Components, frontend-застосунки, backend-системи та API-інтеграції для практичного й підтримуваного бізнес-ПЗ.",
+    "valueProp": "ICT Services виконує розробку Salesforce і Full-Stack, API-інтеграції та підтримуване бізнес-ПЗ, зосереджене на реальних операційних процесах.",
+    "primaryCta": "Переглянути послуги",
+    "secondaryCta": "Обговорити проект",
+    "aboutLink": "Про ICT Services"
+  },
+  "who": {
+    "title": "З ким ми працюємо",
+    "items": [
+      "Партнери Salesforce і команди B2B Commerce",
+      "Малі компанії, що модернізують внутрішні системи",
+      "Компанії, яким потрібні довгострокове супроводження та підтримка",
+      "Команди, що створюють dashboards, портали й внутрішні інструменти"
+    ]
+  },
+  "technologies": {
+    "title": "Технології",
+    "groups": {
+      "salesforce": {
+        "name": "Salesforce",
+        "items": ["Apex", "Lightning", "LWC", "Visualforce", "Flows", "SOQL", "REST-інтеграції"]
+      },
+      "frontend": {
+        "name": "Frontend",
+        "items": [
+          "React",
+          "React Native",
+          "Next.js",
+          "JavaScript",
+          "TypeScript",
+          "адаптивний UI",
+          "доступність"
+        ]
+      },
+      "backend": {
+        "name": "Backend",
+        "items": ["Python", "Java", "Spring Boot", "SQL", "PostgreSQL", "REST API"]
+      },
+      "delivery": {
+        "name": "Доставка",
+        "items": ["Git", "code review", "підтримуваність", "документація"]
+      }
+    }
+  }
+}

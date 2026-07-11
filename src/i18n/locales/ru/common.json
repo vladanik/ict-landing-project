@@ -1,0 +1,56 @@
+{
+  "brand": {
+    "name": "ICT Services",
+    "owner": "Wladyslaw Danik",
+    "homeAria": "Главная страница ICT Services",
+    "logoAlt": "Логотип облака ICT Services"
+  },
+  "languages": {
+    "selectorLabel": "Выбрать язык",
+    "menuLabel": "Доступные языки",
+    "current": "Текущий язык: {{language}}"
+  },
+  "navigation": {
+    "home": "Главная",
+    "blog": "Блог",
+    "about": "О нас",
+    "caseStudies": "Кейсы",
+    "services": "Услуги",
+    "contact": "Контакты",
+    "legal": "Правовая информация",
+    "toggle": "Переключить навигацию",
+    "footer": "Навигация в футере",
+    "social": "Социальные ссылки"
+  },
+  "actions": {
+    "back": "Назад",
+    "clear": "Очистить",
+    "download": "Скачать",
+    "refresh": "Обновить",
+    "retry": "Повторить",
+    "submit": "Отправить"
+  },
+  "status": {
+    "loading": "Загрузка..."
+  },
+  "dates": {
+    "created": "Создано {{date}}",
+    "updated": "Обновлено {{date}}",
+    "published": "Опубликовано {{date}}"
+  },
+  "pagination": {
+    "previous": "Предыдущая",
+    "next": "Следующая",
+    "pageOf": "Страница {{page}} из {{total}}"
+  },
+  "cookie": {
+    "message": "Этот сайт использует cookie, чтобы запомнить это уведомление. Прочитайте",
+    "policyLink": "Политику использования cookie",
+    "accept": "Понятно",
+    "ariaLabel": "Уведомление о cookie"
+  },
+  "footer": {
+    "description": "ICT Services разрабатывает решения Salesforce и Full-Stack для поддерживаемых бизнес-приложений, интеграций и внутренних инструментов.",
+    "copyright": "Copyright 2026 ICT Wladyslaw Danik"
+  }
+}

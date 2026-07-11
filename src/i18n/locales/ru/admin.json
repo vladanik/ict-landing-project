@@ -1,0 +1,118 @@
+{
+  "common": {
+    "panelTitle": "Админ-панель",
+    "logout": "Выйти",
+    "published": "Опубликовано",
+    "draft": "Черновик",
+    "featured": "Избранное",
+    "created": "Создано {{date}}",
+    "updated": "Обновлено {{date}}",
+    "publishedDate": "Опубликовано {{date}}",
+    "tagsAria": "Теги статьи {{title}}"
+  },
+  "login": {
+    "title": "Доступ администратора",
+    "password": "Пароль",
+    "missingHash": "Hash пароля админ-панели не настроен.",
+    "missingHashDetails": "Hash пароля админ-панели не настроен. Установите REACT_APP_ADMIN_PANEL_PASSWORD_HASH.",
+    "invalidPassword": "Неверный пароль.",
+    "validationError": "Не удалось проверить пароль в этой сессии браузера.",
+    "checking": "Проверка...",
+    "unlock": "Разблокировать"
+  },
+  "panel": {
+    "heading": "Управление блогом",
+    "description": "Управляйте опубликованными статьями и черновиками публичного блога.",
+    "writeNew": "Написать новую статью",
+    "refresh": "Обновить",
+    "empty": "Статьи не найдены.",
+    "loadError": "Не удалось загрузить статьи. Проверьте подключение к backend.",
+    "paginationAria": "Пагинация статей администратора",
+    "qualityAria": "Маркеры качества контента статьи {{title}}",
+    "seoTitleSet": "SEO title задан",
+    "seoDescriptionSet": "SEO description задан"
+  },
+  "editor": {
+    "editTitle": "Редактировать статью",
+    "newTitle": "Написать новую статью",
+    "editDescription": "Обновите текст статьи, статус публикации и метаданные.",
+    "newDescription": "Создайте черновик или опубликуйте новую статью для публичного блога.",
+    "backToPanel": "Назад в админ-панель",
+    "fields": {
+      "title": "Заголовок",
+      "slug": "Slug",
+      "shortDescription": "Краткое описание",
+      "tags": "Теги",
+      "readingTime": "Время чтения в минутах",
+      "metaTitle": "Meta title",
+      "metaDescription": "Meta description",
+      "imageUrl": "URL изображения",
+      "content": "Контент",
+      "authorName": "Автор"
+    },
+    "placeholders": {
+      "tags": "Salesforce, React, Java"
+    },
+    "help": {
+      "readingTime": "Оставьте пустым, чтобы рассчитать автоматически по контенту.",
+      "metaTitle": "Оставьте пустым, чтобы использовать заголовок статьи.",
+      "metaDescription": "Оставьте пустым, чтобы использовать краткое описание.",
+      "imageUrl": "Используется для социальных ссылок и схемы BlogPosting."
+    },
+    "actions": {
+      "generateSlug": "Создать slug из заголовка",
+      "saving": "Сохранение...",
+      "saveChanges": "Сохранить изменения",
+      "saveArticle": "Сохранить статью",
+      "preview": "Предпросмотр статьи",
+      "updating": "Обновление...",
+      "publish": "Опубликовать",
+      "unpublish": "Снять с публикации",
+      "delete": "Удалить статью"
+    },
+    "messages": {
+      "fixFields": "Исправьте выделенные поля перед сохранением.",
+      "saved": "Статья успешно сохранена.",
+      "created": "Статья успешно создана.",
+      "loadError": "Не удалось загрузить статью.",
+      "saveError": "Не удалось сохранить статью.",
+      "published": "Статья успешно опубликована.",
+      "unpublished": "Статья снята с публикации.",
+      "statusError": "Не удалось обновить статус публикации.",
+      "deleteConfirm": "Удалить \"{{title}}\"? Это действие нельзя отменить.",
+      "deleted": "Статья успешно удалена.",
+      "deleteError": "Не удалось удалить статью.",
+      "previewError": "Не удалось открыть предпросмотр в этой сессии браузера."
+    },
+    "validation": {
+      "titleRequired": "Заголовок обязателен.",
+      "titleMax": "Заголовок должен быть не длиннее 200 символов.",
+      "slugRequired": "Slug обязателен.",
+      "slugMax": "Slug должен быть не длиннее 250 символов.",
+      "slugPattern": "Slug должен использовать строчные буквы, цифры и одиночные дефисы между словами.",
+      "shortDescriptionRequired": "Краткое описание обязательно.",
+      "shortDescriptionMax": "Краткое описание должно быть не длиннее 500 символов.",
+      "contentRequired": "Контент обязателен.",
+      "authorNameRequired": "Автор обязателен.",
+      "authorNameMax": "Имя автора должно быть не длиннее 100 символов.",
+      "metaTitleMax": "Meta title должен быть не длиннее 200 символов.",
+      "metaDescriptionMax": "Meta description должен быть не длиннее 300 символов.",
+      "readingTimePositive": "Время чтения должно быть положительным числом."
+    }
+  },
+  "preview": {
+    "mode": "Режим предпросмотра",
+    "backToEditor": "Назад к редактору",
+    "backToPanel": "Назад в админ-панель",
+    "missing": "Данные предпросмотра недоступны.",
+    "articleFallback": "Статья",
+    "untitled": "Статья без заголовка",
+    "imageAlt": "Статья {{title}}",
+    "seoPreview": "Предпросмотр SEO",
+    "seoPreviewAria": "Предпросмотр SEO",
+    "metaTitle": "Meta title:",
+    "metaDescription": "Meta description:",
+    "usingArticleTitle": "Используется заголовок статьи",
+    "usingShortDescription": "Используется краткое описание"
+  }
+}

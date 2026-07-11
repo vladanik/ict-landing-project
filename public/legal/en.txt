@@ -1,0 +1,101 @@
+1. Terms of Service (Terms & Conditions) !!!
+Last Updated: 05.2026 \\ \\
+**1. Introduction** \\
+Welcome to the website of ICT Wladyslaw Danik ("we", "us", or "our"), registered in Poland. By accessing or using https://ict-services.dev (the "Site"), you agree to these Terms of Service (the "Terms") and our Privacy Policy. If you do not agree, please do not use the Site. \\
+**2. Eligibility** \\
+By using the Site, you confirm that you are of legal age in your jurisdiction and capable of entering into a legally binding agreement. If you use the Site on behalf of an organisation, you confirm that you may bind that organisation to these Terms. \\
+**3. Use of the Site** \\
+You agree to use the Site in compliance with applicable Polish and EU laws. You may not use the Site for unlawful or fraudulent activity, harmful code, or infringement of third-party rights. \\
+**4. Intellectual Property Rights** \\
+Site content, including text, graphics, logos, images, code, and other materials, belongs to ICT Wladyslaw Danik or licensors and is protected by Polish, EU, and international intellectual property laws. \\
+**5. Open-Source Code** \\
+The website source code may be available at https://github.com/vladanik/ict-landing-project under the MIT License. Use of that code is governed by the open-source licence. \\
+**6. Third-Party Links and Services** \\
+The Site may link to third-party websites or services. We are not responsible for their content, privacy practices, or terms. \\
+**7. Disclaimer of Warranties** \\
+To the extent permitted by Polish and EU law, the Site is provided "as is" and "as available" without warranties. \\
+**8. Limitation of Liability** \\
+Except where required by applicable law, ICT, its affiliates, and employees are not liable for indirect, incidental, special, or consequential damages arising from use of the Site. \\
+**9. Indemnification** \\
+You agree to indemnify ICT Wladyslaw Danik, its affiliates, and employees from claims, damages, losses, or expenses arising from your use of the Site or violation of these Terms. \\
+**10. Governing Law and Jurisdiction** \\
+These Terms are governed by Polish law. Disputes shall be resolved by competent courts in Poland. \\
+**11. Changes to These Terms** \\
+We may modify these Terms. Changes will be posted on the Site with an updated effective date. \\
+**12. Contact Us** \\
+For questions about these Terms, contact ictxservices@gmail.com. \\
+________________________________________
+2. Privacy Policy !!!
+Last Updated: 05.2026 \\ \\
+**1. Introduction** \\
+ICT Wladyslaw Danik respects your privacy and is committed to protecting personal data. This Privacy Policy explains how we collect, use, and protect information when you use the Site and your rights under GDPR and applicable Polish law. \\
+**2. Data Controller** \\
+ICT Wladyslaw Danik, registered in Poland, is the controller of your personal data. \\
+**3. Personal Data We Collect** \\
+• **Contact Information:** name, email address, and information you provide through forms or communications. \\
+• **Technical Data:** IP address, browser type, device details, operating system, cookies, and similar technologies. \\
+• **Usage Data:** pages visited, time spent, and navigation paths. \\
+**4. How We Use Your Personal Data** \\
+We process personal data to operate the Site, respond to enquiries, improve services, analyse use, and comply with legal obligations. \\
+**5. Legal Bases for Processing** \\
+We rely on consent, contractual necessity, legal obligation, and legitimate interests such as security, fraud prevention, and service improvement. \\
+**6. Disclosure of Your Personal Data** \\
+We may share data with service providers or legal/regulatory authorities where required by law or necessary to enforce rights. \\
+**7. International Data Transfers** \\
+If data is transferred outside the EEA, appropriate safeguards are used. \\
+**8. Data Retention** \\
+We retain data only as long as necessary for the purposes collected or to comply with legal obligations. \\
+**9. Your Rights** \\
+You may request access, rectification, erasure, restriction, objection, withdrawal of consent, or lodge a complaint with the Polish Data Protection Authority. Contact ictxservices@gmail.com. \\
+**10. Security Measures** \\
+We use technical and organisational measures to protect personal data, but no internet transmission is completely secure. \\
+**11. Children's Privacy** \\
+The Site is not directed at children under 16, and we do not knowingly collect their personal data. \\
+**12. Changes to This Privacy Policy** \\
+We may update this Privacy Policy. Updates will be posted on this page. \\
+**13. Contact Us** \\
+For privacy questions, contact ictxservices@gmail.com. \\
+________________________________________
+3. Cookie Policy !!!
+Last Updated: 05.2026 \\ \\
+**1. Introduction** \\
+This Cookie Policy explains what cookies are, how we use them, and how you can manage them under applicable Polish and EU law. \\
+**2. What Are Cookies?** \\
+Cookies are small text files placed on your device to store information about browsing activity. \\
+**3. Types of Cookies We Use** \\
+• **Essential Cookies:** necessary for Site operation. \\
+• **Analytics/Performance Cookies:** help us understand use and improve functionality. \\
+• **Functionality Cookies:** remember preferences and settings. \\
+• **Targeting/Advertising Cookies (if applicable):** deliver content or advertising tailored to interests. \\
+**4. Managing Cookies** \\
+You can control or delete cookies in browser settings. Disabling some cookies may affect Site functionality. \\
+**5. Third-Party Cookies** \\
+Trusted third-party services may set their own cookies. Review their policies. \\
+**6. Changes to This Cookie Policy** \\
+We may update this Cookie Policy when technology, law, or operations change. \\
+**7. Contact Us** \\
+For cookie questions, contact ictxservices@gmail.com. \\
+________________________________________
+4. Open-Source License Notices !!!
+**MIT License** \\
+Copyright (c) 2026 ICT Wladyslaw Danik \\ \\
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, subject to the MIT License conditions. \\
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. \\
+________________________________________
+5. Disclaimer !!!
+**General Disclaimer** \\
+Information and materials on this Site are for informational purposes only. While we strive for accuracy, we do not guarantee that information is up to date, complete, or error-free. \\
+**Open-Source Code Disclaimer** \\
+Open-source code is provided "as is" without warranty of any kind. \\
+________________________________________
+6. Accessibility Statement !!!
+Last Updated: 05.2026 \\ \\
+ICT Wladyslaw Danik strives to ensure that the Site is accessible to people with disabilities in compliance with applicable EU and Polish accessibility regulations. We continuously improve accessibility and welcome feedback. \\
+If you encounter accessibility barriers or have suggestions, contact ictxservices@gmail.com. \\
+________________________________________
+7. Company Information & Contact Details !!!
+**Company Name:** ICT Wladyslaw Danik \\
+**Registered Seat:** N/A \\
+**VAT (NIP) Number:** PL5423478680 \\
+**REGON:** 527223048 \\
+**Email:** ictxservices@gmail.com \\

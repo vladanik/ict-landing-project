@@ -1,0 +1,56 @@
+{
+  "brand": {
+    "name": "ICT Services",
+    "owner": "Wladyslaw Danik",
+    "homeAria": "Strona główna ICT Services",
+    "logoAlt": "Logo chmury ICT Services"
+  },
+  "languages": {
+    "selectorLabel": "Wybierz język",
+    "menuLabel": "Dostępne języki",
+    "current": "Aktualny język: {{language}}"
+  },
+  "navigation": {
+    "home": "Strona główna",
+    "blog": "Blog",
+    "about": "O nas",
+    "caseStudies": "Case studies",
+    "services": "Usługi",
+    "contact": "Kontakt",
+    "legal": "Informacje prawne",
+    "toggle": "Przełącz nawigację",
+    "footer": "Nawigacja w stopce",
+    "social": "Linki społecznościowe"
+  },
+  "actions": {
+    "back": "Wstecz",
+    "clear": "Wyczyść",
+    "download": "Pobierz",
+    "refresh": "Odśwież",
+    "retry": "Spróbuj ponownie",
+    "submit": "Wyślij"
+  },
+  "status": {
+    "loading": "Ładowanie..."
+  },
+  "dates": {
+    "created": "Utworzono {{date}}",
+    "updated": "Zaktualizowano {{date}}",
+    "published": "Opublikowano {{date}}"
+  },
+  "pagination": {
+    "previous": "Poprzednia",
+    "next": "Następna",
+    "pageOf": "Strona {{page}} z {{total}}"
+  },
+  "cookie": {
+    "message": "Ta strona używa pliku cookie, aby zapamiętać ten komunikat. Przeczytaj",
+    "policyLink": "Politykę plików cookie",
+    "accept": "Rozumiem",
+    "ariaLabel": "Komunikat o plikach cookie"
+  },
+  "footer": {
+    "description": "ICT Services dostarcza rozwiązania Salesforce i Full-Stack dla utrzymywalnych aplikacji biznesowych, integracji i narzędzi wewnętrznych.",
+    "copyright": "Copyright 2026 ICT Wladyslaw Danik"
+  }
+}

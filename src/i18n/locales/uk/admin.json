@@ -1,0 +1,118 @@
+{
+  "common": {
+    "panelTitle": "Адмін-панель",
+    "logout": "Вийти",
+    "published": "Опубліковано",
+    "draft": "Чернетка",
+    "featured": "Вибране",
+    "created": "Створено {{date}}",
+    "updated": "Оновлено {{date}}",
+    "publishedDate": "Опубліковано {{date}}",
+    "tagsAria": "Теги статті {{title}}"
+  },
+  "login": {
+    "title": "Доступ адміністратора",
+    "password": "Пароль",
+    "missingHash": "Hash пароля адмін-панелі не налаштовано.",
+    "missingHashDetails": "Hash пароля адмін-панелі не налаштовано. Встановіть REACT_APP_ADMIN_PANEL_PASSWORD_HASH.",
+    "invalidPassword": "Неправильний пароль.",
+    "validationError": "Не вдалося перевірити пароль у цій сесії браузера.",
+    "checking": "Перевірка...",
+    "unlock": "Розблокувати"
+  },
+  "panel": {
+    "heading": "Керування блогом",
+    "description": "Керуйте опублікованими статтями та чернетками публічного блогу.",
+    "writeNew": "Написати нову статтю",
+    "refresh": "Оновити",
+    "empty": "Статей не знайдено.",
+    "loadError": "Не вдалося завантажити статті. Перевірте підключення до backend.",
+    "paginationAria": "Пагінація статей адміністратора",
+    "qualityAria": "Маркери якості контенту статті {{title}}",
+    "seoTitleSet": "SEO title задано",
+    "seoDescriptionSet": "SEO description задано"
+  },
+  "editor": {
+    "editTitle": "Редагувати статтю",
+    "newTitle": "Написати нову статтю",
+    "editDescription": "Оновіть текст статті, статус публікації та метадані.",
+    "newDescription": "Створіть чернетку або опублікуйте нову статтю для публічного блогу.",
+    "backToPanel": "Назад до адмін-панелі",
+    "fields": {
+      "title": "Заголовок",
+      "slug": "Slug",
+      "shortDescription": "Короткий опис",
+      "tags": "Теги",
+      "readingTime": "Час читання у хвилинах",
+      "metaTitle": "Meta title",
+      "metaDescription": "Meta description",
+      "imageUrl": "URL зображення",
+      "content": "Контент",
+      "authorName": "Автор"
+    },
+    "placeholders": {
+      "tags": "Salesforce, React, Java"
+    },
+    "help": {
+      "readingTime": "Залиште порожнім, щоб розрахувати автоматично за контентом.",
+      "metaTitle": "Залиште порожнім, щоб використати заголовок статті.",
+      "metaDescription": "Залиште порожнім, щоб використати короткий опис.",
+      "imageUrl": "Використовується для соціального поширення та схеми BlogPosting."
+    },
+    "actions": {
+      "generateSlug": "Створити slug із заголовка",
+      "saving": "Збереження...",
+      "saveChanges": "Зберегти зміни",
+      "saveArticle": "Зберегти статтю",
+      "preview": "Передперегляд статті",
+      "updating": "Оновлення...",
+      "publish": "Опублікувати",
+      "unpublish": "Зняти з публікації",
+      "delete": "Видалити статтю"
+    },
+    "messages": {
+      "fixFields": "Виправте виділені поля перед збереженням.",
+      "saved": "Статтю успішно збережено.",
+      "created": "Статтю успішно створено.",
+      "loadError": "Не вдалося завантажити статтю.",
+      "saveError": "Не вдалося зберегти статтю.",
+      "published": "Статтю успішно опубліковано.",
+      "unpublished": "Статтю знято з публікації.",
+      "statusError": "Не вдалося оновити статус публікації.",
+      "deleteConfirm": "Видалити \"{{title}}\"? Цю дію не можна скасувати.",
+      "deleted": "Статтю успішно видалено.",
+      "deleteError": "Не вдалося видалити статтю.",
+      "previewError": "Не вдалося відкрити передперегляд у цій сесії браузера."
+    },
+    "validation": {
+      "titleRequired": "Заголовок є обов’язковим.",
+      "titleMax": "Заголовок має бути не довшим за 200 символів.",
+      "slugRequired": "Slug є обов’язковим.",
+      "slugMax": "Slug має бути не довшим за 250 символів.",
+      "slugPattern": "Slug має використовувати малі літери, цифри й одиночні дефіси між словами.",
+      "shortDescriptionRequired": "Короткий опис є обов’язковим.",
+      "shortDescriptionMax": "Короткий опис має бути не довшим за 500 символів.",
+      "contentRequired": "Контент є обов’язковим.",
+      "authorNameRequired": "Автор є обов’язковим.",
+      "authorNameMax": "Ім’я автора має бути не довшим за 100 символів.",
+      "metaTitleMax": "Meta title має бути не довшим за 200 символів.",
+      "metaDescriptionMax": "Meta description має бути не довшим за 300 символів.",
+      "readingTimePositive": "Час читання має бути додатним числом."
+    }
+  },
+  "preview": {
+    "mode": "Режим передперегляду",
+    "backToEditor": "Назад до редактора",
+    "backToPanel": "Назад до адмін-панелі",
+    "missing": "Дані передперегляду недоступні.",
+    "articleFallback": "Стаття",
+    "untitled": "Стаття без заголовка",
+    "imageAlt": "Стаття {{title}}",
+    "seoPreview": "Передперегляд SEO",
+    "seoPreviewAria": "Передперегляд SEO",
+    "metaTitle": "Meta title:",
+    "metaDescription": "Meta description:",
+    "usingArticleTitle": "Використовується заголовок статті",
+    "usingShortDescription": "Використовується короткий опис"
+  }
+}

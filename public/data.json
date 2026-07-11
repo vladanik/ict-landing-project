@@ -1,196 +1,76 @@
 {
   "companyName": "ICT",
-  "about": {
-    "aboutUs": {
-      "title": "About ICT Services",
-      "img": "logo",
-      "paragraph": "**ICT Services** is a software development brand led by Władysław Danik. The work focuses on practical, maintainable business applications with Salesforce, Apex, Lightning Web Components, React, Java, SQL and API integrations."
-    },
-    "whatWeOffer": {
-      "title": "What We Offer",
-      "paragraph": "Support is available for focused development, modernization and integration work across business systems and web applications.",
-      "items": [
-        {
-          "title": "Custom Software Development",
-          "img": "offers1",
-          "paragraph": "Building tailored features and internal tools with Java, React, SQL and API-first architecture."
-        },
-        {
-          "title": "Salesforce Development",
-          "img": "offers2",
-          "paragraph": "Creating and improving Salesforce solutions with Apex, Lightning Web Components, flows and platform integrations."
-        },
-        {
-          "title": "Web and Frontend Development",
-          "img": "offers3",
-          "paragraph": "Designing responsive interfaces that are clear, accessible and easy to maintain."
-        },
-        {
-          "title": "Database and API Work",
-          "img": "offers4",
-          "paragraph": "Structuring SQL data access, backend services and integrations so systems exchange information reliably."
-        },
-        {
-          "title": "Code Quality and Collaboration",
-          "img": "offers5",
-          "paragraph": "Improving code readability, Git workflows and implementation practices for long-term maintainability."
-        }
-      ]
-    },
-    "coreCompetencies": {
-      "title": "Core Competencies",
-      "paragraph": "The goal is dependable delivery: clear requirements, thoughtful implementation and code that can be extended later.",
-      "items": [
-        {
-          "title": "Salesforce Platform",
-          "paragraph": "Apex, Lightning Web Components, declarative automation, CRM customization and integrations."
-        },
-        {
-          "title": "Frontend Engineering",
-          "paragraph": "JavaScript frameworks, responsive layouts, accessibility and reusable UI components."
-        },
-        {
-          "title": "Backend and Data",
-          "paragraph": "Java, SQL, REST APIs, data modeling and practical application architecture."
-        },
-        {
-          "title": "Communication",
-          "paragraph": "Requirements are translated into concrete implementation steps with regular, direct updates."
-        }
-      ]
-    },
-    "ourApproach": {
-      "title": "Approach",
-      "paragraph": "ICT Services favors straightforward architecture, readable code and incremental delivery. Each project starts with the business problem, then moves toward a solution that is simple enough to operate and flexible enough to grow."
-    },
-    "ourTeam": {
-      "title": "Communication",
-      "img": "multilingual",
-      "paragraph": "Communication is available in **Polish**, **English** and **Russian**. This makes it easier to clarify requirements, document decisions and keep collaboration moving without unnecessary friction."
-    },
-    "whyChooseUs": {
-      "title": "Why Work With ICT Services?",
-      "paragraph": "ICT Services is a good fit when you need hands-on implementation, careful modernization or focused technical support without unnecessary overhead.",
-      "items": [
-        {
-          "paragraph": "Practical solutions shaped around real business workflows."
-        },
-        {
-          "paragraph": "Experience across Salesforce, React, Java, SQL and APIs."
-        },
-        {
-          "paragraph": "Direct communication with the person doing the development work."
-        }
-      ]
-    }
-  },
   "projects": {
     "projects": [
       {
-        "name": "ICT Services Landing Platform",
-        "description": "A modern React-based landing platform for ICT Services featuring reusable content configuration, legal compliance sections, and a functional contact workflow.",
-        "internalPath": "/",
         "projectId": "ictWebsite",
+        "translationKey": "projects:items.ictWebsite",
+        "internalPath": "/",
         "techStack": ["React", "React Router", "EmailJS", "CSS", "Vercel"]
       },
       {
-        "name": "Dream Analyzer AI",
-        "description": "A full-stack AI-powered web application that analyzes user-described dreams and generates multiple interpretations using OpenAI API.",
-        "demoLink": "https://dream-analyzer-ai.vercel.app/",
         "projectId": "dreamAnalyzerAI",
+        "translationKey": "projects:items.dreamAnalyzerAI",
+        "demoLink": "https://dream-analyzer-ai.vercel.app/",
         "techStack": ["React", "Java", "Spring Boot", "OpenAI API", "Vercel", "Render"]
       },
       {
-        "name": "Pattern Hasher Library",
-        "description": "A lightweight Java hashing library implementing a custom pattern-based transformation algorithm, designed for consistent and efficient string hashing across applications.",
-        "githubLink": "https://github.com/vladanik/pattern-hasher",
         "projectId": "patternHasher",
+        "translationKey": "projects:items.patternHasher",
+        "githubLink": "https://github.com/vladanik/pattern-hasher",
         "techStack": ["Java", "Spring Boot"]
       },
       {
-        "name": "Travel Agency Web Experience",
-        "description": "A PHP-based web experience simulating a travel agency platform, focused on structured content delivery and responsive UI design.",
-        "demoLink": "https://vladanik.github.io/WakacjeStrona/",
         "projectId": "travelAgencyWebsite",
+        "translationKey": "projects:items.travelAgencyWebsite",
+        "demoLink": "https://vladanik.github.io/WakacjeStrona/",
         "techStack": ["PHP", "HTML", "CSS"]
       },
       {
-        "name": "Snake Desktop Game",
-        "description": "A classic Snake game implemented as a desktop application using Java Swing, focusing on event-driven programming and UI rendering.",
-        "githubLink": "https://github.com/vladanik/snakeGame",
         "projectId": "snakeGame",
+        "translationKey": "projects:items.snakeGame",
+        "githubLink": "https://github.com/vladanik/snakeGame",
         "techStack": ["Java", "Swing"]
       }
     ],
-    "workWithNote": "The logos below represent platforms, tools, and ecosystems used in hands-on development work. They do not imply direct partnerships or client relationships.",
     "workWith": [
-      { "name": "Salesforce",  "img": "logo_CRM" },
-      { "name": "Google",      "img": "logo_GLE" },
-      { "name": "React",       "img": "logo_REACT" },
-      { "name": "Java",        "img": "logo_JAVA" },
-      { "name": "Docker",      "img": "logo_DOCKER" },
+      { "name": "Salesforce", "img": "logo_CRM" },
+      { "name": "Google", "img": "logo_GLE" },
+      { "name": "React", "img": "logo_REACT" },
+      { "name": "Java", "img": "logo_JAVA" },
+      { "name": "Docker", "img": "logo_DOCKER" },
       { "name": "Spring Boot", "img": "logo_SPRING" },
-      { "name": "OpenAI",      "img": "logo_OPENAI" },
-      { "name": "Oracle",      "img": "logo_ORCL" },
-      { "name": "Adobe",       "img": "logo_ADBE" },
-      { "name": "Vercel",      "img": "logo_VERCEL" },
-      { "name": "Render",      "img": "logo_RENDER" }
+      { "name": "OpenAI", "img": "logo_OPENAI" },
+      { "name": "Oracle", "img": "logo_ORCL" },
+      { "name": "Adobe", "img": "logo_ADBE" },
+      { "name": "Vercel", "img": "logo_VERCEL" },
+      { "name": "Render", "img": "logo_RENDER" }
     ]
   },
   "services": [
     {
-      "name": "Custom Software Development",
-      "description": "Tailored business functionality built with Java, Apex, React and SQL, focused on maintainability and practical workflows.",
-      "pricing": {
-        "USD": { "from": 500, "to": 5000 },
-        "PLN": { "from": 2000, "to": 20000 },
-        "EUR": { "from": 475, "to": 4750 },
-        "useFrom": true
-      },
-      "serviceId": "custom_software_dev"
+      "id": "salesforce-development",
+      "translationKey": "services:items.salesforceDevelopment"
     },
     {
-      "name": "Salesforce Development",
-      "description": "Salesforce customization and development with Apex, Lightning Web Components, automations and CRM process improvements.",
-      "pricing": {
-        "USD": { "from": 800, "to": 6000 },
-        "PLN": { "from": 3200, "to": 24000 },
-        "EUR": { "from": 760, "to": 5700 },
-        "useFrom": true
-      },
-      "serviceId": "salesforce_dev"
+      "id": "salesforce-b2b-commerce-support",
+      "translationKey": "services:items.salesforceB2BCommerceSupport"
     },
     {
-      "name": "Web and Frontend Development",
-      "description": "Responsive interfaces, landing pages and frontend features designed for clarity, accessibility and easy future changes.",
-      "pricing": {
-        "USD": { "from": 400, "to": 3000 },
-        "PLN": { "from": 1600, "to": 12000 },
-        "EUR": { "from": 380, "to": 2850 },
-        "useFrom": true
-      },
-      "serviceId": "frontend_dev"
+      "id": "frontend-development",
+      "translationKey": "services:items.frontendDevelopment"
     },
     {
-      "name": "API and Backend Services",
-      "description": "Backend services, REST APIs and SQL-backed integrations that connect applications and business processes reliably.",
-      "pricing": {
-        "USD": { "from": 700, "to": 4000 },
-        "PLN": { "from": 2800, "to": 16000 },
-        "EUR": { "from": 665, "to": 3800 },
-        "useFrom": true
-      },
-      "serviceId": "backend_services"
+      "id": "backend-development",
+      "translationKey": "services:items.backendDevelopment"
     },
     {
-      "name": "Code Quality and Optimization",
-      "description": "Reviewing and refactoring existing code to improve readability, performance, reliability and maintainability.",
-      "serviceId": "code_optimization"
+      "id": "api-system-integrations",
+      "translationKey": "services:items.apiSystemIntegrations"
     },
     {
-      "name": "Consultation and Training",
-      "description": "Focused guidance on Salesforce, React and software development practices for individuals or small teams.",
-      "serviceId": "consultation_training"
+      "id": "maintenance-refactoring-technical-support",
+      "translationKey": "services:items.maintenanceRefactoringTechnicalSupport"
     }
   ],
   "contact": {
@@ -210,25 +90,5 @@
       "name": "contact@ict-services.dev",
       "link": "mailto:contact@ict-services.dev"
     }
-  },
-  "contactForm": {
-    "callerTypes": [
-      "Business Client",
-      "Startup Founder",
-      "Recruiter / HR",
-      "Software Developer",
-      "Potential Partner",
-      "Student / Learning",
-      "Other"
-    ],
-    "contactCategories": [
-      "Salesforce Development",
-      "Salesforce B2B Commerce Support",
-      "Frontend Development",
-      "Backend Development",
-      "API and System Integrations",
-      "Maintenance and Technical Support",
-      "General Message"
-    ]
   }
 }

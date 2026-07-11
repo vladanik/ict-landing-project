@@ -29,12 +29,18 @@ body {
 
 .App {
   min-height: 100vh;
-  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    'Roboto',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   color: var(--ict-text);
   background:
     linear-gradient(180deg, rgba(1, 8, 17, 0.86), rgba(2, 13, 27, 0.94) 38%, rgba(1, 7, 14, 0.98)),
     radial-gradient(circle at top right, rgba(95, 162, 255, 0.2), transparent 34%),
-    url("assets/back_blur.png") center top / cover fixed;
+    url('assets/back_blur.png') center top / cover fixed;
 }
 
 .site-container {
@@ -96,8 +102,7 @@ main .page-header {
   border-radius: var(--ict-radius);
   box-shadow: var(--ict-shadow);
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
-    var(--ict-panel);
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)), var(--ict-panel);
   backdrop-filter: blur(14px);
 }
 
@@ -209,6 +214,73 @@ main .page-header {
 #header .nav-link.active {
   color: #ffffff;
   background: rgba(95, 162, 255, 0.18);
+}
+
+.language-switcher {
+  position: relative;
+  margin-left: 10px;
+}
+
+.language-switcher-trigger,
+.language-switcher-option {
+  border: 1px solid rgba(130, 178, 224, 0.24);
+  color: rgba(244, 248, 255, 0.9);
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 800;
+}
+
+.language-switcher-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 82px;
+  min-height: 38px;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 7px 12px;
+}
+
+.language-switcher-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 40;
+  min-width: 178px;
+  display: grid;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid rgba(130, 178, 224, 0.22);
+  border-radius: var(--ict-radius);
+  background: rgba(4, 18, 34, 0.98);
+  box-shadow: var(--ict-shadow);
+}
+
+.language-switcher-option {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 38px;
+  border-radius: var(--ict-radius);
+  padding: 7px 9px;
+  text-align: left;
+}
+
+.language-switcher-option:hover,
+.language-switcher-option:focus-visible,
+.language-switcher-trigger:hover,
+.language-switcher-trigger:focus-visible,
+.language-switcher-option.is-active {
+  color: #ffffff;
+  border-color: rgba(112, 215, 255, 0.52);
+  background: rgba(112, 215, 255, 0.14);
+}
+
+.language-switcher-name {
+  color: var(--ict-muted);
+  font-size: 0.86rem;
+  font-weight: 700;
 }
 
 #footer {
@@ -635,7 +707,11 @@ main .page-header {
   font-weight: 700;
   line-height: 1.2;
   cursor: pointer;
-  transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease, color 160ms ease;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease,
+    color 160ms ease;
 }
 
 .selection-pill:hover,
@@ -656,7 +732,9 @@ main .page-header {
   color: #ffffff;
   border-color: rgba(112, 215, 255, 0.82);
   background: rgba(112, 215, 255, 0.18);
-  box-shadow: 0 0 0 1px rgba(112, 215, 255, 0.16), 0 0 18px rgba(95, 162, 255, 0.14);
+  box-shadow:
+    0 0 0 1px rgba(112, 215, 255, 0.16),
+    0 0 18px rgba(95, 162, 255, 0.14);
 }
 
 .project-details-accordion {
@@ -907,7 +985,7 @@ main .page-header {
 }
 
 .blog-meta span:not(:last-child)::after {
-  content: "";
+  content: '';
   width: 4px;
   height: 4px;
   margin-left: 14px;
@@ -1111,7 +1189,7 @@ main .page-header {
   border-radius: 5px;
   color: #dff2ff;
   background: rgba(112, 215, 255, 0.12);
-  font-family: "Roboto Mono", Consolas, monospace;
+  font-family: 'Roboto Mono', Consolas, monospace;
   font-size: 0.92em;
 }
 
@@ -1200,7 +1278,13 @@ main .page-header {
 .admin-rich-editor .ql-container.ql-snow {
   border: none;
   color: var(--ict-text);
-  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    'Roboto',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-size: 1rem;
 }
 
@@ -1417,6 +1501,22 @@ main .page-header {
     border-radius: var(--ict-radius);
   }
 
+  .language-switcher {
+    margin: 8px 0 0;
+  }
+
+  .language-switcher-trigger {
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: var(--ict-radius);
+  }
+
+  .language-switcher-menu {
+    position: static;
+    margin-top: 6px;
+    width: 100%;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -1535,7 +1635,7 @@ main .page-header {
     align-items: flex-start;
   }
 
-  .cookie-banner-container{
+  .cookie-banner-container {
     width: 100%;
   }
 
