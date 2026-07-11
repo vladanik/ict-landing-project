@@ -1,0 +1,31 @@
+{
+  "pageTitle": "O ICT Services",
+  "sections": {
+    "intro": {
+      "title": "Niezależna usługa developmentu",
+      "imageAlt": "Logo chmury ICT Services",
+      "paragraphs": [
+        "ICT Services to marka tworzenia oprogramowania prowadzona przez Wladyslawa Danika. Skupia się na praktycznych, utrzymywalnych aplikacjach biznesowych, pracy z CRM i integracjach, a nie na ogólnej produkcji stron internetowych.",
+        "Praca opiera się na praktycznym doświadczeniu komercyjnym z Salesforce, Apex, Lightning Web Components, Visualforce, Full-Stack developmentem, SQL i integracjami API."
+      ]
+    },
+    "why": {
+      "title": "Dlaczego warto pracować z ICT Services?",
+      "items": [
+        "Bezpośrednia komunikacja z osobą wykonującą development.",
+        "Praktyczne rozwiązania dopasowane do realnych procesów biznesowych.",
+        "Doświadczenie w Salesforce, Full-Stack development, SQL i API.",
+        "Nacisk na czytelny, utrzymywalny i rozszerzalny kod."
+      ]
+    },
+    "approach": {
+      "title": "Podejście",
+      "paragraph": "ICT Services stawia na prostą architekturę, czytelną implementację i iteracyjne dostarczanie. Każdy projekt zaczyna się od procesu biznesowego, a następnie przechodzi do oprogramowania, które jest wystarczająco proste w obsłudze i elastyczne do dalszej rozbudowy."
+    },
+    "communication": {
+      "title": "Komunikacja",
+      "imageAlt": "Ilustracja komunikacji po polsku, angielsku i rosyjsku",
+      "paragraph": "Komunikacja jest dostępna po polsku, angielsku, rosyjsku i ukraińsku, co ułatwia wyjaśnianie wymagań, dokumentowanie decyzji i sprawną współpracę bez zbędnych tarć."
+    }
+  }
+}

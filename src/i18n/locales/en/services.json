@@ -1,0 +1,35 @@
+{
+  "pageTitle": "Services",
+  "intro": "ICT Services focuses on practical software delivery for business workflows, CRM systems, integrations and internal tools. Work is shaped around maintainable implementation rather than generic web portfolio output.",
+  "discussService": "Discuss This Service",
+  "notes": {
+    "demo": "**Note:** Services and pricing are indicative examples, not fixed offers or commitments.",
+    "pricing": "**Pricing:** Final estimates depend on scope, integrations, architecture, deadlines, licensing and content requirements. Contact us for an individual estimate."
+  },
+  "items": {
+    "salesforceDevelopment": {
+      "title": "Salesforce Development",
+      "description": "Apex, Lightning Web Components, Visualforce, Flows, CRM customization and platform integrations."
+    },
+    "salesforceB2BCommerceSupport": {
+      "title": "Salesforce B2B Commerce Support",
+      "description": "Help with storefront features, order flows, legacy code, integrations and production support."
+    },
+    "frontendDevelopment": {
+      "title": "Frontend Development",
+      "description": "Responsive, accessible interfaces for business applications, admin panels and portals."
+    },
+    "backendDevelopment": {
+      "title": "Backend Development",
+      "description": "REST APIs, backend services, database integration and business logic."
+    },
+    "apiSystemIntegrations": {
+      "title": "API & System Integrations",
+      "description": "Connecting Salesforce, web apps, databases and external services with reliable data flows."
+    },
+    "maintenanceRefactoringTechnicalSupport": {
+      "title": "Maintenance, Refactoring & Technical Support",
+      "description": "Bug fixing, code cleanup, performance improvements, production support and long-term maintainability."
+    }
+  }
+}

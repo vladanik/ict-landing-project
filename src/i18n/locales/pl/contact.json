@@ -1,0 +1,115 @@
+{
+  "pageTitle": "Omów swój projekt software",
+  "intro": "Opisz, co budujesz albo utrzymujesz. ICT Services może pomóc w Salesforce development, aplikacjach frontendowych, systemach backendowych, integracjach, wsparciu produkcyjnym i długoterminowej utrzymywalności.",
+  "formNote": "Możesz też użyć formularza poniżej.",
+  "methods": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "telegram": "Telegram",
+    "email": "Email"
+  },
+  "form": {
+    "title": "Wyślij zapytanie projektowe",
+    "description": "Krótko opisz, czego potrzebujesz. Specyfikacja techniczna nie jest wymagana.",
+    "optional": "(opcjonalnie)",
+    "required": "(wymagane)",
+    "fields": {
+      "name": {
+        "label": "Imię i nazwisko",
+        "placeholder": "Twoje imię i nazwisko"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "ty@firma.com"
+      },
+      "company": {
+        "label": "Firma / Organizacja",
+        "placeholder": "Firma, startup lub organizacja"
+      },
+      "services": {
+        "label": "W czym potrzebujesz pomocy?"
+      },
+      "otherServiceDetails": {
+        "label": "Doprecyzuj",
+        "placeholder": "Opisz usługę, której potrzebujesz"
+      },
+      "projectDescription": {
+        "label": "Opis projektu",
+        "placeholder": "Krótko opisz pomysł, problem albo to, co chcesz zbudować."
+      },
+      "details": {
+        "toggle": "Dodatkowe szczegóły projektu (opcjonalnie)"
+      },
+      "timeline": {
+        "label": "Termin"
+      },
+      "collaborationType": {
+        "label": "Typ współpracy"
+      },
+      "budgetRange": {
+        "label": "Budżet"
+      },
+      "preferredContactMethod": {
+        "label": "Preferowany kontakt"
+      },
+      "phone": {
+        "label": "Telefon",
+        "placeholder": "Numer telefonu"
+      }
+    },
+    "options": {
+      "services": {
+        "salesforceDevelopment": "Salesforce Development",
+        "salesforceB2BCommerce": "Salesforce B2B Commerce",
+        "frontendDevelopment": "Frontend Development",
+        "backendDevelopment": "Backend Development",
+        "apiIntegrations": "Integracje API",
+        "technicalSupport": "Wsparcie techniczne",
+        "websiteDevelopment": "Tworzenie stron",
+        "aiAutomation": "AI / Automatyzacja",
+        "other": "Inne"
+      },
+      "timeline": {
+        "asap": "Jak najszybciej",
+        "withinOneMonth": "W ciągu 1 miesiąca",
+        "oneToThreeMonths": "1-3 miesiące",
+        "flexiblePlanning": "Elastycznie / etap planowania"
+      },
+      "collaboration": {
+        "oneTimeProject": "Jednorazowy projekt",
+        "longTermCollaboration": "Długoterminowa współpraca",
+        "maintenanceSupport": "Utrzymanie i wsparcie",
+        "notSure": "Nie wiem jeszcze"
+      },
+      "budget": {
+        "under1k": "Poniżej €1k",
+        "eur1k5k": "€1k-5k",
+        "eur5k15k": "€5k-15k",
+        "eur15kPlus": "€15k+",
+        "notSure": "Nie wiem jeszcze"
+      },
+      "contactMethod": {
+        "email": "Email",
+        "phone": "Telefon",
+        "videoCall": "Wideorozmowa"
+      }
+    },
+    "validation": {
+      "nameRequired": "Imię i nazwisko jest wymagane.",
+      "emailRequired": "Email jest wymagany.",
+      "emailInvalid": "Wpisz poprawny adres email.",
+      "serviceRequired": "Wybierz co najmniej jedną usługę.",
+      "otherRequired": "Opisz usługę, której potrzebujesz.",
+      "descriptionRequired": "Opis projektu jest wymagany.",
+      "phoneRequired": "Numer telefonu jest wymagany dla tej formy kontaktu.",
+      "formIncomplete": "Uzupełnij wymagane pola przed wysłaniem."
+    },
+    "status": {
+      "sending": "Wysyłanie...",
+      "send": "Wyślij zapytanie",
+      "success": "Email został wysłany. Dziękujemy, odpowiemy tak szybko, jak to możliwe.",
+      "error": "Wysyłka się nie powiodła. Użyj jednej z metod kontaktu powyżej albo spróbuj później."
+    },
+    "trust": "Zwykle odpowiadamy w ciągu 24 godzin."
+  }
+}

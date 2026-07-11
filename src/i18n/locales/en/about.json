@@ -1,0 +1,31 @@
+{
+  "pageTitle": "About ICT Services",
+  "sections": {
+    "intro": {
+      "title": "Independent Development Service",
+      "imageAlt": "ICT Services cloud logo",
+      "paragraphs": [
+        "ICT Services is a software development brand led by Wladyslaw Danik. It focuses on practical, maintainable business applications, CRM work and integrations rather than broad generic website production.",
+        "The work is based on hands-on commercial experience with Salesforce, Apex, Lightning Web Components, Visualforce, Full-Stack development, SQL and API integrations."
+      ]
+    },
+    "why": {
+      "title": "Why Work With ICT Services?",
+      "items": [
+        "Direct communication with the person doing the development work.",
+        "Practical solutions shaped around real business workflows.",
+        "Experience across Salesforce, Full-Stack development, SQL and APIs.",
+        "Focus on readable, maintainable and extendable code."
+      ]
+    },
+    "approach": {
+      "title": "Approach",
+      "paragraph": "ICT Services favours straightforward architecture, readable implementation and incremental delivery. Each project starts with the business process, then moves toward software that is simple enough to operate and flexible enough to extend later."
+    },
+    "communication": {
+      "title": "Communication",
+      "imageAlt": "Polish English and Russian communication illustration",
+      "paragraph": "Communication is available in Polish, English, Russian and Ukrainian, which helps clarify requirements, document decisions and keep collaboration moving without unnecessary overhead."
+    }
+  }
+}

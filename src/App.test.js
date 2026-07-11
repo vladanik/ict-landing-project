@@ -1,16 +1,31 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-jest.mock('@vercel/analytics/react', () => ({
-  Analytics: () => null,
-}), { virtual: true });
+jest.mock(
+  '@vercel/analytics/react',
+  () => ({
+    Analytics: () => null,
+  }),
+  { virtual: true }
+);
 
-jest.mock('react-markdown', () => function ReactMarkdownMock({ children }) {
-  return <div>{children}</div>;
-});
+jest.mock(
+  '@vercel/speed-insights/react',
+  () => ({
+    SpeedInsights: () => null,
+  }),
+  { virtual: true }
+);
+
+jest.mock(
+  'react-markdown',
+  () =>
+    function ReactMarkdownMock({ children }) {
+      return <div>{children}</div>;
+    }
+);
 
 const appData = {
-  about: {},
   projects: {
     projects: [],
     workWith: [],
@@ -34,15 +49,11 @@ const appData = {
       link: 'https://t.me/ict',
     },
   },
-  contactForm: {
-    callerTypes: ['Business Client'],
-    contactCategories: ['Service Request'],
-  },
 };
 
 beforeEach(() => {
   global.fetch = jest.fn().mockResolvedValue({
-    json: jest.fn().mockResolvedValue({ data: appData }),
+    json: jest.fn().mockResolvedValue(appData),
   });
 });
 
@@ -53,6 +64,8 @@ afterEach(() => {
 test('renders ICT home page after loading site data', async () => {
   render(<App />);
 
-  expect(await screen.findByText(/DELIVERING_RESULTS/i)).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: /view services/i })).toBeInTheDocument();
+  expect(
+    await screen.findByRole('heading', { name: /Salesforce & Full-Stack Development/i })
+  ).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /View Services/i })).toBeInTheDocument();
 });

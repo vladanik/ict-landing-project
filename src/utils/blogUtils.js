@@ -13,24 +13,6 @@ const suggestedCategories = [
   'Management',
 ];
 
-export const formatDate = (dateString) => {
-  if (!dateString) {
-    return '';
-  }
-
-  const date = new Date(dateString);
-
-  if (Number.isNaN(date.getTime())) {
-    return '';
-  }
-
-  return new Intl.DateTimeFormat('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  }).format(date);
-};
-
 export const generateSlug = (title) =>
   (title || '')
     .trim()
@@ -174,7 +156,9 @@ export const maybeConvertMarkdownToHtml = (content) => {
     if (headingData) {
       closeParagraph();
       closeList();
-      htmlParts.push(`<h${headingData.level}>${escapeHtml(headingData.text)}</h${headingData.level}>`);
+      htmlParts.push(
+        `<h${headingData.level}>${escapeHtml(headingData.text)}</h${headingData.level}>`
+      );
       return;
     }
 
@@ -232,7 +216,10 @@ export const normalizeTags = (tags) => {
   }
 
   if (typeof tags === 'string') {
-    return tags.split(',').map((tag) => tag.trim()).filter(Boolean);
+    return tags
+      .split(',')
+      .map((tag) => tag.trim())
+      .filter(Boolean);
   }
 
   return [];
@@ -252,17 +239,20 @@ export const getArticleTags = (article) => {
   const searchableText = `${article?.title || ''} ${article?.shortDescription || ''}`.toLowerCase();
   const inferredTags = suggestedCategories.filter((category) => {
     const keyword = category.toLowerCase();
-    return searchableText.includes(keyword) || (keyword === 'integrations' && searchableText.includes('api'));
+    return (
+      searchableText.includes(keyword) ||
+      (keyword === 'integrations' && searchableText.includes('api'))
+    );
   });
 
   return inferredTags.length > 0 ? inferredTags : ['Business Applications'];
 };
 
-export const getReadingTime = (article, includeSummary = false) => {
+export const getReadingTimeMinutes = (article, includeSummary = false) => {
   const backendReadingTime = Number(article?.readingTimeMinutes);
 
   if (Number.isFinite(backendReadingTime) && backendReadingTime > 0) {
-    return `${backendReadingTime} min read`;
+    return backendReadingTime;
   }
 
   const contentParts = [article?.content || ''];
@@ -272,10 +262,29 @@ export const getReadingTime = (article, includeSummary = false) => {
 
   const text = stripHtml(contentParts.join(' '));
   const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
-  return `${Math.max(1, Math.ceil(wordCount / 220))} min read`;
+  return Math.max(1, Math.ceil(wordCount / 220));
 };
 
-export const validateArticle = (article) => {
+const defaultValidationMessages = {
+  titleRequired: 'Title is required.',
+  titleMax: 'Title must be 200 characters or fewer.',
+  slugRequired: 'Slug is required.',
+  slugMax: 'Slug must be 250 characters or fewer.',
+  slugPattern: 'Slug must use lowercase letters, digits, and single hyphens between words.',
+  shortDescriptionRequired: 'Short description is required.',
+  shortDescriptionMax: 'Short description must be 500 characters or fewer.',
+  contentRequired: 'Content is required.',
+  authorNameRequired: 'Author name is required.',
+  authorNameMax: 'Author name must be 100 characters or fewer.',
+  metaTitleMax: 'Meta title must be 200 characters or fewer.',
+  metaDescriptionMax: 'Meta description must be 300 characters or fewer.',
+  readingTimePositive: 'Reading time must be a positive number.',
+};
+
+const getValidationMessage = (messages, key) =>
+  messages?.[key] || defaultValidationMessages[key] || key;
+
+export const validateArticle = (article, messages = defaultValidationMessages) => {
   const errors = {};
   const title = (article.title || '').trim();
   const slug = (article.slug || '').trim();
@@ -287,50 +296,50 @@ export const validateArticle = (article) => {
   const readingTimeMinutes = article.readingTimeMinutes;
 
   if (!title) {
-    errors.title = 'Title is required.';
+    errors.title = getValidationMessage(messages, 'titleRequired');
   } else if (title.length > 200) {
-    errors.title = 'Title must be 200 characters or fewer.';
+    errors.title = getValidationMessage(messages, 'titleMax');
   }
 
   if (!slug) {
-    errors.slug = 'Slug is required.';
+    errors.slug = getValidationMessage(messages, 'slugRequired');
   } else if (slug.length > 250) {
-    errors.slug = 'Slug must be 250 characters or fewer.';
+    errors.slug = getValidationMessage(messages, 'slugMax');
   } else if (!SLUG_PATTERN.test(slug)) {
-    errors.slug = 'Slug must use lowercase letters, digits, and single hyphens between words.';
+    errors.slug = getValidationMessage(messages, 'slugPattern');
   }
 
   if (!shortDescription) {
-    errors.shortDescription = 'Short description is required.';
+    errors.shortDescription = getValidationMessage(messages, 'shortDescriptionRequired');
   } else if (shortDescription.length > 500) {
-    errors.shortDescription = 'Short description must be 500 characters or fewer.';
+    errors.shortDescription = getValidationMessage(messages, 'shortDescriptionMax');
   }
 
   if (isRichTextEmpty(content)) {
-    errors.content = 'Content is required.';
+    errors.content = getValidationMessage(messages, 'contentRequired');
   }
 
   if (!authorName) {
-    errors.authorName = 'Author name is required.';
+    errors.authorName = getValidationMessage(messages, 'authorNameRequired');
   } else if (authorName.length > 100) {
-    errors.authorName = 'Author name must be 100 characters or fewer.';
+    errors.authorName = getValidationMessage(messages, 'authorNameMax');
   }
 
   if (metaTitle.length > 200) {
-    errors.metaTitle = 'Meta title must be 200 characters or fewer.';
+    errors.metaTitle = getValidationMessage(messages, 'metaTitleMax');
   }
 
   if (metaDescription.length > 300) {
-    errors.metaDescription = 'Meta description must be 300 characters or fewer.';
+    errors.metaDescription = getValidationMessage(messages, 'metaDescriptionMax');
   }
 
   if (
-    readingTimeMinutes !== null
-    && readingTimeMinutes !== undefined
-    && readingTimeMinutes !== ''
-    && (!Number.isFinite(Number(readingTimeMinutes)) || Number(readingTimeMinutes) <= 0)
+    readingTimeMinutes !== null &&
+    readingTimeMinutes !== undefined &&
+    readingTimeMinutes !== '' &&
+    (!Number.isFinite(Number(readingTimeMinutes)) || Number(readingTimeMinutes) <= 0)
   ) {
-    errors.readingTimeMinutes = 'Reading time must be a positive number.';
+    errors.readingTimeMinutes = getValidationMessage(messages, 'readingTimePositive');
   }
 
   return errors;

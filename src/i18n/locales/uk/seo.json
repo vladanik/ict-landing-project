@@ -1,0 +1,44 @@
+{
+  "site": {
+    "name": "ICT Services",
+    "owner": "Wladyslaw Danik"
+  },
+  "home": {
+    "title": "Salesforce і Full-Stack розробка | ICT Services",
+    "description": "ICT Services виконує Salesforce development, frontend-застосунки, backend-системи та API-інтеграції для практичних бізнес-систем.",
+    "serviceTypes": [
+      "Salesforce development",
+      "Frontend development",
+      "Backend development",
+      "API-інтеграції"
+    ],
+    "areasServed": ["Польща", "Європейський Союз", "Віддалено"]
+  },
+  "about": {
+    "title": "Про ICT Services | Salesforce і Full-Stack Developer",
+    "description": "ICT Services — бренд розробки ПЗ під керівництвом Wladyslaw Danik, зосереджений на Salesforce, Full-Stack engineering, SQL та API-інтеграціях.",
+    "jobTitle": "Salesforce і Full-Stack Developer"
+  },
+  "services": {
+    "title": "Послуги Salesforce і Full-Stack розробки | ICT Services",
+    "description": "Послуги розробки для Salesforce, Apex, LWC, Frontend, Backend, REST APIs, інтеграцій, супроводу та бізнес-застосунків."
+  },
+  "projects": {
+    "title": "Кейси | ICT Services",
+    "description": "Вибрані кейси розробки ПЗ: Salesforce, React, Java, інтеграції, підтримуваність і бізнес-застосунки."
+  },
+  "contact": {
+    "title": "Контакти ICT Services | Обговорити software-проект",
+    "description": "Зв’яжіться з ICT Services, щоб обговорити Salesforce development, frontend-застосунки, backend-системи, інтеграції або довгострокову технічну підтримку."
+  },
+  "legal": {
+    "title": "Правова інформація | ICT Services",
+    "description": "Правова інформація ICT Services."
+  },
+  "blog": {
+    "title": "Блог | Статті про Salesforce і Full-Stack розробку",
+    "description": "Технічні статті про Salesforce development, frontend-застосунки, backend-системи, інтеграції, підтримуваність і доставку ПЗ.",
+    "jsonLdName": "Блог ICT Services",
+    "jsonLdDescription": "Практичні статті про Salesforce development, frontend-застосунки, backend-системи, інтеграції, підтримуваність і доставку ПЗ."
+  }
+}

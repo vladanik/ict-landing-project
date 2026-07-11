@@ -1,0 +1,35 @@
+{
+  "pageTitle": "Послуги",
+  "intro": "ICT Services зосереджується на практичній доставці ПЗ для бізнес-процесів, CRM-систем, інтеграцій і внутрішніх інструментів. Робота будується навколо підтримуваної реалізації, а не універсального веб-портфоліо.",
+  "discussService": "Обговорити послугу",
+  "notes": {
+    "demo": "**Примітка:** Послуги та ціни є орієнтовними прикладами, а не фіксованими пропозиціями чи зобов’язаннями.",
+    "pricing": "**Вартість:** Остаточна оцінка залежить від обсягу, інтеграцій, архітектури, строків, ліцензій і вимог до контенту. Зв’яжіться з нами для індивідуальної оцінки."
+  },
+  "items": {
+    "salesforceDevelopment": {
+      "title": "Salesforce Development",
+      "description": "Apex, Lightning Web Components, Visualforce, Flows, налаштування CRM та інтеграції платформи."
+    },
+    "salesforceB2BCommerceSupport": {
+      "title": "Підтримка Salesforce B2B Commerce",
+      "description": "Допомога зі storefront-функціями, потоками замовлень, legacy-кодом, інтеграціями та production support."
+    },
+    "frontendDevelopment": {
+      "title": "Frontend Development",
+      "description": "Адаптивні й доступні інтерфейси для бізнес-застосунків, адмін-панелей і порталів."
+    },
+    "backendDevelopment": {
+      "title": "Backend Development",
+      "description": "REST API, backend-сервіси, інтеграція баз даних і бізнес-логіка."
+    },
+    "apiSystemIntegrations": {
+      "title": "API та системні інтеграції",
+      "description": "З’єднання Salesforce, веб-застосунків, баз даних і зовнішніх сервісів через надійні потоки даних."
+    },
+    "maintenanceRefactoringTechnicalSupport": {
+      "title": "Супровід, рефакторинг і технічна підтримка",
+      "description": "Виправлення помилок, очищення коду, оптимізація продуктивності, production support і довгострокова підтримуваність."
+    }
+  }
+}

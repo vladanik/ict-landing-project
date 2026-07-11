@@ -7,25 +7,25 @@ import img4 from '../assets/offers4.png';
 import img5 from '../assets/offers5.png';
 
 function AboutOffers({ data }) {
-    const images = {
-        offers1: img1,
-        offers2: img2,
-        offers3: img3,
-        offers4: img4,
-        offers5: img5,
-    }
+  const images = {
+    offers1: img1,
+    offers2: img2,
+    offers3: img3,
+    offers4: img4,
+    offers5: img5,
+  };
 
-    return (
-        <div className='about-offers'>
-            {data.map(offerItem => (
-                <article key={offerItem.title} className='about-offers-section'>
-                    <h3>{offerItem.title}</h3>
-                    <img src={images[offerItem.img]} alt={`${offerItem.title} illustration`} loading='lazy' />
-                    <p>{offerItem.paragraph}</p>
-                </article>
-            ))}
-        </div>
-    );
+  return (
+    <div className="about-offers">
+      {data.map((offerItem) => (
+        <article key={offerItem.title} className="about-offers-section">
+          <h3>{offerItem.title}</h3>
+          <img src={images[offerItem.img]} alt={`${offerItem.title} illustration`} loading="lazy" />
+          <p>{offerItem.paragraph}</p>
+        </article>
+      ))}
+    </div>
+  );
 }
 
 AboutOffers.propTypes = {

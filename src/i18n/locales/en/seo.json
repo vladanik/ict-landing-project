@@ -1,0 +1,44 @@
+{
+  "site": {
+    "name": "ICT Services",
+    "owner": "Wladyslaw Danik"
+  },
+  "home": {
+    "title": "Salesforce & Full-Stack Development | ICT Services",
+    "description": "ICT Services provides Salesforce development, frontend applications, backend systems, and API integrations for practical business systems.",
+    "serviceTypes": [
+      "Salesforce development",
+      "Frontend development",
+      "Backend development",
+      "API integrations"
+    ],
+    "areasServed": ["Poland", "European Union", "Remote"]
+  },
+  "about": {
+    "title": "About ICT Services | Salesforce and Full-Stack Developer",
+    "description": "ICT Services is a software development brand led by Wladyslaw Danik, focused on Salesforce, Full-Stack engineering, SQL and API integrations.",
+    "jobTitle": "Salesforce and Full-Stack Developer"
+  },
+  "services": {
+    "title": "Salesforce & Full-Stack Development Services | ICT Services",
+    "description": "Development services for Salesforce, Apex, LWC, Frontend, Backend, REST APIs, integrations, maintenance and business applications."
+  },
+  "projects": {
+    "title": "Case Studies | ICT Services",
+    "description": "Selected software development case studies covering Salesforce, React, Java, integrations, maintainability and business applications."
+  },
+  "contact": {
+    "title": "Contact ICT Services | Discuss Your Software Project",
+    "description": "Contact ICT Services to discuss Salesforce development, frontend applications, backend systems, integrations or long-term technical support."
+  },
+  "legal": {
+    "title": "Legal Notices | ICT Services",
+    "description": "Legal notices for ICT Services."
+  },
+  "blog": {
+    "title": "Blog | Salesforce & Full-Stack Development Articles",
+    "description": "Technical articles about Salesforce development, frontend applications, backend systems, integrations, maintainability and software delivery.",
+    "jsonLdName": "ICT Services Blog",
+    "jsonLdDescription": "Practical articles about Salesforce development, frontend applications, backend systems, integrations, maintainability and software delivery."
+  }
+}

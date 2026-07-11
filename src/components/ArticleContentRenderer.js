@@ -1,21 +1,26 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 import { isHtmlContent, isRichTextEmpty } from '../utils/blogUtils';
 
 function ArticleContentRenderer({ content }) {
+  const { t } = useTranslation('blog');
+
   if (isRichTextEmpty(content)) {
-    return <div className='blog-rich-content blog-rich-content-empty'>No content provided yet.</div>;
+    return (
+      <div className="blog-rich-content blog-rich-content-empty">{t('article.emptyContent')}</div>
+    );
   }
 
   if (isHtmlContent(content)) {
     // TODO: For production, sanitize stored HTML on backend or before rendering.
-    return <div className='blog-rich-content' dangerouslySetInnerHTML={{ __html: content }} />;
+    return <div className="blog-rich-content" dangerouslySetInnerHTML={{ __html: content }} />;
   }
 
   return (
-    <div className='blog-rich-content'>
+    <div className="blog-rich-content">
       <ReactMarkdown>{content}</ReactMarkdown>
     </div>
   );

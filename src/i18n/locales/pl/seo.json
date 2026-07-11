@@ -1,0 +1,44 @@
+{
+  "site": {
+    "name": "ICT Services",
+    "owner": "Wladyslaw Danik"
+  },
+  "home": {
+    "title": "Salesforce i Full-Stack Development | ICT Services",
+    "description": "ICT Services zapewnia Salesforce development, aplikacje frontendowe, systemy backendowe i integracje API dla praktycznych systemów biznesowych.",
+    "serviceTypes": [
+      "Salesforce development",
+      "Frontend development",
+      "Backend development",
+      "integracje API"
+    ],
+    "areasServed": ["Polska", "Unia Europejska", "Zdalnie"]
+  },
+  "about": {
+    "title": "O ICT Services | Salesforce i Full-Stack Developer",
+    "description": "ICT Services to marka tworzenia oprogramowania prowadzona przez Wladyslawa Danika, skoncentrowana na Salesforce, Full-Stack engineering, SQL i integracjach API.",
+    "jobTitle": "Salesforce i Full-Stack Developer"
+  },
+  "services": {
+    "title": "Usługi Salesforce i Full-Stack Development | ICT Services",
+    "description": "Usługi developmentu dla Salesforce, Apex, LWC, Frontend, Backend, REST API, integracji, utrzymania i aplikacji biznesowych."
+  },
+  "projects": {
+    "title": "Case Studies | ICT Services",
+    "description": "Wybrane case studies software development obejmujące Salesforce, React, Java, integracje, utrzymywalność i aplikacje biznesowe."
+  },
+  "contact": {
+    "title": "Kontakt ICT Services | Omów projekt software",
+    "description": "Skontaktuj się z ICT Services, aby omówić Salesforce development, aplikacje frontendowe, systemy backendowe, integracje lub długoterminowe wsparcie techniczne."
+  },
+  "legal": {
+    "title": "Informacje prawne | ICT Services",
+    "description": "Informacje prawne ICT Services."
+  },
+  "blog": {
+    "title": "Blog | Artykuły Salesforce i Full-Stack Development",
+    "description": "Artykuły techniczne o Salesforce development, aplikacjach frontendowych, systemach backendowych, integracjach, utrzymywalności i dostarczaniu oprogramowania.",
+    "jsonLdName": "Blog ICT Services",
+    "jsonLdDescription": "Praktyczne artykuły o Salesforce development, aplikacjach frontendowych, systemach backendowych, integracjach, utrzymywalności i dostarczaniu oprogramowania."
+  }
+}

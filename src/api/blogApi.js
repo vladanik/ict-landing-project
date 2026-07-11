@@ -8,14 +8,18 @@ const removeTrailingSlashes = (value) => {
   return value.slice(0, endIndex);
 };
 
-const API_BASE_URL = removeTrailingSlashes(process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080');
+const API_BASE_URL = removeTrailingSlashes(
+  process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080'
+);
 
 const parseErrorMessage = async (response) => {
   const fallbackMessage = `Request failed with status ${response.status}`;
 
   try {
     const errorBody = await response.json();
-    return errorBody.message || errorBody.error || errorBody.detail || errorBody.title || fallbackMessage;
+    return (
+      errorBody.message || errorBody.error || errorBody.detail || errorBody.title || fallbackMessage
+    );
   } catch (_error) {
     return fallbackMessage;
   }
@@ -50,7 +54,9 @@ const request = async (path, options = {}) => {
     }
 
     if (error instanceof TypeError) {
-      throw new Error('Internal server error. We\'re sorry for the inconvenience. Please try again later.');
+      throw new Error(
+        "Internal server error. We're sorry for the inconvenience. Please try again later."
+      );
     }
 
     throw error;
@@ -76,7 +82,8 @@ export const getPublishedArticleBySlug = (slug) =>
 export const getAdminArticles = (page = 0, size = 50) =>
   request(`/api/admin/blog/articles?page=${page}&size=${size}`);
 
-export const getAdminArticleById = (id) => request(`/api/admin/blog/articles/${encodeURIComponent(id)}`);
+export const getAdminArticleById = (id) =>
+  request(`/api/admin/blog/articles/${encodeURIComponent(id)}`);
 
 export const createArticle = (payload) =>
   request('/api/admin/blog/articles', {

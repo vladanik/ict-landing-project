@@ -1,0 +1,118 @@
+{
+  "common": {
+    "panelTitle": "Panel administracyjny",
+    "logout": "Wyloguj",
+    "published": "Opublikowany",
+    "draft": "Szkic",
+    "featured": "Wyróżniony",
+    "created": "Utworzono {{date}}",
+    "updated": "Zaktualizowano {{date}}",
+    "publishedDate": "Opublikowano {{date}}",
+    "tagsAria": "Tagi artykułu {{title}}"
+  },
+  "login": {
+    "title": "Dostęp administracyjny",
+    "password": "Hasło",
+    "missingHash": "Hash hasła panelu administracyjnego nie jest skonfigurowany.",
+    "missingHashDetails": "Hash hasła panelu administracyjnego nie jest skonfigurowany. Ustaw REACT_APP_ADMIN_PANEL_PASSWORD_HASH.",
+    "invalidPassword": "Nieprawidłowe hasło.",
+    "validationError": "Nie można zweryfikować hasła w tej sesji przeglądarki.",
+    "checking": "Sprawdzanie...",
+    "unlock": "Odblokuj"
+  },
+  "panel": {
+    "heading": "Zarządzanie blogiem",
+    "description": "Zarządzaj opublikowanymi artykułami i szkicami publicznego bloga.",
+    "writeNew": "Napisz nowy artykuł",
+    "refresh": "Odśwież",
+    "empty": "Nie znaleziono artykułów.",
+    "loadError": "Nie udało się załadować artykułów. Sprawdź połączenie z backendem.",
+    "paginationAria": "Paginacja artykułów administracyjnych",
+    "qualityAria": "Wskaźniki jakości treści artykułu {{title}}",
+    "seoTitleSet": "Tytuł SEO ustawiony",
+    "seoDescriptionSet": "Opis SEO ustawiony"
+  },
+  "editor": {
+    "editTitle": "Edytuj artykuł",
+    "newTitle": "Napisz nowy artykuł",
+    "editDescription": "Aktualizuj treść artykułu, status publikacji i metadane.",
+    "newDescription": "Utwórz szkic albo opublikuj nowy artykuł na publicznym blogu.",
+    "backToPanel": "Wróć do panelu",
+    "fields": {
+      "title": "Tytuł",
+      "slug": "Slug",
+      "shortDescription": "Krótki opis",
+      "tags": "Tagi",
+      "readingTime": "Czas czytania w minutach",
+      "metaTitle": "Tytuł meta",
+      "metaDescription": "Opis meta",
+      "imageUrl": "URL obrazu",
+      "content": "Treść",
+      "authorName": "Autor"
+    },
+    "placeholders": {
+      "tags": "Salesforce, React, Java"
+    },
+    "help": {
+      "readingTime": "Zostaw puste, aby obliczyć automatycznie z treści.",
+      "metaTitle": "Zostaw puste, aby użyć tytułu artykułu.",
+      "metaDescription": "Zostaw puste, aby użyć krótkiego opisu.",
+      "imageUrl": "Używany do udostępniania społecznościowego i schematu BlogPosting."
+    },
+    "actions": {
+      "generateSlug": "Wygeneruj slug z tytułu",
+      "saving": "Zapisywanie...",
+      "saveChanges": "Zapisz zmiany",
+      "saveArticle": "Zapisz artykuł",
+      "preview": "Podgląd artykułu",
+      "updating": "Aktualizacja...",
+      "publish": "Opublikuj",
+      "unpublish": "Cofnij publikację",
+      "delete": "Usuń artykuł"
+    },
+    "messages": {
+      "fixFields": "Popraw wyróżnione pola przed zapisaniem.",
+      "saved": "Artykuł został zapisany.",
+      "created": "Artykuł został utworzony.",
+      "loadError": "Nie udało się załadować artykułu.",
+      "saveError": "Nie udało się zapisać artykułu.",
+      "published": "Artykuł został opublikowany.",
+      "unpublished": "Publikacja artykułu została cofnięta.",
+      "statusError": "Nie udało się zaktualizować statusu publikacji.",
+      "deleteConfirm": "Usunąć \"{{title}}\"? Tej operacji nie można cofnąć.",
+      "deleted": "Artykuł został usunięty.",
+      "deleteError": "Nie udało się usunąć artykułu.",
+      "previewError": "Nie można otworzyć podglądu w tej sesji przeglądarki."
+    },
+    "validation": {
+      "titleRequired": "Tytuł jest wymagany.",
+      "titleMax": "Tytuł może mieć maksymalnie 200 znaków.",
+      "slugRequired": "Slug jest wymagany.",
+      "slugMax": "Slug może mieć maksymalnie 250 znaków.",
+      "slugPattern": "Slug może zawierać małe litery, cyfry i pojedyncze myślniki między słowami.",
+      "shortDescriptionRequired": "Krótki opis jest wymagany.",
+      "shortDescriptionMax": "Krótki opis może mieć maksymalnie 500 znaków.",
+      "contentRequired": "Treść jest wymagana.",
+      "authorNameRequired": "Autor jest wymagany.",
+      "authorNameMax": "Autor może mieć maksymalnie 100 znaków.",
+      "metaTitleMax": "Tytuł meta może mieć maksymalnie 200 znaków.",
+      "metaDescriptionMax": "Opis meta może mieć maksymalnie 300 znaków.",
+      "readingTimePositive": "Czas czytania musi być dodatnią liczbą."
+    }
+  },
+  "preview": {
+    "mode": "Tryb podglądu",
+    "backToEditor": "Wróć do edytora",
+    "backToPanel": "Wróć do panelu",
+    "missing": "Brak danych podglądu.",
+    "articleFallback": "Artykuł",
+    "untitled": "Artykuł bez tytułu",
+    "imageAlt": "Artykuł {{title}}",
+    "seoPreview": "Podgląd SEO",
+    "seoPreviewAria": "Podgląd SEO",
+    "metaTitle": "Tytuł meta:",
+    "metaDescription": "Opis meta:",
+    "usingArticleTitle": "Używany jest tytuł artykułu",
+    "usingShortDescription": "Używany jest krótki opis"
+  }
+}
