@@ -1,8 +1,10 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { getPublishedArticles } from '../api/blogApi';
-import { formatDate, getArticleTags, getReadingTime } from '../utils/blogUtils';
+import { getArticleTags, getReadingTimeMinutes } from '../utils/blogUtils';
+import { formatLocalizedDate } from '../utils/formatting';
 import LoadingSpinner from './LoadingSpinner';
 import SEO, { buildCanonicalUrl, SITE_URL } from './SEO';
 
@@ -17,6 +19,7 @@ const getPageArticles = (pageData) => {
 };
 
 function Blog() {
+  const { t, i18n } = useTranslation(['blog', 'seo', 'common']);
   const [searchParams, setSearchParams] = useSearchParams();
   const page = useMemo(() => {
     const pageParam = Number.parseInt(searchParams.get('page') || '0', 10);
@@ -44,7 +47,7 @@ function Blog() {
       } catch (error) {
         if (isCurrentRequest) {
           console.error('Unable to load blog articles:', error);
-          setErrorMessage(error.message || 'Unable to load articles. Please check backend connection.');
+          setErrorMessage(error.message || t('list.loadError'));
         }
       } finally {
         if (isCurrentRequest) {
@@ -58,7 +61,7 @@ function Blog() {
     return () => {
       isCurrentRequest = false;
     };
-  }, [activeTag, page]);
+  }, [activeTag, page, t]);
 
   const articles = getPageArticles(pageData);
   const currentPage = pageData?.number ?? page;
@@ -87,15 +90,16 @@ function Blog() {
   return (
     <main>
       <SEO
-        title='Blog | Salesforce & Full-Stack Development Articles'
-        description='Technical articles about Salesforce development, frontend applications, backend systems, integrations, maintainability and software delivery.'
-        canonicalPath='/blog'
+        title={t('seo:blog.title')}
+        description={t('seo:blog.description')}
+        canonicalPath="/blog"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Blog',
-          name: 'ICT Services Blog',
-          description: 'Practical articles about Salesforce development, frontend applications, backend systems, integrations, maintainability and software delivery.',
+          name: t('seo:blog.jsonLdName'),
+          description: t('seo:blog.jsonLdDescription'),
           url: `${SITE_URL}/blog`,
+          inLanguage: i18n.resolvedLanguage,
           blogPost: articles.map((article) => ({
             '@type': 'BlogPosting',
             headline: article.title,
@@ -104,17 +108,14 @@ function Blog() {
           })),
         }}
       />
-      <h1 className='page-header'>Blog</h1>
-      <section id='blog' className='section blog-list'>
-        <p className='blog-intro'>
-          Practical articles about Salesforce development, frontend applications, backend systems, integrations,
-          maintainability and software delivery.
-        </p>
+      <h1 className="page-header">{t('list.title')}</h1>
+      <section id="blog" className="section blog-list">
+        <p className="blog-intro">{t('list.intro')}</p>
         {activeTag && (
-          <output className='active-tag-filter'>
-            <span>Filtered by {activeTag}</span>
-            <button type='button' className='btn btn-sm btn-outline-light' onClick={clearTagFilter}>
-              Clear filter
+          <output className="active-tag-filter">
+            <span>{t('list.filteredBy', { tag: activeTag })}</span>
+            <button type="button" className="btn btn-sm btn-outline-light" onClick={clearTagFilter}>
+              {t('list.clearFilter')}
             </button>
           </output>
         )}
@@ -122,58 +123,73 @@ function Blog() {
         {isLoading && <LoadingSpinner />}
 
         {!isLoading && errorMessage && (
-          <div className='error-message' role='alert'>
+          <div className="error-message" role="alert">
             {errorMessage}
           </div>
         )}
 
-        {!isLoading && !errorMessage && articles.length === 0 && (
-          <p>No articles have been published yet.</p>
-        )}
+        {!isLoading && !errorMessage && articles.length === 0 && <p>{t('list.empty')}</p>}
 
         {!isLoading && !errorMessage && articles.length > 0 && (
           <>
-            <div className='blog-card-grid'>
+            <div className="blog-card-grid">
               {articles.map((article) => {
-                const displayDate = formatDate(article.publishedDate || article.createdDate);
-                const createdDate = formatDate(article.createdDate);
-                const modifiedDate = formatDate(article.lastModifiedDate);
+                const displayDate = formatLocalizedDate(
+                  article.publishedDate || article.createdDate,
+                  i18n.resolvedLanguage
+                );
+                const createdDate = formatLocalizedDate(article.createdDate, i18n.resolvedLanguage);
+                const modifiedDate = formatLocalizedDate(
+                  article.lastModifiedDate,
+                  i18n.resolvedLanguage
+                );
                 const shouldShowModifiedDate = modifiedDate && modifiedDate !== createdDate;
 
                 return (
-                  <article className='blog-card' key={article.id || article.slug}>
+                  <article className="blog-card" key={article.id || article.slug}>
                     {article.imageUrl && (
-                      <Link className='blog-card-image-link' to={`/blog/${article.slug}`} aria-label={`Read ${article.title}`}>
+                      <Link
+                        className="blog-card-image-link"
+                        to={`/blog/${article.slug}`}
+                        aria-label={t('list.readArticleAria', { title: article.title })}
+                      >
                         <img
-                          className='blog-card-image'
+                          className="blog-card-image"
                           src={article.imageUrl}
-                          alt={`${article.title} article`}
-                          loading='lazy'
+                          alt={t('list.imageAlt', { title: article.title })}
+                          loading="lazy"
                         />
                       </Link>
                     )}
-                    <div className='blog-meta'>
-                      <span>{article.authorName || 'Wladyslaw Danik'}</span>
+                    <div className="blog-meta">
+                      <span>{article.authorName || t('meta.authorFallback')}</span>
                       {displayDate && <span>{displayDate}</span>}
-                      <span>{getReadingTime(article)}</span>
-                      {shouldShowModifiedDate && <span>Updated {modifiedDate}</span>}
+                      <span>
+                        {t('meta.readingTime', { count: getReadingTimeMinutes(article) })}
+                      </span>
+                      {shouldShowModifiedDate && (
+                        <span>{t('meta.updated', { date: modifiedDate })}</span>
+                      )}
                     </div>
-                    <div className='blog-tags' aria-label={`${article.title} tags`}>
+                    <div
+                      className="blog-tags"
+                      aria-label={t('list.tagsAria', { title: article.title })}
+                    >
                       {getArticleTags(article).map((tag) => (
-                        <button type='button' key={tag} onClick={() => filterByTag(tag)}>
+                        <button type="button" key={tag} onClick={() => filterByTag(tag)}>
                           {tag}
                         </button>
                       ))}
                     </div>
-                    <h2 className='blog-card-title'>
-                      <Link className='blog-card-title-link' to={`/blog/${article.slug}`}>
+                    <h2 className="blog-card-title">
+                      <Link className="blog-card-title-link" to={`/blog/${article.slug}`}>
                         {article.title}
                       </Link>
                     </h2>
-                    <p className='blog-card-description'>{article.shortDescription}</p>
-                    <div className='blog-actions'>
-                      <Link className='btn btn-sm btn-primary' to={`/blog/${article.slug}`}>
-                        Read more
+                    <p className="blog-card-description">{article.shortDescription}</p>
+                    <div className="blog-actions">
+                      <Link className="btn btn-sm btn-primary" to={`/blog/${article.slug}`}>
+                        {t('list.readMore')}
                       </Link>
                     </div>
                   </article>
@@ -181,25 +197,28 @@ function Blog() {
               })}
             </div>
 
-            <div className='blog-pagination' aria-label='Blog pagination'>
+            <div className="blog-pagination" aria-label={t('list.paginationAria')}>
               <button
-                type='button'
-                className='btn btn-sm btn-outline-light'
+                type="button"
+                className="btn btn-sm btn-outline-light"
                 disabled={isFirstPage}
                 onClick={() => changePage(currentPage - 1)}
               >
-                Previous
+                {t('common:pagination.previous')}
               </button>
               <span>
-                Page {totalPages === 0 ? 0 : currentPage + 1} of {totalPages}
+                {t('common:pagination.pageOf', {
+                  page: totalPages === 0 ? 0 : currentPage + 1,
+                  total: totalPages,
+                })}
               </span>
               <button
-                type='button'
-                className='btn btn-sm btn-outline-light'
+                type="button"
+                className="btn btn-sm btn-outline-light"
                 disabled={isLastPage}
                 onClick={() => changePage(currentPage + 1)}
               >
-                Next
+                {t('common:pagination.next')}
               </button>
             </div>
           </>

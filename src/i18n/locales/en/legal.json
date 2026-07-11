@@ -1,0 +1,7 @@
+{
+  "pageTitle": "Legal Notices",
+  "loading": "Loading legal notices...",
+  "loadError": "Unable to load the selected legal notice language. Showing English fallback where available.",
+  "empty": "No legal notices are available.",
+  "download": "Download"
+}

@@ -23,7 +23,7 @@ These Terms and any related disputes are governed by and construed in accordance
 **11. Changes to These Terms** \\
 We may modify these Terms at any time. Any changes will be posted on the Site with an updated effective date. Your continued use of the Site after any changes indicates your acceptance of the revised Terms. \\
 **12. Contact Us** \\
-If you have questions about these Terms, please contact us at ictxservices@gmail.com. \\
+If you have questions about these Terms, please contact us at contact@ict-services.dev. \\
 ________________________________________
 2. Privacy Policy !!!
 Last Updated: 05.2026 \\ \\
@@ -63,7 +63,7 @@ You have the right to: \\
 •	Restrict or object to processing of your data. \\
 •	Withdraw your consent at any time (if processing was based on consent). \\
 •	Lodge a complaint with the Polish Data Protection Authority (Urząd Ochrony Danych Osobowych). \\
-To exercise your rights, please contact us at ictxservices@gmail.com. \\
+To exercise your rights, please contact us at contact@ict-services.dev. \\
 **10. Security Measures** \\
 We implement technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. While we strive to protect your data, no transmission over the internet is completely secure. \\
 **11. Children’s Privacy** \\
@@ -71,7 +71,7 @@ Our Site is not directed at children under 16 years of age, and we do not knowin
 **12. Changes to This Privacy Policy** \\
 We may update this Privacy Policy periodically. Any changes will be posted on this page with an updated effective date. Your continued use of the Site after changes are posted constitutes acceptance of those changes. \\
 **13. Contact Us** \\
-For questions or concerns regarding this Privacy Policy, please contact us at ictxservices@gmail.com. \\
+For questions or concerns regarding this Privacy Policy, please contact us at contact@ict-services.dev. \\
 ________________________________________
 3. Cookie Policy !!!
 Last Updated: 05.2026 \\ \\
@@ -91,7 +91,7 @@ We may use trusted third-party services that set their own cookies. We encourage
 **6. Changes to This Cookie Policy** \\
 We may update this Cookie Policy to reflect changes in technology, data protection law, or our business operations. Any updates will be posted here with an updated effective date. \\
 **7. Contact Us** \\
-For questions about our use of cookies, please contact us at ictxservices@gmail.com. \\
+For questions about our use of cookies, please contact us at contact@ict-services.dev. \\
 ________________________________________
 4. Open-Source License Notices !!!
 **MIT License** \\
@@ -109,12 +109,12 @@ ________________________________________
 6. Accessibility Statement !!!
 Last Updated: 05.2026 \\ \\
 ICT Władysław Danik strives to ensure that our Site is accessible to people with disabilities in compliance with applicable EU and Polish accessibility regulations. We are continuously improving our Site’s accessibility and welcome your feedback. \\
-If you encounter any accessibility barriers or have suggestions, please contact us at ictxservices@gmail.com. \\
+If you encounter any accessibility barriers or have suggestions, please contact us at contact@ict-services.dev. \\
 ________________________________________
 7. Company Information & Contact Details !!!
 **Company Name:** ICT Władysław Danik \\
 **Registered Seat:** N/A \\
 **VAT (NIP) Number:** PL5423478680 \\
 **REGON:** 527223048 \\
-**Email:** ictxservices@gmail.com \\
+**Email:** contact@ict-services.dev \\
 

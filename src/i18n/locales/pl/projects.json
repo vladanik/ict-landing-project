@@ -1,0 +1,61 @@
+{
+  "pageTitle": "Case studies",
+  "intro": {
+    "title": "Wybrane prace software development",
+    "description": "Te case studies podsumowują praktyczne wdrożenia w aplikacjach React, systemach backendowych Java, integracjach, utrzymywalności i oprogramowaniu biznesowym. Prace wrażliwe dla klientów mogą być omawiane jako zanonimizowane przykłady."
+  },
+  "labels": {
+    "problem": "Problem",
+    "solution": "Rozwiązanie",
+    "technologies": "Technologie",
+    "result": "Rezultat",
+    "caseStudiesAria": "Case studies",
+    "techStackAria": "Technologie projektu {{name}}",
+    "technologyLogoAlt": "Logo ekosystemu technologicznego {{name}}"
+  },
+  "actions": {
+    "openCaseStudy": "Otwórz case study",
+    "liveDemo": "Demo"
+  },
+  "workWith": {
+    "title": "Technologie i ekosystemy, z którymi pracuje ICT Services",
+    "note": "Poniższe logo reprezentują platformy, narzędzia i ekosystemy używane w praktycznej pracy developerskiej. Nie oznaczają bezpośrednich partnerstw ani relacji z klientami."
+  },
+  "items": {
+    "ictWebsite": {
+      "name": "ICT Services Landing Platform",
+      "description": "Nowoczesna platforma landingowa React dla ICT Services z wielokrotnie używaną konfiguracją treści, sekcjami prawnymi i działającym formularzem kontaktowym.",
+      "problem": "Marka potrzebowała skoncentrowanej strony usług software development z jasnym pozycjonowaniem i prostą ścieżką kontaktu.",
+      "solution": "Zbudowano landing React z wielokrotnie używaną treścią, stronami prawnymi, routingiem bloga i przepływem kontaktowym EmailJS.",
+      "result": "Utrzymywalna publiczna strona, która jasno komunikuje usługi Salesforce, React i Java development."
+    },
+    "dreamAnalyzerAI": {
+      "name": "Dream Analyzer AI",
+      "description": "Full-stack aplikacja AI analizująca opisane przez użytkownika sny i generująca wiele interpretacji z użyciem OpenAI API.",
+      "problem": "Użytkownicy potrzebowali uporządkowanego sposobu przesyłania otwartego tekstu i otrzymywania użytecznych interpretacji generowanych przez AI.",
+      "solution": "Dostarczono aplikację full-stack z interfejsem React, backendem Java Spring Boot i integracją OpenAI API.",
+      "result": "Działająca aplikacja AI z rozdzielonym frontendem i backendem oraz wdrażalnym hostingiem chmurowym."
+    },
+    "patternHasher": {
+      "name": "Pattern Hasher Library",
+      "description": "Lekka biblioteka haszująca Java z niestandardowym algorytmem transformacji opartym na wzorcu, zaprojektowana do spójnego i wydajnego haszowania stringów.",
+      "problem": "Aplikacje Java potrzebowały małego, wielokrotnie używanego narzędzia haszującego o przewidywalnym zachowaniu.",
+      "solution": "Utworzono lekką bibliotekę Java z podejściem transformacji opartym na wzorcu i skoncentrowaną implementacją.",
+      "result": "Pakiet wielokrotnego użytku, który można analizować, rozszerzać i integrować z projektami Java."
+    },
+    "travelAgencyWebsite": {
+      "name": "Travel Agency Web Experience",
+      "description": "Doświadczenie webowe PHP symulujące platformę biura podróży, skoncentrowane na uporządkowanej prezentacji treści i responsywnym UI.",
+      "problem": "Koncepcja podróżnicza z dużą ilością treści wymagała uporządkowanej, responsywnej prezentacji webowej.",
+      "solution": "Wdrożono doświadczenie PHP i frontend z uporządkowanymi sekcjami treści oraz responsywnym stylem.",
+      "result": "Czytelne doświadczenie przeglądarkowe pokazujące praktyczne dostarczanie treści i strukturę UI."
+    },
+    "snakeGame": {
+      "name": "Snake Desktop Game",
+      "description": "Klasyczna gra Snake jako aplikacja desktopowa Java Swing, skoncentrowana na programowaniu zdarzeniowym i renderowaniu UI.",
+      "problem": "Koncepcja gry desktopowej wymagała obsługi wejścia sterowanej zdarzeniami i niezawodnego renderowania ekranu.",
+      "solution": "Zbudowano aplikację Java Swing ze sterowaniem klawiaturą, aktualizacjami stanu gry i renderowaniem UI.",
+      "result": "Funkcjonalna aplikacja desktopowa pokazująca programowanie UI w Java i zarządzanie stanem aplikacji."
+    }
+  }
+}

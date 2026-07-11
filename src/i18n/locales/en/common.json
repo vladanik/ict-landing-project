@@ -1,0 +1,56 @@
+{
+  "brand": {
+    "name": "ICT Services",
+    "owner": "Wladyslaw Danik",
+    "homeAria": "ICT Services home",
+    "logoAlt": "ICT Services cloud logo"
+  },
+  "languages": {
+    "selectorLabel": "Select language",
+    "menuLabel": "Available languages",
+    "current": "Current language: {{language}}"
+  },
+  "navigation": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About",
+    "caseStudies": "Case Studies",
+    "services": "Services",
+    "contact": "Contact",
+    "legal": "Legal Notices",
+    "toggle": "Toggle navigation",
+    "footer": "Footer navigation",
+    "social": "Social links"
+  },
+  "actions": {
+    "back": "Back",
+    "clear": "Clear",
+    "download": "Download",
+    "refresh": "Refresh",
+    "retry": "Retry",
+    "submit": "Submit"
+  },
+  "status": {
+    "loading": "Loading..."
+  },
+  "dates": {
+    "created": "Created {{date}}",
+    "updated": "Updated {{date}}",
+    "published": "Published {{date}}"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "pageOf": "Page {{page}} of {{total}}"
+  },
+  "cookie": {
+    "message": "This website uses a cookie to remember this notice. Read the",
+    "policyLink": "Cookie Policy",
+    "accept": "Got it!",
+    "ariaLabel": "Cookie notice"
+  },
+  "footer": {
+    "description": "ICT Services provides Salesforce and Full-Stack development for maintainable business applications, integrations and internal tools.",
+    "copyright": "Copyright 2026 ICT Wladyslaw Danik"
+  }
+}

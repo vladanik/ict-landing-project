@@ -1,0 +1,37 @@
+{
+  "list": {
+    "title": "Блог",
+    "intro": "Практические статьи о Salesforce development, frontend-приложениях, backend-системах, интеграциях, поддерживаемости и поставке ПО.",
+    "filteredBy": "Фильтр по {{tag}}",
+    "clearFilter": "Очистить фильтр",
+    "empty": "Пока нет опубликованных статей.",
+    "loadError": "Не удалось загрузить статьи. Проверьте подключение к backend.",
+    "readMore": "Читать дальше",
+    "readArticleAria": "Читать {{title}}",
+    "imageAlt": "Статья {{title}}",
+    "tagsAria": "Теги статьи {{title}}",
+    "paginationAria": "Пагинация блога"
+  },
+  "article": {
+    "backToBlog": "Назад к блогу",
+    "loadError": "Не удалось загрузить эту статью. Проверьте подключение к backend.",
+    "emptyContent": "Контент пока не добавлен.",
+    "fallbackTitle": "Статья блога | ICT Services Blog",
+    "titleSuffix": "{{title}} | ICT Services Blog",
+    "fallbackDescription": "Техническая статья ICT Services о Salesforce, frontend, backend и поставке ПО.",
+    "viewServices": "Посмотреть услуги разработки",
+    "discussProject": "Обсудить проект",
+    "ctaAria": "Призыв обсудить проект",
+    "ctaText": "Нужна помощь с похожим проектом Salesforce, Full-Stack или API? Давайте обсудим ваш проект."
+  },
+  "meta": {
+    "authorFallback": "Wladyslaw Danik",
+    "readingTime_one": "{{count}} минута чтения",
+    "readingTime_few": "{{count}} минуты чтения",
+    "readingTime_many": "{{count}} минут чтения",
+    "readingTime_other": "{{count}} минуты чтения",
+    "updated": "Обновлено {{date}}",
+    "created": "Создано {{date}}",
+    "published": "Опубликовано {{date}}"
+  }
+}

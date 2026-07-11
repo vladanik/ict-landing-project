@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import 'react-quill/dist/quill.snow.css';
 
 import {
@@ -14,13 +15,13 @@ import {
 } from '../api/blogApi';
 import {
   ARTICLE_PREVIEW_STORAGE_KEY,
-  formatDate,
   generateSlug,
   normalizeContentForEditor,
   parseTagsInput,
   tagsToInputValue,
   validateArticle,
 } from '../utils/blogUtils';
+import { formatLocalizedDate } from '../utils/formatting';
 import LoadingSpinner from './LoadingSpinner';
 
 const emptyArticle = {
@@ -63,6 +64,7 @@ const editorFormats = [
 ];
 
 function AdminArticleEditor({ onLogout }) {
+  const { t, i18n } = useTranslation('admin');
   const { id } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
@@ -110,11 +112,11 @@ function AdminArticleEditor({ onLogout }) {
       populateArticle(data);
     } catch (error) {
       console.error('Unable to load blog article:', error);
-      setMessage({ type: 'error', text: error.message || 'Unable to load article.' });
+      setMessage({ type: 'error', text: error.message || t('editor.messages.loadError') });
     } finally {
       setIsLoading(false);
     }
-  }, [id, isEditMode, populateArticle]);
+  }, [id, isEditMode, populateArticle, t]);
 
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
@@ -124,7 +126,10 @@ function AdminArticleEditor({ onLogout }) {
     return () => window.clearTimeout(timeoutId);
   }, [loadArticle]);
 
-  const pageTitle = useMemo(() => (isEditMode ? 'Edit article' : 'Write new article'), [isEditMode]);
+  const pageTitle = useMemo(
+    () => (isEditMode ? t('editor.editTitle') : t('editor.newTitle')),
+    [isEditMode, t]
+  );
 
   const handleChange = (event) => {
     const { checked, name, type, value } = event.target;
@@ -156,7 +161,8 @@ function AdminArticleEditor({ onLogout }) {
     content: formData.content.trim(),
     authorName: formData.authorName.trim(),
     tags: parseTagsInput(formData.tags),
-    readingTimeMinutes: formData.readingTimeMinutes === '' ? null : Number(formData.readingTimeMinutes),
+    readingTimeMinutes:
+      formData.readingTimeMinutes === '' ? null : Number(formData.readingTimeMinutes),
     metaTitle: formData.metaTitle.trim() || null,
     metaDescription: formData.metaDescription.trim() || null,
     imageUrl: formData.imageUrl.trim() || null,
@@ -167,11 +173,11 @@ function AdminArticleEditor({ onLogout }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const payload = buildPayload();
-    const errors = validateArticle(payload);
+    const errors = validateArticle(payload, t('editor.validation', { returnObjects: true }));
     setValidationErrors(errors);
 
     if (Object.keys(errors).length > 0) {
-      setMessage({ type: 'error', text: 'Please fix the highlighted fields before saving.' });
+      setMessage({ type: 'error', text: t('editor.messages.fixFields') });
       return;
     }
 
@@ -188,21 +194,21 @@ function AdminArticleEditor({ onLogout }) {
           id: updatedArticle?.id || article?.id || id,
           content: updatedArticle?.content || payload.content,
         });
-        setMessage({ type: 'success', text: 'Article saved successfully.' });
+        setMessage({ type: 'success', text: t('editor.messages.saved') });
       } else {
         const createdArticle = await createArticle(payload);
-        setMessage({ type: 'success', text: 'Article created successfully.' });
+        setMessage({ type: 'success', text: t('editor.messages.created') });
 
         if (createdArticle?.id) {
           navigate(`/adminpanel/articles/${createdArticle.id}`, {
             replace: true,
-            state: { message: 'Article created successfully.' },
+            state: { message: t('editor.messages.created') },
           });
         }
       }
     } catch (error) {
       console.error('Unable to save blog article:', error);
-      setMessage({ type: 'error', text: error.message || 'Unable to save article.' });
+      setMessage({ type: 'error', text: error.message || t('editor.messages.saveError') });
     } finally {
       setIsSaving(false);
     }
@@ -231,18 +237,20 @@ function AdminArticleEditor({ onLogout }) {
       populateArticle(nextArticle);
       setMessage({
         type: 'success',
-        text: nextArticle.published ? 'Article published successfully.' : 'Article unpublished successfully.',
+        text: nextArticle.published
+          ? t('editor.messages.published')
+          : t('editor.messages.unpublished'),
       });
     } catch (error) {
       console.error('Unable to update publication status:', error);
-      setMessage({ type: 'error', text: error.message || 'Unable to update publication status.' });
+      setMessage({ type: 'error', text: error.message || t('editor.messages.statusError') });
     } finally {
       setIsActionRunning(false);
     }
   };
 
   const handleDelete = async () => {
-    if (!article || !window.confirm(`Delete "${article.title}"? This cannot be undone.`)) {
+    if (!article || !window.confirm(t('editor.messages.deleteConfirm', { title: article.title }))) {
       return;
     }
 
@@ -251,10 +259,10 @@ function AdminArticleEditor({ onLogout }) {
 
     try {
       await deleteArticle(article.id);
-      navigate('/adminpanel', { replace: true, state: { message: 'Article deleted successfully.' } });
+      navigate('/adminpanel', { replace: true, state: { message: t('editor.messages.deleted') } });
     } catch (error) {
       console.error('Unable to delete blog article:', error);
-      setMessage({ type: 'error', text: error.message || 'Unable to delete article.' });
+      setMessage({ type: 'error', text: error.message || t('editor.messages.deleteError') });
       setIsActionRunning(false);
     }
   };
@@ -277,7 +285,8 @@ function AdminArticleEditor({ onLogout }) {
       content: formData.content,
       authorName: formData.authorName,
       tags: parseTagsInput(formData.tags),
-      readingTimeMinutes: formData.readingTimeMinutes === '' ? null : Number(formData.readingTimeMinutes),
+      readingTimeMinutes:
+        formData.readingTimeMinutes === '' ? null : Number(formData.readingTimeMinutes),
       metaTitle: formData.metaTitle,
       metaDescription: formData.metaDescription,
       imageUrl: formData.imageUrl,
@@ -299,35 +308,33 @@ function AdminArticleEditor({ onLogout }) {
       navigate('/adminpanel/articles/preview');
     } catch (error) {
       console.error('Unable to prepare article preview:', error);
-      setMessage({ type: 'error', text: 'Unable to open preview in this browser session.' });
+      setMessage({ type: 'error', text: t('editor.messages.previewError') });
     }
   };
 
   return (
     <main>
-      <h1 className='page-header'>{pageTitle}</h1>
-      <section className='section admin-editor'>
-        <div className='admin-toolbar'>
+      <h1 className="page-header">{pageTitle}</h1>
+      <section className="section admin-editor">
+        <div className="admin-toolbar">
           <div>
             <h2>{pageTitle}</h2>
-            <p>
-              {isEditMode
-                ? 'Update article copy, publication status, and article metadata.'
-                : 'Create a draft or publish a new article for the public Blog.'}
-            </p>
+            <p>{isEditMode ? t('editor.editDescription') : t('editor.newDescription')}</p>
           </div>
-          <button type='button' className='btn btn-outline-light' onClick={onLogout}>
-            Logout
+          <button type="button" className="btn btn-outline-light" onClick={onLogout}>
+            {t('common.logout')}
           </button>
         </div>
 
-        <div className='admin-editor-nav'>
-          <Link className='btn btn-sm btn-outline-light' to='/adminpanel'>
-            Back to admin panel
+        <div className="admin-editor-nav">
+          <Link className="btn btn-sm btn-outline-light" to="/adminpanel">
+            {t('editor.backToPanel')}
           </Link>
           {isEditMode && article && (
-            <span className={`admin-status ${article.published ? 'admin-status-published' : 'admin-status-draft'}`}>
-              {article.published ? 'Published' : 'Draft'}
+            <span
+              className={`admin-status ${article.published ? 'admin-status-published' : 'admin-status-draft'}`}
+            >
+              {article.published ? t('common.published') : t('common.draft')}
             </span>
           )}
         </div>
@@ -341,191 +348,254 @@ function AdminArticleEditor({ onLogout }) {
         {isLoading && <LoadingSpinner />}
 
         {!isLoading && (!isEditMode || article) && (
-          <form className='admin-editor-card' onSubmit={handleSubmit}>
-                <div className='admin-form-field'>
-                  <label htmlFor='article-title'>Title</label>
-                  <input id='article-title' name='title' value={formData.title} onChange={handleChange} maxLength='200' />
-                  {validationErrors.title && <span className='form-error'>{validationErrors.title}</span>}
-                </div>
+          <form className="admin-editor-card" onSubmit={handleSubmit}>
+            <div className="admin-form-field">
+              <label htmlFor="article-title">{t('editor.fields.title')}</label>
+              <input
+                id="article-title"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
+                maxLength="200"
+              />
+              {validationErrors.title && (
+                <span className="form-error">{validationErrors.title}</span>
+              )}
+            </div>
 
-                <div className='admin-form-field'>
-                  <label htmlFor='article-slug'>Slug</label>
-                  <div className='admin-inline-field'>
-                    <input id='article-slug' name='slug' value={formData.slug} onChange={handleChange} maxLength='250' />
-                    <button type='button' className='btn btn-sm btn-outline-light' onClick={handleGenerateSlug} disabled={isBusy}>
-                      Generate slug from title
-                    </button>
-                  </div>
-                  {validationErrors.slug && <span className='form-error'>{validationErrors.slug}</span>}
-                </div>
+            <div className="admin-form-field">
+              <label htmlFor="article-slug">{t('editor.fields.slug')}</label>
+              <div className="admin-inline-field">
+                <input
+                  id="article-slug"
+                  name="slug"
+                  value={formData.slug}
+                  onChange={handleChange}
+                  maxLength="250"
+                />
+                <button
+                  type="button"
+                  className="btn btn-sm btn-outline-light"
+                  onClick={handleGenerateSlug}
+                  disabled={isBusy}
+                >
+                  {t('editor.actions.generateSlug')}
+                </button>
+              </div>
+              {validationErrors.slug && <span className="form-error">{validationErrors.slug}</span>}
+            </div>
 
-                <div className='admin-form-field'>
-                  <label htmlFor='article-short-description'>Short description</label>
-                  <textarea
-                    id='article-short-description'
-                    name='shortDescription'
-                    value={formData.shortDescription}
-                    onChange={handleChange}
-                    maxLength='500'
-                    rows='4'
-                  />
-                  {validationErrors.shortDescription && (
-                    <span className='form-error'>{validationErrors.shortDescription}</span>
-                  )}
-                </div>
+            <div className="admin-form-field">
+              <label htmlFor="article-short-description">
+                {t('editor.fields.shortDescription')}
+              </label>
+              <textarea
+                id="article-short-description"
+                name="shortDescription"
+                value={formData.shortDescription}
+                onChange={handleChange}
+                maxLength="500"
+                rows="4"
+              />
+              {validationErrors.shortDescription && (
+                <span className="form-error">{validationErrors.shortDescription}</span>
+              )}
+            </div>
 
-                <div className='admin-form-field'>
-                  <label htmlFor='article-tags'>Tags</label>
-                  <input
-                    id='article-tags'
-                    name='tags'
-                    value={formData.tags}
-                    onChange={handleChange}
-                    placeholder='Salesforce, React, Java'
-                  />
-                </div>
+            <div className="admin-form-field">
+              <label htmlFor="article-tags">{t('editor.fields.tags')}</label>
+              <input
+                id="article-tags"
+                name="tags"
+                value={formData.tags}
+                onChange={handleChange}
+                placeholder={t('editor.placeholders.tags')}
+              />
+            </div>
 
-                <div className='admin-form-field'>
-                  <label htmlFor='article-reading-time'>Reading time in minutes</label>
-                  <input
-                    id='article-reading-time'
-                    name='readingTimeMinutes'
-                    type='number'
-                    min='1'
-                    step='1'
-                    value={formData.readingTimeMinutes}
-                    onChange={handleChange}
-                  />
-                  <span className='admin-field-help'>Leave empty to calculate automatically from content.</span>
-                  {validationErrors.readingTimeMinutes && (
-                    <span className='form-error'>{validationErrors.readingTimeMinutes}</span>
-                  )}
-                </div>
+            <div className="admin-form-field">
+              <label htmlFor="article-reading-time">{t('editor.fields.readingTime')}</label>
+              <input
+                id="article-reading-time"
+                name="readingTimeMinutes"
+                type="number"
+                min="1"
+                step="1"
+                value={formData.readingTimeMinutes}
+                onChange={handleChange}
+              />
+              <span className="admin-field-help">{t('editor.help.readingTime')}</span>
+              {validationErrors.readingTimeMinutes && (
+                <span className="form-error">{validationErrors.readingTimeMinutes}</span>
+              )}
+            </div>
 
-                <div className='admin-form-field'>
-                  <label htmlFor='article-meta-title'>Meta title</label>
-                  <input
-                    id='article-meta-title'
-                    name='metaTitle'
-                    value={formData.metaTitle}
-                    onChange={handleChange}
-                    maxLength='200'
-                  />
-                  <span className='admin-field-help'>Leave empty to use article title.</span>
-                  {validationErrors.metaTitle && <span className='form-error'>{validationErrors.metaTitle}</span>}
-                </div>
+            <div className="admin-form-field">
+              <label htmlFor="article-meta-title">{t('editor.fields.metaTitle')}</label>
+              <input
+                id="article-meta-title"
+                name="metaTitle"
+                value={formData.metaTitle}
+                onChange={handleChange}
+                maxLength="200"
+              />
+              <span className="admin-field-help">{t('editor.help.metaTitle')}</span>
+              {validationErrors.metaTitle && (
+                <span className="form-error">{validationErrors.metaTitle}</span>
+              )}
+            </div>
 
-                <div className='admin-form-field'>
-                  <label htmlFor='article-meta-description'>Meta description</label>
-                  <textarea
-                    id='article-meta-description'
-                    name='metaDescription'
-                    value={formData.metaDescription}
-                    onChange={handleChange}
-                    maxLength='300'
-                    rows='3'
-                  />
-                  <span className='admin-field-help'>Leave empty to use short description.</span>
-                  {validationErrors.metaDescription && (
-                    <span className='form-error'>{validationErrors.metaDescription}</span>
-                  )}
-                </div>
+            <div className="admin-form-field">
+              <label htmlFor="article-meta-description">{t('editor.fields.metaDescription')}</label>
+              <textarea
+                id="article-meta-description"
+                name="metaDescription"
+                value={formData.metaDescription}
+                onChange={handleChange}
+                maxLength="300"
+                rows="3"
+              />
+              <span className="admin-field-help">{t('editor.help.metaDescription')}</span>
+              {validationErrors.metaDescription && (
+                <span className="form-error">{validationErrors.metaDescription}</span>
+              )}
+            </div>
 
-                <div className='admin-form-field'>
-                  <label htmlFor='article-image-url'>Image URL</label>
-                  <input
-                    id='article-image-url'
-                    name='imageUrl'
-                    type='url'
-                    value={formData.imageUrl}
-                    onChange={handleChange}
-                  />
-                  <span className='admin-field-help'>Used for social sharing and BlogPosting schema.</span>
-                </div>
+            <div className="admin-form-field">
+              <label htmlFor="article-image-url">{t('editor.fields.imageUrl')}</label>
+              <input
+                id="article-image-url"
+                name="imageUrl"
+                type="url"
+                value={formData.imageUrl}
+                onChange={handleChange}
+              />
+              <span className="admin-field-help">{t('editor.help.imageUrl')}</span>
+            </div>
 
-                <div className='admin-form-field'>
-                  <label htmlFor='article-content'>Content</label>
-                  <ReactQuill
-                    id='article-content'
-                    className='admin-rich-editor'
-                    theme='snow'
-                    value={formData.content}
-                    onChange={handleContentChange}
-                    modules={editorModules}
-                    formats={editorFormats}
-                    readOnly={isBusy}
-                  />
-                  {validationErrors.content && <span className='form-error'>{validationErrors.content}</span>}
-                </div>
+            <div className="admin-form-field">
+              <label htmlFor="article-content">{t('editor.fields.content')}</label>
+              <ReactQuill
+                id="article-content"
+                className="admin-rich-editor"
+                theme="snow"
+                value={formData.content}
+                onChange={handleContentChange}
+                modules={editorModules}
+                formats={editorFormats}
+                readOnly={isBusy}
+              />
+              {validationErrors.content && (
+                <span className="form-error">{validationErrors.content}</span>
+              )}
+            </div>
 
-                <div className='admin-form-field'>
-                  <label htmlFor='article-author'>Author name</label>
-                  <input
-                    id='article-author'
-                    name='authorName'
-                    value={formData.authorName}
-                    onChange={handleChange}
-                    maxLength='100'
-                  />
-                  {validationErrors.authorName && <span className='form-error'>{validationErrors.authorName}</span>}
-                </div>
+            <div className="admin-form-field">
+              <label htmlFor="article-author">{t('editor.fields.authorName')}</label>
+              <input
+                id="article-author"
+                name="authorName"
+                value={formData.authorName}
+                onChange={handleChange}
+                maxLength="100"
+              />
+              {validationErrors.authorName && (
+                <span className="form-error">{validationErrors.authorName}</span>
+              )}
+            </div>
 
-                <label className='admin-checkbox' htmlFor='article-published'>
-                  <input
-                    id='article-published'
-                    name='published'
-                    type='checkbox'
-                    checked={formData.published}
-                    onChange={handleChange}
-                  />
-                  Published
-                </label>
+            <label className="admin-checkbox" htmlFor="article-published">
+              <input
+                id="article-published"
+                name="published"
+                type="checkbox"
+                checked={formData.published}
+                onChange={handleChange}
+              />
+              {t('common.published')}
+            </label>
 
-                <label className='admin-checkbox' htmlFor='article-featured'>
-                  <input
-                    id='article-featured'
-                    name='featured'
-                    type='checkbox'
-                    checked={formData.featured}
-                    onChange={handleChange}
-                  />
-                  Featured
-                </label>
+            <label className="admin-checkbox" htmlFor="article-featured">
+              <input
+                id="article-featured"
+                name="featured"
+                type="checkbox"
+                checked={formData.featured}
+                onChange={handleChange}
+              />
+              {t('common.featured')}
+            </label>
 
-                <div className='admin-editor-actions'>
-                  <button type='submit' className='btn btn-primary' disabled={isBusy}>
-                    {isSaving ? 'Saving...' : isEditMode ? 'Save changes' : 'Save article'}
-                  </button>
+            <div className="admin-editor-actions">
+              <button type="submit" className="btn btn-primary" disabled={isBusy}>
+                {isSaving
+                  ? t('editor.actions.saving')
+                  : isEditMode
+                    ? t('editor.actions.saveChanges')
+                    : t('editor.actions.saveArticle')}
+              </button>
 
-                  <button type='button' className='btn btn-outline-light' onClick={handlePreview} disabled={isBusy}>
-                    Preview Article
-                  </button>
+              <button
+                type="button"
+                className="btn btn-outline-light"
+                onClick={handlePreview}
+                disabled={isBusy}
+              >
+                {t('editor.actions.preview')}
+              </button>
 
-                  {isEditMode && article && (
-                    <button
-                      type='button'
-                      className='btn btn-outline-light'
-                      onClick={handlePublishToggle}
-                      disabled={isBusy}
-                    >
-                      {isActionRunning ? 'Updating...' : article.published ? 'Unpublish' : 'Publish'}
-                    </button>
-                  )}
+              {isEditMode && article && (
+                <button
+                  type="button"
+                  className="btn btn-outline-light"
+                  onClick={handlePublishToggle}
+                  disabled={isBusy}
+                >
+                  {isActionRunning
+                    ? t('editor.actions.updating')
+                    : article.published
+                      ? t('editor.actions.unpublish')
+                      : t('editor.actions.publish')}
+                </button>
+              )}
 
-                  {isEditMode && article && (
-                    <button type='button' className='btn btn-danger' onClick={handleDelete} disabled={isBusy}>
-                      Delete article
-                    </button>
-                  )}
-                </div>
+              {isEditMode && article && (
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={handleDelete}
+                  disabled={isBusy}
+                >
+                  {t('editor.actions.delete')}
+                </button>
+              )}
+            </div>
 
-                {isEditMode && article && (
-                  <div className='blog-meta admin-editor-meta'>
-                    {formatDate(article.createdDate) && <span>Created {formatDate(article.createdDate)}</span>}
-                    {formatDate(article.lastModifiedDate) && <span>Updated {formatDate(article.lastModifiedDate)}</span>}
-                    {formatDate(article.publishedDate) && <span>Published {formatDate(article.publishedDate)}</span>}
-                  </div>
+            {isEditMode && article && (
+              <div className="blog-meta admin-editor-meta">
+                {formatLocalizedDate(article.createdDate, i18n.resolvedLanguage) && (
+                  <span>
+                    {t('common.created', {
+                      date: formatLocalizedDate(article.createdDate, i18n.resolvedLanguage),
+                    })}
+                  </span>
                 )}
+                {formatLocalizedDate(article.lastModifiedDate, i18n.resolvedLanguage) && (
+                  <span>
+                    {t('common.updated', {
+                      date: formatLocalizedDate(article.lastModifiedDate, i18n.resolvedLanguage),
+                    })}
+                  </span>
+                )}
+                {formatLocalizedDate(article.publishedDate, i18n.resolvedLanguage) && (
+                  <span>
+                    {t('common.publishedDate', {
+                      date: formatLocalizedDate(article.publishedDate, i18n.resolvedLanguage),
+                    })}
+                  </span>
+                )}
+              </div>
+            )}
           </form>
         )}
       </section>

@@ -1,0 +1,37 @@
+{
+  "list": {
+    "title": "Blog",
+    "intro": "Practical articles about Salesforce development, frontend applications, backend systems, integrations, maintainability and software delivery.",
+    "filteredBy": "Filtered by {{tag}}",
+    "clearFilter": "Clear filter",
+    "empty": "No articles have been published yet.",
+    "loadError": "Unable to load articles. Please check backend connection.",
+    "readMore": "Read more",
+    "readArticleAria": "Read {{title}}",
+    "imageAlt": "{{title}} article",
+    "tagsAria": "{{title}} tags",
+    "paginationAria": "Blog pagination"
+  },
+  "article": {
+    "backToBlog": "Back to Blog",
+    "loadError": "Unable to load this article. Please check backend connection.",
+    "emptyContent": "No content provided yet.",
+    "fallbackTitle": "Blog Article | ICT Services Blog",
+    "titleSuffix": "{{title}} | ICT Services Blog",
+    "fallbackDescription": "Technical article from ICT Services about Salesforce, frontend, backend and software delivery.",
+    "viewServices": "View development services",
+    "discussProject": "Discuss your project",
+    "ctaAria": "Project discussion call to action",
+    "ctaText": "Need help with a similar Salesforce, Full-Stack or API project? Let's discuss your project."
+  },
+  "meta": {
+    "authorFallback": "Wladyslaw Danik",
+    "readingTime_one": "{{count}} min read",
+    "readingTime_few": "{{count}} min read",
+    "readingTime_many": "{{count}} min read",
+    "readingTime_other": "{{count}} min read",
+    "updated": "Updated {{date}}",
+    "created": "Created {{date}}",
+    "published": "Published {{date}}"
+  }
+}

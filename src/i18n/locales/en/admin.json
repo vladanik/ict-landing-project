@@ -1,0 +1,118 @@
+{
+  "common": {
+    "panelTitle": "Admin Panel",
+    "logout": "Logout",
+    "published": "Published",
+    "draft": "Draft",
+    "featured": "Featured",
+    "created": "Created {{date}}",
+    "updated": "Updated {{date}}",
+    "publishedDate": "Published {{date}}",
+    "tagsAria": "{{title}} tags"
+  },
+  "login": {
+    "title": "Admin access",
+    "password": "Password",
+    "missingHash": "Admin panel password hash is not configured.",
+    "missingHashDetails": "Admin panel password hash is not configured. Set REACT_APP_ADMIN_PANEL_PASSWORD_HASH.",
+    "invalidPassword": "Invalid password.",
+    "validationError": "Unable to validate password in this browser session.",
+    "checking": "Checking...",
+    "unlock": "Unlock"
+  },
+  "panel": {
+    "heading": "Blog management",
+    "description": "Manage published articles and drafts for the public Blog.",
+    "writeNew": "Write new article",
+    "refresh": "Refresh",
+    "empty": "No articles found.",
+    "loadError": "Unable to load articles. Please check backend connection.",
+    "paginationAria": "Admin article pagination",
+    "qualityAria": "{{title}} content quality markers",
+    "seoTitleSet": "SEO title set",
+    "seoDescriptionSet": "SEO description set"
+  },
+  "editor": {
+    "editTitle": "Edit article",
+    "newTitle": "Write new article",
+    "editDescription": "Update article copy, publication status, and article metadata.",
+    "newDescription": "Create a draft or publish a new article for the public Blog.",
+    "backToPanel": "Back to admin panel",
+    "fields": {
+      "title": "Title",
+      "slug": "Slug",
+      "shortDescription": "Short description",
+      "tags": "Tags",
+      "readingTime": "Reading time in minutes",
+      "metaTitle": "Meta title",
+      "metaDescription": "Meta description",
+      "imageUrl": "Image URL",
+      "content": "Content",
+      "authorName": "Author name"
+    },
+    "placeholders": {
+      "tags": "Salesforce, React, Java"
+    },
+    "help": {
+      "readingTime": "Leave empty to calculate automatically from content.",
+      "metaTitle": "Leave empty to use article title.",
+      "metaDescription": "Leave empty to use short description.",
+      "imageUrl": "Used for social sharing and BlogPosting schema."
+    },
+    "actions": {
+      "generateSlug": "Generate slug from title",
+      "saving": "Saving...",
+      "saveChanges": "Save changes",
+      "saveArticle": "Save article",
+      "preview": "Preview Article",
+      "updating": "Updating...",
+      "publish": "Publish",
+      "unpublish": "Unpublish",
+      "delete": "Delete article"
+    },
+    "messages": {
+      "fixFields": "Please fix the highlighted fields before saving.",
+      "saved": "Article saved successfully.",
+      "created": "Article created successfully.",
+      "loadError": "Unable to load article.",
+      "saveError": "Unable to save article.",
+      "published": "Article published successfully.",
+      "unpublished": "Article unpublished successfully.",
+      "statusError": "Unable to update publication status.",
+      "deleteConfirm": "Delete \"{{title}}\"? This cannot be undone.",
+      "deleted": "Article deleted successfully.",
+      "deleteError": "Unable to delete article.",
+      "previewError": "Unable to open preview in this browser session."
+    },
+    "validation": {
+      "titleRequired": "Title is required.",
+      "titleMax": "Title must be 200 characters or fewer.",
+      "slugRequired": "Slug is required.",
+      "slugMax": "Slug must be 250 characters or fewer.",
+      "slugPattern": "Slug must use lowercase letters, digits, and single hyphens between words.",
+      "shortDescriptionRequired": "Short description is required.",
+      "shortDescriptionMax": "Short description must be 500 characters or fewer.",
+      "contentRequired": "Content is required.",
+      "authorNameRequired": "Author name is required.",
+      "authorNameMax": "Author name must be 100 characters or fewer.",
+      "metaTitleMax": "Meta title must be 200 characters or fewer.",
+      "metaDescriptionMax": "Meta description must be 300 characters or fewer.",
+      "readingTimePositive": "Reading time must be a positive number."
+    }
+  },
+  "preview": {
+    "mode": "Preview mode",
+    "backToEditor": "Back to editor",
+    "backToPanel": "Back to admin panel",
+    "missing": "No preview data available.",
+    "articleFallback": "Article",
+    "untitled": "Untitled article",
+    "imageAlt": "{{title}} article",
+    "seoPreview": "SEO preview",
+    "seoPreviewAria": "SEO preview",
+    "metaTitle": "Meta title:",
+    "metaDescription": "Meta description:",
+    "usingArticleTitle": "Using article title",
+    "usingShortDescription": "Using short description"
+  }
+}

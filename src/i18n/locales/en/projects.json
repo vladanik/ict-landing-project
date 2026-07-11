@@ -1,0 +1,61 @@
+{
+  "pageTitle": "Case Studies",
+  "intro": {
+    "title": "Selected Software Development Work",
+    "description": "These case studies summarize practical implementation work across React applications, Java backend systems, integrations, maintainability and business-facing software. Client-sensitive work can be discussed as anonymized examples."
+  },
+  "labels": {
+    "problem": "Problem",
+    "solution": "Solution",
+    "technologies": "Technologies",
+    "result": "Result",
+    "caseStudiesAria": "Case studies",
+    "techStackAria": "{{name}} technologies",
+    "technologyLogoAlt": "{{name}} technology ecosystem logo"
+  },
+  "actions": {
+    "openCaseStudy": "Open Case Study",
+    "liveDemo": "Live Demo"
+  },
+  "workWith": {
+    "title": "Technologies and ecosystems ICT Services works with",
+    "note": "The logos below represent platforms, tools, and ecosystems used in hands-on development work. They do not imply direct partnerships or client relationships."
+  },
+  "items": {
+    "ictWebsite": {
+      "name": "ICT Services Landing Platform",
+      "description": "A modern React-based landing platform for ICT Services featuring reusable content configuration, legal compliance sections, and a functional contact workflow.",
+      "problem": "The brand needed a focused software development website with clear service positioning and a simple contact path.",
+      "solution": "Built a React landing experience with reusable content, legal pages, blog routing and an EmailJS contact workflow.",
+      "result": "A maintainable public site that communicates Salesforce, React and Java development services clearly."
+    },
+    "dreamAnalyzerAI": {
+      "name": "Dream Analyzer AI",
+      "description": "A full-stack AI-powered web application that analyzes user-described dreams and generates multiple interpretations using OpenAI API.",
+      "problem": "Users needed a structured way to submit open-ended text and receive useful AI-generated interpretations.",
+      "solution": "Delivered a full-stack application with a React interface, Java Spring Boot backend and OpenAI API integration.",
+      "result": "A working AI web application with separated frontend and backend responsibilities and deployable cloud hosting."
+    },
+    "patternHasher": {
+      "name": "Pattern Hasher Library",
+      "description": "A lightweight Java hashing library implementing a custom pattern-based transformation algorithm, designed for consistent and efficient string hashing across applications.",
+      "problem": "Java applications needed a small reusable hashing utility with predictable behavior.",
+      "solution": "Created a lightweight Java library with a pattern-based transformation approach and focused implementation.",
+      "result": "A reusable package that can be inspected, extended and integrated into Java-based projects."
+    },
+    "travelAgencyWebsite": {
+      "name": "Travel Agency Web Experience",
+      "description": "A PHP-based web experience simulating a travel agency platform, focused on structured content delivery and responsive UI design.",
+      "problem": "A content-heavy travel concept needed a structured, responsive web presentation.",
+      "solution": "Implemented a PHP and frontend experience with organized content sections and responsive styling.",
+      "result": "A clear browser-based experience demonstrating practical content delivery and UI structure."
+    },
+    "snakeGame": {
+      "name": "Snake Desktop Game",
+      "description": "A classic Snake game implemented as a desktop application using Java Swing, focusing on event-driven programming and UI rendering.",
+      "problem": "A desktop game concept required event-driven input handling and reliable screen rendering.",
+      "solution": "Built a Java Swing application with keyboard controls, game state updates and UI rendering.",
+      "result": "A functional desktop application demonstrating Java UI programming and application state management."
+    }
+  }
+}

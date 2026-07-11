@@ -1,0 +1,44 @@
+{
+  "site": {
+    "name": "ICT Services",
+    "owner": "Wladyslaw Danik"
+  },
+  "home": {
+    "title": "Salesforce и Full-Stack разработка | ICT Services",
+    "description": "ICT Services выполняет Salesforce development, frontend-приложения, backend-системы и API-интеграции для практичных бизнес-систем.",
+    "serviceTypes": [
+      "Salesforce development",
+      "Frontend development",
+      "Backend development",
+      "API-интеграции"
+    ],
+    "areasServed": ["Польша", "Европейский союз", "Удаленно"]
+  },
+  "about": {
+    "title": "Об ICT Services | Salesforce и Full-Stack Developer",
+    "description": "ICT Services — бренд разработки ПО под руководством Wladyslaw Danik, сфокусированный на Salesforce, Full-Stack engineering, SQL и API-интеграциях.",
+    "jobTitle": "Salesforce и Full-Stack Developer"
+  },
+  "services": {
+    "title": "Услуги Salesforce и Full-Stack разработки | ICT Services",
+    "description": "Услуги разработки для Salesforce, Apex, LWC, Frontend, Backend, REST APIs, интеграций, сопровождения и бизнес-приложений."
+  },
+  "projects": {
+    "title": "Кейсы | ICT Services",
+    "description": "Избранные кейсы разработки ПО: Salesforce, React, Java, интеграции, поддерживаемость и бизнес-приложения."
+  },
+  "contact": {
+    "title": "Контакты ICT Services | Обсудить software-проект",
+    "description": "Свяжитесь с ICT Services, чтобы обсудить Salesforce development, frontend-приложения, backend-системы, интеграции или долгосрочную техническую поддержку."
+  },
+  "legal": {
+    "title": "Правовая информация | ICT Services",
+    "description": "Правовая информация ICT Services."
+  },
+  "blog": {
+    "title": "Блог | Статьи о Salesforce и Full-Stack разработке",
+    "description": "Технические статьи о Salesforce development, frontend-приложениях, backend-системах, интеграциях, поддерживаемости и поставке ПО.",
+    "jsonLdName": "Блог ICT Services",
+    "jsonLdDescription": "Практические статьи о Salesforce development, frontend-приложениях, backend-системах, интеграциях, поддерживаемости и поставке ПО."
+  }
+}

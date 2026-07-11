@@ -1,0 +1,35 @@
+{
+  "pageTitle": "Usługi",
+  "intro": "ICT Services koncentruje się na praktycznym dostarczaniu oprogramowania dla procesów biznesowych, systemów CRM, integracji i narzędzi wewnętrznych. Praca jest ukierunkowana na utrzymywalną implementację, a nie na ogólne portfolio stron internetowych.",
+  "discussService": "Omów tę usługę",
+  "notes": {
+    "demo": "**Uwaga:** Usługi i ceny są orientacyjnymi przykładami, a nie stałymi ofertami ani zobowiązaniami.",
+    "pricing": "**Wycena:** Końcowe szacunki zależą od zakresu, integracji, architektury, terminów, licencji i wymagań dotyczących treści. Skontaktuj się z nami, aby otrzymać indywidualną wycenę."
+  },
+  "items": {
+    "salesforceDevelopment": {
+      "title": "Salesforce Development",
+      "description": "Apex, Lightning Web Components, Visualforce, Flows, dostosowanie CRM i integracje platformowe."
+    },
+    "salesforceB2BCommerceSupport": {
+      "title": "Wsparcie Salesforce B2B Commerce",
+      "description": "Pomoc przy funkcjach storefront, przepływach zamówień, kodzie legacy, integracjach i wsparciu produkcyjnym."
+    },
+    "frontendDevelopment": {
+      "title": "Frontend Development",
+      "description": "Responsywne, dostępne interfejsy dla aplikacji biznesowych, paneli administracyjnych i portali."
+    },
+    "backendDevelopment": {
+      "title": "Backend Development",
+      "description": "REST API, usługi backendowe, integracja baz danych i logika biznesowa."
+    },
+    "apiSystemIntegrations": {
+      "title": "Integracje API i systemów",
+      "description": "Łączenie Salesforce, aplikacji webowych, baz danych i usług zewnętrznych w niezawodne przepływy danych."
+    },
+    "maintenanceRefactoringTechnicalSupport": {
+      "title": "Utrzymanie, refaktoryzacja i wsparcie techniczne",
+      "description": "Naprawa błędów, porządkowanie kodu, poprawa wydajności, wsparcie produkcyjne i długoterminowa utrzymywalność."
+    }
+  }
+}

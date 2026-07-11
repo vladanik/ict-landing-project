@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import PropTypes from 'prop-types';
 
 import Header from './components/Header';
@@ -12,8 +12,8 @@ import Projects from './components/Projects';
 import ContactForm from './components/ContactForm';
 import Services from './components/Services';
 import Contact from './components/Contact';
-import Legal from "./components/Legal";
-import Blog from "./components/Blog";
+import Legal from './components/Legal';
+import Blog from './components/Blog';
 import BlogArticleDetails from './components/BlogArticleDetails';
 import AdminPanel from './components/AdminPanel';
 import AdminArticleEditor from './components/AdminArticleEditor';
@@ -23,8 +23,8 @@ import LoadingSpinner from './components/LoadingSpinner';
 
 import './App.css';
 
-import Cookies from "js-cookie";
-import CookieBanner from "./components/CookieBanner";
+import Cookies from 'js-cookie';
+import CookieBanner from './components/CookieBanner';
 
 function ScrollToHash() {
   const location = useLocation();
@@ -51,61 +51,66 @@ function AppContent({ data }) {
   });
 
   const acceptCookies = () => {
-      Cookies.set('cookieBannerSeen', 'true', { expires: 365 });
-      setShowCookieBanner(false);
-  }
+    Cookies.set('cookieBannerSeen', 'true', {
+      expires: 365,
+      sameSite: 'Lax',
+      secure: process.env.NODE_ENV === 'production',
+      path: '/',
+    });
+    setShowCookieBanner(false);
+  };
 
   return (
-    <div className='App'>
+    <div className="App">
       <ScrollToHash />
       <CookieBanner show={showCookieBanner} close={acceptCookies} />
 
       <Header />
       <Routes>
-        <Route path='/' element={<HomePage contact={data.contact} />} />
-        <Route path='/about' element={<About data={data} />} />
-        <Route path='/case-studies' element={<Projects data={data.projects} />} />
-        <Route path='/projects' element={<Navigate to='/case-studies' replace />} />
-        <Route path='/services' element={<Services data={data.services} />} />
-        <Route path='/contact' element={<Contact data={data.contact} />} />
-        <Route path='/legal' element={<Legal />} />
-        <Route path='/blog' element={<Blog />} />
-        <Route path='/blog/:slug' element={<BlogArticleDetails />} />
+        <Route path="/" element={<HomePage contact={data.contact} />} />
+        <Route path="/about" element={<About data={data} />} />
+        <Route path="/case-studies" element={<Projects data={data.projects} />} />
+        <Route path="/projects" element={<Navigate to="/case-studies" replace />} />
+        <Route path="/services" element={<Services data={data.services} />} />
+        <Route path="/contact" element={<Contact data={data.contact} />} />
+        <Route path="/legal" element={<Legal />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogArticleDetails />} />
         <Route
-          path='/adminpanel'
-          element={(
+          path="/adminpanel"
+          element={
             <AdminAccessGate>
               {({ onLogout }) => <AdminPanel onLogout={onLogout} />}
             </AdminAccessGate>
-          )}
+          }
         />
         <Route
-          path='/adminpanel/articles/preview'
-          element={(
+          path="/adminpanel/articles/preview"
+          element={
             <AdminAccessGate>
               <AdminArticlePreview />
             </AdminAccessGate>
-          )}
+          }
         />
         <Route
-          path='/adminpanel/articles/new'
-          element={(
+          path="/adminpanel/articles/new"
+          element={
             <AdminAccessGate>
               {({ onLogout }) => <AdminArticleEditor onLogout={onLogout} />}
             </AdminAccessGate>
-          )}
+          }
         />
         <Route
-          path='/adminpanel/articles/:id'
-          element={(
+          path="/adminpanel/articles/:id"
+          element={
             <AdminAccessGate>
               {({ onLogout }) => <AdminArticleEditor onLogout={onLogout} />}
             </AdminAccessGate>
-          )}
+          }
         />
       </Routes>
 
-      {showContactForm && <ContactForm data={data.contactForm} />}
+      {showContactForm && <ContactForm />}
       <Footer contact={data.contact} />
     </div>
   );
@@ -113,18 +118,12 @@ function AppContent({ data }) {
 
 AppContent.propTypes = {
   data: PropTypes.shape({
-    about: PropTypes.object.isRequired,
     projects: PropTypes.shape({
       projects: PropTypes.array.isRequired,
       workWith: PropTypes.array.isRequired,
-      workWithNote: PropTypes.string,
     }).isRequired,
     services: PropTypes.array.isRequired,
     contact: PropTypes.object.isRequired,
-    contactForm: PropTypes.shape({
-      callerTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
-      contactCategories: PropTypes.arrayOf(PropTypes.string).isRequired,
-    }).isRequired,
   }).isRequired,
 };
 
