@@ -23,7 +23,7 @@ Regulamin podlega prawu polskiemu. Spory rozstrzygają właściwe sądy w Polsce
 **11. Zmiany Regulaminu** \\
 Możemy zmieniać Regulamin. Zmiany będą publikowane na Stronie z aktualną datą obowiązywania. \\
 **12. Kontakt** \\
-Pytania dotyczące Regulaminu kieruj na ictxservices@gmail.com. \\
+Pytania dotyczące Regulaminu kieruj na contact@ict-services.dev. \\
 ________________________________________
 2. Polityka prywatności !!!
 Ostatnia aktualizacja: 05.2026 \\ \\
@@ -46,7 +46,7 @@ Jeśli dane są przekazywane poza EOG, stosujemy odpowiednie zabezpieczenia. \\
 **8. Przechowywanie danych** \\
 Dane przechowujemy tylko tak długo, jak jest to potrzebne do celu zebrania lub wykonania obowiązków prawnych. \\
 **9. Twoje prawa** \\
-Masz prawo dostępu, sprostowania, usunięcia, ograniczenia, sprzeciwu, wycofania zgody i skargi do Prezesa UODO. Kontakt: ictxservices@gmail.com. \\
+Masz prawo dostępu, sprostowania, usunięcia, ograniczenia, sprzeciwu, wycofania zgody i skargi do Prezesa UODO. Kontakt: contact@ict-services.dev. \\
 **10. Bezpieczeństwo** \\
 Stosujemy środki techniczne i organizacyjne, ale żadna transmisja internetowa nie jest całkowicie bezpieczna. \\
 **11. Prywatność dzieci** \\
@@ -54,7 +54,7 @@ Strona nie jest skierowana do dzieci poniżej 16 lat i świadomie nie zbieramy i
 **12. Zmiany Polityki** \\
 Możemy aktualizować Politykę prywatności. Zmiany będą publikowane na tej stronie. \\
 **13. Kontakt** \\
-Pytania dotyczące prywatności kieruj na ictxservices@gmail.com. \\
+Pytania dotyczące prywatności kieruj na contact@ict-services.dev. \\
 ________________________________________
 3. Polityka plików cookie !!!
 Ostatnia aktualizacja: 05.2026 \\ \\
@@ -74,7 +74,7 @@ Zaufane usługi zewnętrzne mogą ustawiać własne cookies. Zapoznaj się z ich
 **6. Zmiany Polityki** \\
 Możemy aktualizować Politykę cookie w związku ze zmianami technologii, prawa lub działalności. \\
 **7. Kontakt** \\
-Pytania dotyczące cookies kieruj na ictxservices@gmail.com. \\
+Pytania dotyczące cookies kieruj na contact@ict-services.dev. \\
 ________________________________________
 4. Informacje o licencji open source !!!
 **Licencja MIT** \\
@@ -91,11 +91,11 @@ ________________________________________
 6. Deklaracja dostępności !!!
 Ostatnia aktualizacja: 05.2026 \\ \\
 ICT Wladyslaw Danik dąży do zapewnienia dostępności Strony dla osób z niepełnosprawnościami zgodnie z właściwymi regulacjami UE i Polski. Stale ulepszamy dostępność i przyjmujemy uwagi. \\
-Jeśli napotkasz bariery dostępności lub masz sugestie, skontaktuj się: ictxservices@gmail.com. \\
+Jeśli napotkasz bariery dostępności lub masz sugestie, skontaktuj się: contact@ict-services.dev. \\
 ________________________________________
 7. Dane firmy i kontakt !!!
 **Nazwa firmy:** ICT Wladyslaw Danik \\
 **Siedziba:** N/A \\
 **NIP:** PL5423478680 \\
 **REGON:** 527223048 \\
-**Email:** ictxservices@gmail.com \\
+**Email:** contact@ict-services.dev \\

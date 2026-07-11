@@ -23,7 +23,7 @@ These Terms are governed by Polish law. Disputes shall be resolved by competent 
 **11. Changes to These Terms** \\
 We may modify these Terms. Changes will be posted on the Site with an updated effective date. \\
 **12. Contact Us** \\
-For questions about these Terms, contact ictxservices@gmail.com. \\
+For questions about these Terms, contact contact@ict-services.dev. \\
 ________________________________________
 2. Privacy Policy !!!
 Last Updated: 05.2026 \\ \\
@@ -46,7 +46,7 @@ If data is transferred outside the EEA, appropriate safeguards are used. \\
 **8. Data Retention** \\
 We retain data only as long as necessary for the purposes collected or to comply with legal obligations. \\
 **9. Your Rights** \\
-You may request access, rectification, erasure, restriction, objection, withdrawal of consent, or lodge a complaint with the Polish Data Protection Authority. Contact ictxservices@gmail.com. \\
+You may request access, rectification, erasure, restriction, objection, withdrawal of consent, or lodge a complaint with the Polish Data Protection Authority. Contact contact@ict-services.dev. \\
 **10. Security Measures** \\
 We use technical and organisational measures to protect personal data, but no internet transmission is completely secure. \\
 **11. Children's Privacy** \\
@@ -54,7 +54,7 @@ The Site is not directed at children under 16, and we do not knowingly collect t
 **12. Changes to This Privacy Policy** \\
 We may update this Privacy Policy. Updates will be posted on this page. \\
 **13. Contact Us** \\
-For privacy questions, contact ictxservices@gmail.com. \\
+For privacy questions, contact contact@ict-services.dev. \\
 ________________________________________
 3. Cookie Policy !!!
 Last Updated: 05.2026 \\ \\
@@ -74,7 +74,7 @@ Trusted third-party services may set their own cookies. Review their policies. \
 **6. Changes to This Cookie Policy** \\
 We may update this Cookie Policy when technology, law, or operations change. \\
 **7. Contact Us** \\
-For cookie questions, contact ictxservices@gmail.com. \\
+For cookie questions, contact contact@ict-services.dev. \\
 ________________________________________
 4. Open-Source License Notices !!!
 **MIT License** \\
@@ -91,11 +91,11 @@ ________________________________________
 6. Accessibility Statement !!!
 Last Updated: 05.2026 \\ \\
 ICT Wladyslaw Danik strives to ensure that the Site is accessible to people with disabilities in compliance with applicable EU and Polish accessibility regulations. We continuously improve accessibility and welcome feedback. \\
-If you encounter accessibility barriers or have suggestions, contact ictxservices@gmail.com. \\
+If you encounter accessibility barriers or have suggestions, contact contact@ict-services.dev. \\
 ________________________________________
 7. Company Information & Contact Details !!!
 **Company Name:** ICT Wladyslaw Danik \\
 **Registered Seat:** N/A \\
 **VAT (NIP) Number:** PL5423478680 \\
 **REGON:** 527223048 \\
-**Email:** ictxservices@gmail.com \\
+**Email:** contact@ict-services.dev \\
